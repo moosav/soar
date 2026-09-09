@@ -21,7 +21,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "5ebb029629d78bbc68a33f78432d8bd0031b619f",
+            "hash": "a816313f5e870b3c5abacfa90b404b1adad918d4",
             "nodes": {
                 "0": {
                     "data": {
@@ -99,7 +99,7 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "ip_hostname": "artifact:*.cef.dhost"
+                            "ip_hostname": "artifact:*.cef.deviceAddress"
                         },
                         "requiredParameters": [
                             {
@@ -134,7 +134,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-09T12:42:16.666885+00:00",
+    "create_time": "2026-09-09T12:43:28.618066+00:00",
     "draft_mode": false,
     "labels": [
         "*"
