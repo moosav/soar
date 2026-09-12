@@ -28,7 +28,6 @@
                     "targetPort": "2_in"
                 }
             ],
-            "hash": "059727444a79490af2791cff6fcbc5927e9abc76",
             "nodes": {
                 "0": {
                     "data": {
@@ -152,9 +151,11 @@
         },
         "input_spec": [
             {
-                "contains": [],
+                "contains": [
+                    "vault id"
+                ],
                 "description": "",
-                "name": "ip"
+                "name": "id"
             }
         ],
         "output_spec": null,
