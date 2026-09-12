@@ -1,0 +1,105 @@
+"""
+
+"""
+
+
+import phantom.rules as phantom
+import json
+from datetime import datetime, timedelta
+
+
+@phantom.playbook_block()
+def on_start(container):
+    phantom.debug('on_start() called')
+
+    # call 'format_1' block
+    format_1(container=container)
+
+    return
+
+@phantom.playbook_block()
+def add_note_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("add_note_1() called")
+
+    # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+
+    id_value = container.get("id", None)
+    format_1__as_list = phantom.get_format_data(name="format_1__as_list")
+
+    parameters = []
+
+    # build parameters list for 'add_note_1' call
+    for format_1__item in format_1__as_list:
+        parameters.append({
+            "content": format_1__item,
+            "title": "title1",
+            "container_id": id_value,
+        })
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.act("add note", parameters=parameters, name="add_note_1", assets=["test-2"])
+
+    return
+
+
+@phantom.playbook_block()
+def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("format_1() called")
+
+    template = """{0}\n"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "artifact:*.id"
+    ]
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_1")
+
+    add_note_1(container=container)
+
+    return
+
+
+@phantom.playbook_block()
+def on_finish(container, summary):
+    phantom.debug("on_finish() called")
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # This function is called after all actions are completed.
+    # summary of all the action and/or all details of actions
+    # can be collected here.
+
+    # summary_json = phantom.get_summary()
+    # if 'result' in summary_json:
+        # for action_result in summary_json['result']:
+            # if 'action_run_id' in action_result:
+                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)
+                # phantom.debug(action_results)
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    return
