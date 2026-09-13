@@ -30,7 +30,7 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
     parameters.append({
         "content": format_1,
-        "title": "test-2",
+        "title": "test note",
         "container_id": id_value,
     })
 
