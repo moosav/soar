@@ -23,18 +23,20 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    id_value = container.get("id", None)
     ipm_1__result = phantom.collect2(container=container, datapath=["ipm_1:custom_function_result.message"])
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.id","artifact:*.id"])
 
     parameters = []
 
     # build parameters list for 'add_note_1' call
     for ipm_1__result_item in ipm_1__result:
-        parameters.append({
-            "title": "title1",
-            "content": ipm_1__result_item[0],
-            "container_id": id_value,
-        })
+        for container_artifact_item in container_artifact_data:
+            parameters.append({
+                "title": "title1",
+                "content": ipm_1__result_item[0],
+                "container_id": container_artifact_item[0],
+                "context": {'artifact_id': container_artifact_item[1]},
+            })
 
     ################################################################################
     ## Custom Code Start
