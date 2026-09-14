@@ -12,8 +12,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'code_1' block
-    code_1(container=container)
+    # call 'ipm_1' block
+    ipm_1(container=container)
 
     return
 
@@ -68,33 +68,6 @@ def ipm_1(action=None, success=None, container=None, results=None, handle=None, 
     ################################################################################
 
     phantom.custom_function(custom_function="local/IPM", parameters=parameters, name="ipm_1", callback=add_note_1)
-
-    return
-
-
-@phantom.playbook_block()
-def code_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("code_1() called")
-
-    input_parameter_0 = ""
-
-    code_1__ur = None
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.save_block_result(key="code_1:ur", value=json.dumps(code_1__ur))
-
-    phantom.save_block_result(key="code_1_called", value="True")
-
-    ipm_1(container=container)
 
     return
 

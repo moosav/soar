@@ -7,20 +7,6 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_0_to_port_5",
-                    "sourceNode": "0",
-                    "sourcePort": "0_out",
-                    "targetNode": "5",
-                    "targetPort": "5_in"
-                },
-                {
-                    "id": "port_5_to_port_4",
-                    "sourceNode": "5",
-                    "sourcePort": "5_out",
-                    "targetNode": "4",
-                    "targetPort": "4_in"
-                },
-                {
                     "id": "port_4_to_port_3",
                     "sourceNode": "4",
                     "sourcePort": "4_out",
@@ -33,9 +19,16 @@
                     "sourcePort": "3_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
+                },
+                {
+                    "id": "port_0_to_port_4",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "4",
+                    "targetPort": "4_in"
                 }
             ],
-            "hash": "331195c1a04978ba3229424504a14f74905ddf7e",
+            "hash": "d9145f0b1280f4ac40bf0d8dabf04afc7115eed9",
             "nodes": {
                 "0": {
                     "data": {
@@ -191,30 +184,7 @@
                     "type": "utility",
                     "warnings": {},
                     "x": 940,
-                    "y": 580
-                },
-                "5": {
-                    "data": {
-                        "advanced": {
-                            "join": []
-                        },
-                        "functionId": 1,
-                        "functionName": "code_1",
-                        "id": "5",
-                        "inputParameters": [
-                            ""
-                        ],
-                        "outputVariables": [
-                            "ur"
-                        ],
-                        "type": "code"
-                    },
-                    "errors": {},
-                    "id": "5",
-                    "type": "code",
-                    "warnings": {},
-                    "x": 940,
-                    "y": 459.9999999999999
+                    "y": 480
                 }
             },
             "notes": ""
@@ -227,7 +197,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-14T18:23:32.693467+00:00",
+    "create_time": "2026-09-14T18:26:07.282346+00:00",
     "draft_mode": false,
     "labels": [
         "events"
