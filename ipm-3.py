@@ -38,7 +38,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
     ## Custom Code End
     ################################################################################
 
-    phantom.format(container=container, template=template, parameters=parameters, name="format_1")
+    phantom.format(container=container, template=template, parameters=parameters, name="format_1", scope="new")
 
     add_note_1(container=container)
 

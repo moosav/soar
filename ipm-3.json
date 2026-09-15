@@ -35,7 +35,7 @@
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "8fee058ae570abd06fce61983dafac9c99bf8712",
+            "hash": "f71523124227d731fceb799b1657b7e94f3316be",
             "nodes": {
                 "0": {
                     "data": {
@@ -74,7 +74,8 @@
                 "3": {
                     "data": {
                         "advanced": {
-                            "join": []
+                            "join": [],
+                            "scope": "new"
                         },
                         "functionId": 1,
                         "functionName": "format_1",
@@ -240,7 +241,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-15T18:16:38.549579+00:00",
+    "create_time": "2026-09-15T18:21:10.670993+00:00",
     "draft_mode": false,
     "labels": [
         "events"
