@@ -9,6 +9,6 @@ def IPM_2(input_severity=None, **kwargs):
     ############################ Custom Code Goes Below This Line #################################
     outputs = {}
 
-    outputs["severity"] = kwargs
+    outputs["severity"] = "high"
 
     return outputs
