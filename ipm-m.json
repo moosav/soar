@@ -14,28 +14,14 @@
                     "targetPort": "4_in"
                 },
                 {
-                    "id": "port_4_to_port_5",
+                    "id": "port_4_to_port_1",
                     "sourceNode": "4",
                     "sourcePort": "4_out",
-                    "targetNode": "5",
-                    "targetPort": "5_in"
-                },
-                {
-                    "id": "port_5_to_port_6",
-                    "sourceNode": "5",
-                    "sourcePort": "5_out",
-                    "targetNode": "6",
-                    "targetPort": "6_in"
-                },
-                {
-                    "id": "port_6_to_port_1",
-                    "sourceNode": "6",
-                    "sourcePort": "6_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "331195c1a04978ba3229424504a14f74905ddf7e",
+            "hash": "7f4549a42a7ec5e063057320a3e958ee14172efd",
             "nodes": {
                 "0": {
                     "data": {
@@ -133,91 +119,8 @@
                             "The referenced custom function has changed. Reconfigure this block to use the updated parameters."
                         ]
                     },
-                    "x": 920,
-                    "y": 440
-                },
-                "5": {
-                    "data": {
-                        "advanced": {
-                            "join": []
-                        },
-                        "functionId": 1,
-                        "functionName": "format_1",
-                        "id": "5",
-                        "parameters": [
-                            "ipm_2_1:custom_function_result.data.severity_list"
-                        ],
-                        "template": "Supported Event Severities:\ninformational\nlow\nmedium\nhigh\ncritical\n",
-                        "type": "format"
-                    },
-                    "errors": {},
-                    "id": "5",
-                    "type": "format",
-                    "warnings": {},
-                    "x": 920,
-                    "y": 560
-                },
-                "6": {
-                    "data": {
-                        "action": "add note",
-                        "actionType": "generic",
-                        "advanced": {
-                            "join": []
-                        },
-                        "connector": "Phantom",
-                        "connectorConfigs": [
-                            "test-2"
-                        ],
-                        "connectorId": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
-                        "connectorVersion": "v1",
-                        "functionId": 1,
-                        "functionName": "add_note_1",
-                        "id": "6",
-                        "loop": {
-                            "conditions": [
-                                {
-                                    "comparisons": [
-                                        {
-                                            "comparisonKey": "comparison_key_0",
-                                            "op": "==",
-                                            "param": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "conditionIndex": 0,
-                                    "conditionKey": "condition_key_0",
-                                    "logic": "and",
-                                    "type": "if"
-                                }
-                            ],
-                            "enabled": false,
-                            "exitAfterUnit": "m",
-                            "exitAfterValue": 10,
-                            "exitConditionEnabled": false,
-                            "exitLoopAfter": 2,
-                            "pauseUnit": "m",
-                            "pauseValue": 2
-                        },
-                        "parameters": {
-                            "container_id": "container:id",
-                            "content": "format_1:formatted_data",
-                            "title": "title2"
-                        },
-                        "requiredParameters": [
-                            {
-                                "data_type": "string",
-                                "field": "title"
-                            }
-                        ],
-                        "tab": "byConnector",
-                        "type": "action"
-                    },
-                    "errors": {},
-                    "id": "6",
-                    "type": "action",
-                    "warnings": {},
-                    "x": 920,
-                    "y": 660
+                    "x": 940,
+                    "y": 540
                 }
             },
             "notes": ""
@@ -230,7 +133,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-15T04:14:59.054315+00:00",
+    "create_time": "2026-09-15T08:16:55.200188+00:00",
     "draft_mode": false,
     "labels": [
         "events"

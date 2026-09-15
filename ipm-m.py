@@ -33,67 +33,7 @@ def ipm_2_1(action=None, success=None, container=None, results=None, handle=None
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_1", callback=format_1)
-
-    return
-
-
-@phantom.playbook_block()
-def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("format_1() called")
-
-    template = """Supported Event Severities:\ninformational\nlow\nmedium\nhigh\ncritical\n"""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "ipm_2_1:custom_function_result.data.severity_list"
-    ]
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.format(container=container, template=template, parameters=parameters, name="format_1")
-
-    add_note_1(container=container)
-
-    return
-
-
-@phantom.playbook_block()
-def add_note_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("add_note_1() called")
-
-    # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-
-    id_value = container.get("id", None)
-    format_1 = phantom.get_format_data(name="format_1")
-
-    parameters = []
-
-    parameters.append({
-        "title": "title2",
-        "content": format_1,
-        "container_id": id_value,
-    })
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.act("add note", parameters=parameters, name="add_note_1", assets=["test-2"])
+    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_1")
 
     return
 
