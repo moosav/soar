@@ -35,7 +35,7 @@
                     "targetPort": "3_in"
                 }
             ],
-            "hash": "8fbf5f0df09409c2617c1ad2ad1471a016ea9da4",
+            "hash": "208640901ebcaec99c7dbf25eafdcabfcc2f8d40",
             "nodes": {
                 "0": {
                     "data": {
@@ -134,7 +134,7 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "container_id": "container:severity",
+                            "container_id": "container:id",
                             "content": "format_1:formatted_data",
                             "title": "title3"
                         },
@@ -240,7 +240,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-15T17:17:17.890263+00:00",
+    "create_time": "2026-09-15T17:19:24.637907+00:00",
     "draft_mode": false,
     "labels": [
         "events"
