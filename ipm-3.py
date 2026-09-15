@@ -12,8 +12,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'ipm_2_2' block
-    ipm_2_2(container=container)
+    # call 'ipm_2_1' block
+    ipm_2_1(container=container)
 
     return
 
@@ -50,15 +50,15 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
     id_value = container.get("id", None)
-    ipm_2_2__result = phantom.collect2(container=container, datapath=["ipm_2_2:custom_function_result.data.severity"])
+    ipm_2_1__result = phantom.collect2(container=container, datapath=["ipm_2_1:custom_function_result.data.severity"])
 
     parameters = []
 
     # build parameters list for 'add_note_1' call
-    for ipm_2_2__result_item in ipm_2_2__result:
+    for ipm_2_1__result_item in ipm_2_1__result:
         parameters.append({
             "title": "title3",
-            "content": ipm_2_2__result_item[0],
+            "content": ipm_2_1__result_item[0],
             "container_id": id_value,
         })
 
@@ -78,15 +78,15 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
 
 @phantom.playbook_block()
-def ipm_2_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("ipm_2_2() called")
+def ipm_2_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("ipm_2_1() called")
 
-    severity_value = container.get("severity", None)
+    id_value = container.get("id", None)
 
     parameters = []
 
     parameters.append({
-        "input_event": severity_value,
+        "input_event": id_value,
     })
 
     ################################################################################
@@ -99,7 +99,7 @@ def ipm_2_2(action=None, success=None, container=None, results=None, handle=None
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_2", callback=add_note_1)
+    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_1", callback=add_note_1)
 
     return
 
