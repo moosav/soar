@@ -21,11 +21,11 @@ def on_start(container):
 def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("format_1() called")
 
-    template = """\"test\"\n"""
+    template = """\n"""
 
     # parameter list for template variable replacement
     parameters = [
-        ""
+        "ipm_2_2:custom_function_result.data.severity"
     ]
 
     ################################################################################
