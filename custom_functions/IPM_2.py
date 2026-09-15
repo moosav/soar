@@ -1,5 +1,8 @@
-def IPM_2(**kwargs):
+def IPM_2(event_message=None, **kwargs):
     """
+    Args:
+        event_message
+    
     Returns a JSON-serializable object that implements the configured data paths:
         severity_list: List of supported event severity values
     """
