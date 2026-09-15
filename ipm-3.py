@@ -12,37 +12,10 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'ipm_2_1' block
-    ipm_2_1(container=container)
+    # call 'ipm_2_2' block
+    ipm_2_2(container=container)
 
     return
-
-@phantom.playbook_block()
-def ipm_2_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("ipm_2_1() called")
-
-    id_value = container.get("id", None)
-
-    parameters = []
-
-    parameters.append({
-        "input_severity": id_value,
-    })
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_1", callback=format_1)
-
-    return
-
 
 @phantom.playbook_block()
 def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
@@ -52,7 +25,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "ipm_2_1:custom_function_result.message"
+        "ipm_2_2:custom_function_result.data.severity"
     ]
 
     ################################################################################
@@ -100,6 +73,33 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     ################################################################################
 
     phantom.act("add note", parameters=parameters, name="add_note_1", assets=["test-2"])
+
+    return
+
+
+@phantom.playbook_block()
+def ipm_2_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("ipm_2_2() called")
+
+    id_value = container.get("id", None)
+
+    parameters = []
+
+    parameters.append({
+        "input_event": id_value,
+    })
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_2", callback=format_1)
 
     return
 
