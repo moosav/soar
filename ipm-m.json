@@ -128,7 +128,11 @@
                     "errors": {},
                     "id": "4",
                     "type": "utility",
-                    "warnings": {},
+                    "warnings": {
+                        "config": [
+                            "The referenced custom function has changed. Reconfigure this block to use the updated parameters."
+                        ]
+                    },
                     "x": 920,
                     "y": 440
                 },
