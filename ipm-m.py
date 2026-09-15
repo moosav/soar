@@ -12,14 +12,14 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'ipm_1' block
-    ipm_1(container=container)
+    # call 'ipm_2_1' block
+    ipm_2_1(container=container)
 
     return
 
 @phantom.playbook_block()
-def ipm_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("ipm_1() called")
+def ipm_2_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("ipm_2_1() called")
 
     parameters = [{}]
 
@@ -33,7 +33,7 @@ def ipm_1(action=None, success=None, container=None, results=None, handle=None, 
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="local/IPM", parameters=parameters, name="ipm_1")
+    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_1")
 
     return
 
