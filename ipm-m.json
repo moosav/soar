@@ -12,23 +12,9 @@
                     "sourcePort": "0_out",
                     "targetNode": "4",
                     "targetPort": "4_in"
-                },
-                {
-                    "id": "port_4_to_port_7",
-                    "sourceNode": "4",
-                    "sourcePort": "4_out",
-                    "targetNode": "7",
-                    "targetPort": "7_in"
-                },
-                {
-                    "id": "port_7_to_port_1",
-                    "sourceNode": "7",
-                    "sourcePort": "7_out",
-                    "targetNode": "1",
-                    "targetPort": "1_in"
                 }
             ],
-            "hash": "3fa2693e29c539bd6895cf2aba805fc19c4424c7",
+            "hash": "25a84b713e38edefe63971fad1efd8bcf4ebbbba",
             "nodes": {
                 "0": {
                     "data": {
@@ -124,27 +110,6 @@
                     "warnings": {},
                     "x": 920,
                     "y": 440
-                },
-                "7": {
-                    "data": {
-                        "advanced": {
-                            "join": []
-                        },
-                        "functionId": 2,
-                        "functionName": "format_2",
-                        "id": "7",
-                        "parameters": [
-                            "ipm_1:custom_function_result.success"
-                        ],
-                        "template": "\"hi\"\n",
-                        "type": "format"
-                    },
-                    "errors": {},
-                    "id": "7",
-                    "type": "format",
-                    "warnings": {},
-                    "x": 920,
-                    "y": 560
                 }
             },
             "notes": ""
@@ -157,7 +122,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-15T03:53:46.563760+00:00",
+    "create_time": "2026-09-15T03:55:25.288285+00:00",
     "draft_mode": false,
     "labels": [
         "events"
