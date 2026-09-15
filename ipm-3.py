@@ -52,7 +52,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "ipm_2_1:custom_function_result.data.severity"
+        "ipm_2_1:custom_function_result.message"
     ]
 
     ################################################################################

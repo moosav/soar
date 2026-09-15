@@ -35,7 +35,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "8fbf5f0df09409c2617c1ad2ad1471a016ea9da4",
+            "hash": "cb2a9803768fbb2ca71ce935e953faa0658a335c",
             "nodes": {
                 "0": {
                     "data": {
@@ -51,7 +51,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 1000,
-                    "y": 419.9999999999999
+                    "y": 419.9999999999998
                 },
                 "1": {
                     "data": {
@@ -155,7 +155,7 @@
                         "functionName": "format_1",
                         "id": "3",
                         "parameters": [
-                            "ipm_2_1:custom_function_result.data.severity"
+                            "ipm_2_1:custom_function_result.message"
                         ],
                         "template": "\"test\"\n",
                         "type": "format"
@@ -230,7 +230,13 @@
                     "y": 872.5
                 }
             },
-            "notes": ""
+            "notes": "",
+            "origin": {
+                "playbook_id": 235,
+                "playbook_name": "dsa",
+                "playbook_repo_id": 15,
+                "playbook_repo_name": "ipm"
+            }
         },
         "input_spec": null,
         "output_spec": null,
@@ -240,7 +246,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-15T12:19:04.522834+00:00",
+    "create_time": "2026-09-15T12:23:02.569124+00:00",
     "draft_mode": false,
     "labels": [
         "events"
