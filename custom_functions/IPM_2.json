@@ -1,5 +1,5 @@
 {
-    "create_time": "2026-09-15T17:57:39.273792+00:00",
+    "create_time": "2026-09-15T17:58:28.681558+00:00",
     "custom_function_id": "5cee5721641174ed52fd91873f03a131c04a17b6",
     "description": "",
     "draft_mode": false,
@@ -16,14 +16,12 @@
     ],
     "outputs": [
         {
-            "contains_type": [
-                "sha1"
-            ],
+            "contains_type": [],
             "data_path": "severity",
             "description": "List of supported event severity values"
         }
     ],
-    "outputs_type": "item",
+    "outputs_type": "list",
     "platform_version": "8.6.0.530",
     "python_version": "3.13"
 }
