@@ -4,8 +4,6 @@ def IPM_2(**kwargs):
         severity_list: List of supported event severity values
     """
     ############################ Custom Code Goes Below This Line #################################
-    import json
-
     outputs = {}
 
     outputs["severity_list"] = [
@@ -15,7 +13,5 @@ def IPM_2(**kwargs):
         "high",
         "critical"
     ]
-
-    assert json.dumps(outputs)
 
     return outputs
