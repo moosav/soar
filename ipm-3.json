@@ -35,7 +35,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "cb2a9803768fbb2ca71ce935e953faa0658a335c",
+            "hash": "8fbf5f0df09409c2617c1ad2ad1471a016ea9da4",
             "nodes": {
                 "0": {
                     "data": {
@@ -230,13 +230,7 @@
                     "y": 872.5
                 }
             },
-            "notes": "",
-            "origin": {
-                "playbook_id": 235,
-                "playbook_name": "dsa",
-                "playbook_repo_id": 15,
-                "playbook_repo_name": "ipm"
-            }
+            "notes": ""
         },
         "input_spec": null,
         "output_spec": null,
