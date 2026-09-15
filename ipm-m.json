@@ -12,9 +12,23 @@
                     "sourcePort": "0_out",
                     "targetNode": "4",
                     "targetPort": "4_in"
+                },
+                {
+                    "id": "port_4_to_port_5",
+                    "sourceNode": "4",
+                    "sourcePort": "4_out",
+                    "targetNode": "5",
+                    "targetPort": "5_in"
+                },
+                {
+                    "id": "port_5_to_port_1",
+                    "sourceNode": "5",
+                    "sourcePort": "5_out",
+                    "targetNode": "1",
+                    "targetPort": "1_in"
                 }
             ],
-            "hash": "331195c1a04978ba3229424504a14f74905ddf7e",
+            "hash": "e10fab1172da7d5b3f123b7e5054100eb728c75f",
             "nodes": {
                 "0": {
                     "data": {
@@ -110,6 +124,27 @@
                     "warnings": {},
                     "x": 920,
                     "y": 440
+                },
+                "5": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 1,
+                        "functionName": "format_1",
+                        "id": "5",
+                        "parameters": [
+                            "ipm_2_1:custom_function_result.data.severity_list"
+                        ],
+                        "template": "{0}\n",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "5",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 920,
+                    "y": 556.5
                 }
             },
             "notes": ""
@@ -122,7 +157,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-15T03:59:30.334883+00:00",
+    "create_time": "2026-09-15T04:10:55.617740+00:00",
     "draft_mode": false,
     "labels": [
         "events"
