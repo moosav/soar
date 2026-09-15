@@ -21,21 +21,14 @@
                     "targetPort": "5_in"
                 },
                 {
-                    "id": "port_5_to_port_3",
+                    "id": "port_5_to_port_4",
                     "sourceNode": "5",
                     "sourcePort": "5_out",
-                    "targetNode": "3",
-                    "targetPort": "3_in"
-                },
-                {
-                    "id": "port_3_to_port_4",
-                    "sourceNode": "3",
-                    "sourcePort": "3_out",
                     "targetNode": "4",
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "8fbf5f0df09409c2617c1ad2ad1471a016ea9da4",
+            "hash": "ce41b7451982c60ad0ff77e0d047728bcb177dab",
             "nodes": {
                 "0": {
                     "data": {
@@ -89,8 +82,15 @@
                     "errors": {},
                     "id": "3",
                     "type": "format",
-                    "warnings": {},
-                    "x": 920,
+                    "warnings": {
+                        "config": [
+                            "Reconfigure invalid datapath."
+                        ],
+                        "context": [
+                            "Connect block to playbook flow."
+                        ]
+                    },
+                    "x": 680,
                     "y": 700
                 },
                 "4": {
@@ -136,7 +136,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "format_1:formatted_data",
+                            "content": "ipm_2_2:custom_function_result.data.severity",
                             "title": "title3"
                         },
                         "requiredParameters": [
@@ -241,7 +241,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-15T18:21:10.670993+00:00",
+    "create_time": "2026-09-15T18:27:25.063731+00:00",
     "draft_mode": false,
     "labels": [
         "events"
