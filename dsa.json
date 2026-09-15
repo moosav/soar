@@ -21,13 +21,21 @@
                     "targetPort": "3_in"
                 },
                 {
-                    "id": "port_3_to_port_1",
+                    "id": "port_3_to_port_4",
                     "sourceNode": "3",
                     "sourcePort": "3_out",
+                    "targetNode": "4",
+                    "targetPort": "4_in"
+                },
+                {
+                    "id": "port_4_to_port_1",
+                    "sourceNode": "4",
+                    "sourcePort": "4_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
                 }
             ],
+            "hash": "8fbf5f0df09409c2617c1ad2ad1471a016ea9da4",
             "nodes": {
                 "0": {
                     "data": {
@@ -158,6 +166,68 @@
                     "warnings": {},
                     "x": 969,
                     "y": 748.5
+                },
+                "4": {
+                    "data": {
+                        "action": "add note",
+                        "actionType": "generic",
+                        "advanced": {
+                            "join": []
+                        },
+                        "connector": "Phantom",
+                        "connectorConfigs": [
+                            "test-2"
+                        ],
+                        "connectorId": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                        "connectorVersion": "v1",
+                        "functionId": 1,
+                        "functionName": "add_note_1",
+                        "id": "4",
+                        "loop": {
+                            "conditions": [
+                                {
+                                    "comparisons": [
+                                        {
+                                            "comparisonKey": "comparison_key_0",
+                                            "op": "==",
+                                            "param": "",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "conditionIndex": 0,
+                                    "conditionKey": "condition_key_0",
+                                    "logic": "and",
+                                    "type": "if"
+                                }
+                            ],
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "parameters": {
+                            "container_id": "container:id",
+                            "content": "format_1:formatted_data",
+                            "title": "title3"
+                        },
+                        "requiredParameters": [
+                            {
+                                "data_type": "string",
+                                "field": "title"
+                            }
+                        ],
+                        "tab": "byConnector",
+                        "type": "action"
+                    },
+                    "errors": {},
+                    "id": "4",
+                    "type": "action",
+                    "warnings": {},
+                    "x": 943,
+                    "y": 872.5
                 }
             },
             "notes": ""
@@ -170,7 +240,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-15T12:15:08.262026+00:00",
+    "create_time": "2026-09-15T12:19:04.522834+00:00",
     "draft_mode": false,
     "labels": [
         "events"
