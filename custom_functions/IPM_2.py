@@ -8,10 +8,6 @@ def IPM_2(input_event=None, **kwargs):
     """
     ############################ Custom Code Goes Below This Line #################################
     outputs = {}
-
-    severity = str(kwargs.get("input_event", ""))
-
-    outputs["severity"] = severity
-    outputs["note_content"] = "Severity: " + severity
-
+    outputs["severity"] = "TEST"
+     
     return outputs
