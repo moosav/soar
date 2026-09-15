@@ -1,5 +1,5 @@
 {
-    "create_time": "2026-09-15T08:13:03.478808+00:00",
+    "create_time": "2026-09-15T08:37:31.086060+00:00",
     "custom_function_id": "5cee5721641174ed52fd91873f03a131c04a17b6",
     "description": "",
     "draft_mode": false,
@@ -17,7 +17,7 @@
     "outputs": [
         {
             "contains_type": [],
-            "data_path": "seve",
+            "data_path": "severity",
             "description": "List of supported event severity values"
         }
     ],
