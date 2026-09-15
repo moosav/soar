@@ -21,14 +21,21 @@
                     "targetPort": "5_in"
                 },
                 {
-                    "id": "port_5_to_port_4",
+                    "id": "port_5_to_port_3",
                     "sourceNode": "5",
                     "sourcePort": "5_out",
+                    "targetNode": "3",
+                    "targetPort": "3_in"
+                },
+                {
+                    "id": "port_3_to_port_4",
+                    "sourceNode": "3",
+                    "sourcePort": "3_out",
                     "targetNode": "4",
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "8fbf5f0df09409c2617c1ad2ad1471a016ea9da4",
+            "hash": "3da3b644d836194f127e4b69f2636dafabb4394d",
             "nodes": {
                 "0": {
                     "data": {
@@ -73,7 +80,7 @@
                         "functionName": "format_1",
                         "id": "3",
                         "parameters": [
-                            "ipm_2_2:custom_function_result.data.severity"
+                            ""
                         ],
                         "template": "\"test\"\n",
                         "type": "format"
@@ -81,15 +88,8 @@
                     "errors": {},
                     "id": "3",
                     "type": "format",
-                    "warnings": {
-                        "config": [
-                            "Reconfigure invalid datapath."
-                        ],
-                        "context": [
-                            "Connect block to playbook flow."
-                        ]
-                    },
-                    "x": 700,
+                    "warnings": {},
+                    "x": 920,
                     "y": 700
                 },
                 "4": {
@@ -135,7 +135,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "ipm_2_2:custom_function_result.data.severity",
+                            "content": "format_1:formatted_data.*",
                             "title": "title3"
                         },
                         "requiredParameters": [
@@ -240,7 +240,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-15T17:56:22.848530+00:00",
+    "create_time": "2026-09-15T18:03:26.558404+00:00",
     "draft_mode": false,
     "labels": [
         "events"
