@@ -18,42 +18,6 @@ def on_start(container):
     return
 
 @phantom.playbook_block()
-def add_note_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("add_note_1() called")
-
-    # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-
-    ipm_1__result = phantom.collect2(container=container, datapath=["ipm_1:custom_function_result.message"])
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.id","artifact:*.id"])
-
-    parameters = []
-
-    # build parameters list for 'add_note_1' call
-    for ipm_1__result_item in ipm_1__result:
-        for container_artifact_item in container_artifact_data:
-            parameters.append({
-                "title": "title1",
-                "content": ipm_1__result_item[0],
-                "container_id": container_artifact_item[0],
-                "context": {'artifact_id': container_artifact_item[1]},
-            })
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.act("add note", parameters=parameters, name="add_note_1", assets=["test-2"])
-
-    return
-
-
-@phantom.playbook_block()
 def ipm_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("ipm_1() called")
 
@@ -69,7 +33,7 @@ def ipm_1(action=None, success=None, container=None, results=None, handle=None, 
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="local/IPM", parameters=parameters, name="ipm_1", callback=add_note_1)
+    phantom.custom_function(custom_function="local/IPM", parameters=parameters, name="ipm_1")
 
     return
 
