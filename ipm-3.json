@@ -7,13 +7,6 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_3_to_port_4",
-                    "sourceNode": "3",
-                    "sourcePort": "3_out",
-                    "targetNode": "4",
-                    "targetPort": "4_in"
-                },
-                {
                     "id": "port_4_to_port_1",
                     "sourceNode": "4",
                     "sourcePort": "4_out",
@@ -28,14 +21,14 @@
                     "targetPort": "5_in"
                 },
                 {
-                    "id": "port_5_to_port_3",
+                    "id": "port_5_to_port_4",
                     "sourceNode": "5",
                     "sourcePort": "5_out",
-                    "targetNode": "3",
-                    "targetPort": "3_in"
+                    "targetNode": "4",
+                    "targetPort": "4_in"
                 }
             ],
-            "hash": "c953317c2a9b58dc75c4375f4e14a6bae36f4174",
+            "hash": "0a6fae436768a4f78c03dc4eb91d8d5f84e63051",
             "nodes": {
                 "0": {
                     "data": {
@@ -88,9 +81,16 @@
                     "errors": {},
                     "id": "3",
                     "type": "format",
-                    "warnings": {},
-                    "x": 969,
-                    "y": 748.5
+                    "warnings": {
+                        "config": [
+                            "Reconfigure invalid datapath."
+                        ],
+                        "context": [
+                            "Connect block to playbook flow."
+                        ]
+                    },
+                    "x": 700,
+                    "y": 700
                 },
                 "4": {
                     "data": {
@@ -135,7 +135,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "format_1:formatted_data",
+                            "content": "ipm_2_2:custom_function_result.data.severity",
                             "title": "title3"
                         },
                         "requiredParameters": [
@@ -240,7 +240,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-15T17:29:54.495544+00:00",
+    "create_time": "2026-09-15T17:37:43.116810+00:00",
     "draft_mode": false,
     "labels": [
         "events"

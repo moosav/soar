@@ -40,8 +40,6 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_1")
 
-    add_note_1(container=container)
-
     return
 
 
@@ -52,15 +50,17 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
     id_value = container.get("id", None)
-    format_1 = phantom.get_format_data(name="format_1")
+    ipm_2_2__result = phantom.collect2(container=container, datapath=["ipm_2_2:custom_function_result.data.severity"])
 
     parameters = []
 
-    parameters.append({
-        "title": "title3",
-        "content": format_1,
-        "container_id": id_value,
-    })
+    # build parameters list for 'add_note_1' call
+    for ipm_2_2__result_item in ipm_2_2__result:
+        parameters.append({
+            "title": "title3",
+            "content": ipm_2_2__result_item[0],
+            "container_id": id_value,
+        })
 
     ################################################################################
     ## Custom Code Start
@@ -99,7 +99,7 @@ def ipm_2_2(action=None, success=None, container=None, results=None, handle=None
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_2", callback=format_1)
+    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_2", callback=add_note_1)
 
     return
 
