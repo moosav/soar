@@ -54,7 +54,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "61699a2abd3539b86efd22a619850cf5da226b08",
+            "hash": "34a3a1469a46e383683216239e5e8a915f57959f",
             "nodes": {
                 "0": {
                     "data": {
@@ -246,7 +246,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "ipm_2_1:custom_function_result.data.json_output",
+                            "content": "ipm_2_2:custom_function_result.data.severity",
                             "title": "title4"
                         },
                         "requiredParameters": [
@@ -261,13 +261,9 @@
                     "errors": {},
                     "id": "8",
                     "type": "action",
-                    "warnings": {
-                        "config": [
-                            "Reconfigure invalid datapath."
-                        ]
-                    },
-                    "x": 1212,
-                    "y": 852.5
+                    "warnings": {},
+                    "x": 1220,
+                    "y": 860
                 },
                 "9": {
                     "data": {
@@ -340,7 +336,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-16T07:38:56.663542+00:00",
+    "create_time": "2026-09-16T07:39:26.365386+00:00",
     "draft_mode": false,
     "labels": [
         "events"
