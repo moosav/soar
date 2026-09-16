@@ -1,7 +1,7 @@
 def IPM_2(input_event=None, **kwargs):
     """
     Args:
-        input_event (CEF type: phantom container id)
+        input_event
     
     Returns a JSON-serializable object that implements the configured data paths:
         severity: List of supported event severity values
