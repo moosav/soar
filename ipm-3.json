@@ -54,7 +54,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "d343a17ef0a9184d5643d485fef542f7927fb7dc",
+            "hash": "32b1633a1588e147e325f9c857a466f90a485880",
             "nodes": {
                 "0": {
                     "data": {
@@ -305,14 +305,29 @@
                         "utilities": {
                             "IPM_2": {
                                 "description": "",
-                                "fields": [],
+                                "fields": [
+                                    {
+                                        "dataTypes": [],
+                                        "description": "",
+                                        "inputType": "list",
+                                        "label": "input_event",
+                                        "name": "input_event",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    }
+                                ],
                                 "label": "IPM_2",
                                 "name": "IPM_2"
                             }
                         },
                         "utilityType": "custom_function",
                         "values": {
-                            "IPM_2": {}
+                            "IPM_2": {
+                                "input_event": [
+                                    "container:severity"
+                                ]
+                            }
                         }
                     },
                     "errors": {},
@@ -333,7 +348,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-16T07:55:39.037659+00:00",
+    "create_time": "2026-09-16T08:02:19.560743+00:00",
     "draft_mode": false,
     "labels": [
         "events"
