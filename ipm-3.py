@@ -24,15 +24,15 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
     id_value = container.get("id", None)
-    ipm_2_4__result = phantom.collect2(container=container, datapath=["ipm_2_4:custom_function_result.data.severity"])
+    ipm_2_5__result = phantom.collect2(container=container, datapath=["ipm_2_5:custom_function_result.data.severity"])
 
     parameters = []
 
     # build parameters list for 'add_note_1' call
-    for ipm_2_4__result_item in ipm_2_4__result:
+    for ipm_2_5__result_item in ipm_2_5__result:
         parameters.append({
             "title": "title3",
-            "content": ipm_2_4__result_item[0],
+            "content": ipm_2_5__result_item[0],
             "container_id": id_value,
         })
 
