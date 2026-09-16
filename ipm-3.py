@@ -55,12 +55,12 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 def ipm_2_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("ipm_2_4() called")
 
-    id_value = container.get("id", None)
+    severity_value = container.get("severity", None)
 
     parameters = []
 
     parameters.append({
-        "input_event": id_value,
+        "input_event": severity_value,
     })
 
     ################################################################################
