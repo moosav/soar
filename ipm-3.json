@@ -28,7 +28,7 @@
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "60ad81554e480b8c67c4da8eae4a8e9b0138de04",
+            "hash": "a409e6bb7c48196fc045855e4258f52d8e188a91",
             "nodes": {
                 "0": {
                     "data": {
@@ -190,7 +190,7 @@
                         "values": {
                             "IPM_2": {
                                 "input_event": [
-                                    "artifact:*.id"
+                                    "container:severity"
                                 ]
                             }
                         }
@@ -198,7 +198,11 @@
                     "errors": {},
                     "id": "9",
                     "type": "utility",
-                    "warnings": {},
+                    "warnings": {
+                        "config": [
+                            "The referenced custom function has changed. Reconfigure this block to use the updated parameters."
+                        ]
+                    },
                     "x": 940,
                     "y": 560
                 }
@@ -213,7 +217,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-16T08:10:19.279800+00:00",
+    "create_time": "2026-09-16T10:43:59.822755+00:00",
     "draft_mode": false,
     "labels": [
         "events"
