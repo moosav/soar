@@ -1,11 +1,13 @@
 {
-    "create_time": "2026-09-15T19:11:07.548604+00:00",
+    "create_time": "2026-09-16T03:07:10.618998+00:00",
     "custom_function_id": "5cee5721641174ed52fd91873f03a131c04a17b6",
     "description": "",
     "draft_mode": false,
     "inputs": [
         {
-            "contains_type": [],
+            "contains_type": [
+                "*"
+            ],
             "description": "",
             "input_type": "list",
             "name": "input_event",
@@ -15,7 +17,7 @@
     "outputs": [
         {
             "contains_type": [
-                ""
+                "*"
             ],
             "data_path": "severity",
             "description": "List of supported event severity values"
