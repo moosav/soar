@@ -18,32 +18,6 @@ def on_start(container):
     return
 
 @phantom.playbook_block()
-def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("format_1() called")
-
-    template = """"""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "ipm_2_2:custom_function_result.data.severity"
-    ]
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.format(container=container, template=template, parameters=parameters, name="format_1", scope="new")
-
-    return
-
-
-@phantom.playbook_block()
 def add_note_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("add_note_1() called")
 

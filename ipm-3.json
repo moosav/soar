@@ -28,7 +28,7 @@
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "d343a17ef0a9184d5643d485fef542f7927fb7dc",
+            "hash": "b025be3dc9b8b32ab75c7fb56ea6758b01685b1b",
             "nodes": {
                 "0": {
                     "data": {
@@ -61,37 +61,8 @@
                     "type": "end",
                     "userCode": "\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all details of actions\n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n",
                     "warnings": {},
-                    "x": 1000,
-                    "y": 1000
-                },
-                "3": {
-                    "data": {
-                        "advanced": {
-                            "join": [],
-                            "scope": "new"
-                        },
-                        "functionId": 1,
-                        "functionName": "format_1",
-                        "id": "3",
-                        "parameters": [
-                            "ipm_2_2:custom_function_result.data.severity"
-                        ],
-                        "template": "",
-                        "type": "format"
-                    },
-                    "errors": {},
-                    "id": "3",
-                    "type": "format",
-                    "warnings": {
-                        "config": [
-                            "Reconfigure invalid datapath."
-                        ],
-                        "context": [
-                            "Connect block to playbook flow."
-                        ]
-                    },
-                    "x": 680,
-                    "y": 700
+                    "x": 980,
+                    "y": 940
                 },
                 "4": {
                     "data": {
@@ -152,8 +123,8 @@
                     "id": "4",
                     "type": "action",
                     "warnings": {},
-                    "x": 943,
-                    "y": 872.5
+                    "x": 900,
+                    "y": 760
                 },
                 "6": {
                     "data": {
@@ -245,7 +216,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-16T03:22:54.187545+00:00",
+    "create_time": "2026-09-16T04:52:21.805725+00:00",
     "draft_mode": false,
     "labels": [
         "events"
