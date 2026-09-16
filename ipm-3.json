@@ -14,21 +14,21 @@
                     "targetPort": "1_in"
                 },
                 {
-                    "id": "port_0_to_port_9",
+                    "id": "port_0_to_port_10",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
-                    "targetNode": "9",
-                    "targetPort": "9_in"
+                    "targetNode": "10",
+                    "targetPort": "10_in"
                 },
                 {
-                    "id": "port_9_to_port_4",
-                    "sourceNode": "9",
-                    "sourcePort": "9_out",
+                    "id": "port_10_to_port_4",
+                    "sourceNode": "10",
+                    "sourcePort": "10_out",
                     "targetNode": "4",
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "60ad81554e480b8c67c4da8eae4a8e9b0138de04",
+            "hash": "d6280f6a1878408624b24a62a44799880e180e9c",
             "nodes": {
                 "0": {
                     "data": {
@@ -63,6 +63,83 @@
                     "warnings": {},
                     "x": 1060,
                     "y": 880
+                },
+                "10": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "customFunction": {
+                            "draftMode": false,
+                            "name": "IPM_2",
+                            "repoName": "ipm"
+                        },
+                        "functionId": 3,
+                        "functionName": "IPM_2_3",
+                        "id": "10",
+                        "loop": {
+                            "conditions": [
+                                {
+                                    "comparisons": [
+                                        {
+                                            "comparisonKey": "comparison_key_0",
+                                            "op": "==",
+                                            "param": "",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "conditionIndex": 0,
+                                    "conditionKey": "condition_key_0",
+                                    "logic": "and",
+                                    "type": "if"
+                                }
+                            ],
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "selectMore": false,
+                        "type": "utility",
+                        "utilities": {
+                            "IPM_2": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "dataTypes": [
+                                            "phantom artifact id"
+                                        ],
+                                        "description": "",
+                                        "inputType": "list",
+                                        "label": "artifact_input",
+                                        "name": "artifact_input",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "IPM_2",
+                                "name": "IPM_2"
+                            }
+                        },
+                        "utilityType": "custom_function",
+                        "values": {
+                            "IPM_2": {
+                                "artifact_input": [
+                                    "artifact:*.id"
+                                ]
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "10",
+                    "type": "utility",
+                    "warnings": {},
+                    "x": 845,
+                    "y": 591.0999755859375
                 },
                 "4": {
                     "data": {
@@ -107,7 +184,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "ipm_2_2:custom_function_result.data.severity",
+                            "content": "ipm_2_3:custom_function_result.data.severity",
                             "title": "title3"
                         },
                         "requiredParameters": [
@@ -125,86 +202,6 @@
                     "warnings": {},
                     "x": 800,
                     "y": 780
-                },
-                "9": {
-                    "data": {
-                        "advanced": {
-                            "join": [],
-                            "scope": "new"
-                        },
-                        "customFunction": {
-                            "draftMode": false,
-                            "name": "IPM_2",
-                            "repoName": "ipm"
-                        },
-                        "functionId": 2,
-                        "functionName": "IPM_2_2",
-                        "id": "9",
-                        "loop": {
-                            "conditions": [
-                                {
-                                    "comparisons": [
-                                        {
-                                            "comparisonKey": "comparison_key_0",
-                                            "op": "==",
-                                            "param": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "conditionIndex": 0,
-                                    "conditionKey": "condition_key_0",
-                                    "logic": "and",
-                                    "type": "if"
-                                }
-                            ],
-                            "enabled": false,
-                            "exitAfterUnit": "m",
-                            "exitAfterValue": 10,
-                            "exitConditionEnabled": false,
-                            "exitLoopAfter": 2,
-                            "pauseUnit": "m",
-                            "pauseValue": 2
-                        },
-                        "selectMore": false,
-                        "type": "utility",
-                        "utilities": {
-                            "IPM_2": {
-                                "description": "",
-                                "fields": [
-                                    {
-                                        "dataTypes": [],
-                                        "description": "",
-                                        "inputType": "list",
-                                        "label": "input_event",
-                                        "name": "input_event",
-                                        "placeholder": "",
-                                        "renderType": "datapath",
-                                        "required": false
-                                    }
-                                ],
-                                "label": "IPM_2",
-                                "name": "IPM_2"
-                            }
-                        },
-                        "utilityType": "custom_function",
-                        "values": {
-                            "IPM_2": {
-                                "input_event": [
-                                    "artifact:*.id"
-                                ]
-                            }
-                        }
-                    },
-                    "errors": {},
-                    "id": "9",
-                    "type": "utility",
-                    "warnings": {
-                        "config": [
-                            "The referenced custom function has changed. Reconfigure this block to use the updated parameters."
-                        ]
-                    },
-                    "x": 940,
-                    "y": 560
                 }
             },
             "notes": ""
@@ -217,7 +214,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-16T17:42:49.935141+00:00",
+    "create_time": "2026-09-16T17:47:27.190084+00:00",
     "draft_mode": false,
     "labels": [
         "events"
