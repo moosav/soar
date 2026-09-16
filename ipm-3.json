@@ -14,20 +14,6 @@
                     "targetPort": "1_in"
                 },
                 {
-                    "id": "port_0_to_port_6",
-                    "sourceNode": "0",
-                    "sourcePort": "0_out",
-                    "targetNode": "6",
-                    "targetPort": "6_in"
-                },
-                {
-                    "id": "port_6_to_port_7",
-                    "sourceNode": "6",
-                    "sourcePort": "6_out",
-                    "targetNode": "7",
-                    "targetPort": "7_in"
-                },
-                {
                     "conditions": [
                         {
                             "conditionKey": "condition_key_0",
@@ -52,9 +38,23 @@
                     "sourcePort": "7_out",
                     "targetNode": "8",
                     "targetPort": "8_in"
+                },
+                {
+                    "id": "port_0_to_port_9",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "9",
+                    "targetPort": "9_in"
+                },
+                {
+                    "id": "port_9_to_port_7",
+                    "sourceNode": "9",
+                    "sourcePort": "9_out",
+                    "targetNode": "7",
+                    "targetPort": "7_in"
                 }
             ],
-            "hash": "d343a17ef0a9184d5643d485fef542f7927fb7dc",
+            "hash": "0c3c02b489661f93e5ce06ec39d46f58eec642a5",
             "nodes": {
                 "0": {
                     "data": {
@@ -69,8 +69,8 @@
                     "id": "0",
                     "type": "start",
                     "warnings": {},
-                    "x": 1000,
-                    "y": 419.9999999999994
+                    "x": 980,
+                    "y": 440
                 },
                 "1": {
                     "data": {
@@ -148,88 +148,13 @@
                     "errors": {},
                     "id": "4",
                     "type": "action",
-                    "warnings": {},
-                    "x": 920,
-                    "y": 840
-                },
-                "6": {
-                    "data": {
-                        "advanced": {
-                            "join": []
-                        },
-                        "customFunction": {
-                            "draftMode": false,
-                            "name": "IPM_2",
-                            "repoName": "ipm"
-                        },
-                        "functionId": 1,
-                        "functionName": "IPM_2_1",
-                        "id": "6",
-                        "loop": {
-                            "conditions": [
-                                {
-                                    "comparisons": [
-                                        {
-                                            "comparisonKey": "comparison_key_0",
-                                            "op": "==",
-                                            "param": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "conditionIndex": 0,
-                                    "conditionKey": "condition_key_0",
-                                    "logic": "and",
-                                    "type": "if"
-                                }
-                            ],
-                            "enabled": false,
-                            "exitAfterUnit": "m",
-                            "exitAfterValue": 10,
-                            "exitConditionEnabled": false,
-                            "exitLoopAfter": 2,
-                            "pauseUnit": "m",
-                            "pauseValue": 2
-                        },
-                        "selectMore": false,
-                        "type": "utility",
-                        "utilities": {
-                            "IPM_2": {
-                                "description": "",
-                                "fields": [
-                                    {
-                                        "dataTypes": [
-                                            "*"
-                                        ],
-                                        "description": "",
-                                        "inputType": "item",
-                                        "label": "input_event",
-                                        "name": "input_event",
-                                        "placeholder": "",
-                                        "renderType": "datapath",
-                                        "required": false
-                                    }
-                                ],
-                                "label": "IPM_2",
-                                "name": "IPM_2"
-                            }
-                        },
-                        "utilityType": "custom_function",
-                        "values": {
-                            "IPM_2": {
-                                "input_event": "container:severity"
-                            }
-                        }
-                    },
-                    "errors": {},
-                    "id": "6",
-                    "type": "utility",
                     "warnings": {
                         "config": [
-                            "The referenced custom function has changed. Reconfigure this block to use the updated parameters."
+                            "Reconfigure invalid datapath."
                         ]
                     },
-                    "x": 940,
-                    "y": 580
+                    "x": 920,
+                    "y": 840
                 },
                 "7": {
                     "data": {
@@ -274,7 +199,11 @@
                     "errors": {},
                     "id": "7",
                     "type": "decision",
-                    "warnings": {},
+                    "warnings": {
+                        "config": [
+                            "Reconfigure invalid datapath."
+                        ]
+                    },
                     "x": 1000,
                     "y": 680
                 },
@@ -336,9 +265,73 @@
                     "errors": {},
                     "id": "8",
                     "type": "action",
-                    "warnings": {},
+                    "warnings": {
+                        "config": [
+                            "Reconfigure invalid datapath."
+                        ]
+                    },
                     "x": 1212,
                     "y": 852.5
+                },
+                "9": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "customFunction": {
+                            "draftMode": false,
+                            "name": "IPM_2",
+                            "repoName": "ipm"
+                        },
+                        "functionId": 2,
+                        "functionName": "IPM_2_2",
+                        "id": "9",
+                        "loop": {
+                            "conditions": [
+                                {
+                                    "comparisons": [
+                                        {
+                                            "comparisonKey": "comparison_key_0",
+                                            "op": "==",
+                                            "param": "",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "conditionIndex": 0,
+                                    "conditionKey": "condition_key_0",
+                                    "logic": "and",
+                                    "type": "if"
+                                }
+                            ],
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "selectMore": false,
+                        "type": "utility",
+                        "utilities": {
+                            "IPM_2": {
+                                "description": "",
+                                "fields": [],
+                                "label": "IPM_2",
+                                "name": "IPM_2"
+                            }
+                        },
+                        "utilityType": "custom_function",
+                        "values": {
+                            "IPM_2": {}
+                        }
+                    },
+                    "errors": {},
+                    "id": "9",
+                    "type": "utility",
+                    "warnings": {},
+                    "x": 944,
+                    "y": 548.5
                 }
             },
             "notes": ""
@@ -351,7 +344,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-16T06:16:25.673935+00:00",
+    "create_time": "2026-09-16T06:35:05.763747+00:00",
     "draft_mode": false,
     "labels": [
         "events"

@@ -12,8 +12,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'ipm_2_1' block
-    ipm_2_1(container=container)
+    # call 'ipm_2_2' block
+    ipm_2_2(container=container)
 
     return
 
@@ -47,33 +47,6 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     ################################################################################
 
     phantom.act("add note", parameters=parameters, name="add_note_1", assets=["test-2"])
-
-    return
-
-
-@phantom.playbook_block()
-def ipm_2_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("ipm_2_1() called")
-
-    severity_value = container.get("severity", None)
-
-    parameters = []
-
-    parameters.append({
-        "input_event": severity_value,
-    })
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_1", callback=decision_1)
 
     return
 
@@ -151,6 +124,27 @@ def add_note_2(action=None, success=None, container=None, results=None, handle=N
     ################################################################################
 
     phantom.act("add note", parameters=parameters, name="add_note_2", assets=["test-2"])
+
+    return
+
+
+@phantom.playbook_block()
+def ipm_2_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("ipm_2_2() called")
+
+    parameters = [{}]
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_2", callback=decision_1)
 
     return
 
