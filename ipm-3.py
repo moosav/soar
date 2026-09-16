@@ -82,14 +82,16 @@ def ipm_2_1(action=None, success=None, container=None, results=None, handle=None
 def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("decision_1() called")
 
+    severity_value = container.get("severity", None)
+
     # check for 'if' condition 1
     found_match_1 = phantom.decision(
         container=container,
         conditions=[
-            ["ipm_2_1:custom_function_result.data.json_output", "==", "severity == medium"]
+            ["ipm_2_1:custom_function_result.data.json_output", "==", severity_value]
         ],
         conditions_dps=[
-            ["ipm_2_1:custom_function_result.data.json_output", "==", "severity == medium"]
+            ["ipm_2_1:custom_function_result.data.json_output", "==", "container:severity"]
         ],
         name="decision_1:condition_1",
         delimiter=None)
@@ -103,10 +105,10 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     found_match_2 = phantom.decision(
         container=container,
         conditions=[
-            ["ipm_2_1:custom_function_result.data.json_output", "==", "severity == low"]
+            ["ipm_2_1:custom_function_result.data.json_output", "==", severity_value]
         ],
         conditions_dps=[
-            ["ipm_2_1:custom_function_result.data.json_output", "==", "severity == low"]
+            ["ipm_2_1:custom_function_result.data.json_output", "==", "container:severity"]
         ],
         name="decision_1:condition_2",
         delimiter=None)
