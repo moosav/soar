@@ -1,13 +1,15 @@
 {
-    "create_time": "2026-09-16T17:56:33.510279+00:00",
+    "create_time": "2026-09-16T18:07:57.195232+00:00",
     "custom_function_id": "5cee5721641174ed52fd91873f03a131c04a17b6",
     "description": "",
     "draft_mode": false,
     "inputs": [
         {
-            "contains_type": [],
+            "contains_type": [
+                ""
+            ],
             "description": "",
-            "input_type": "list",
+            "input_type": "item",
             "name": "input_event",
             "placeholder": ""
         }
@@ -19,7 +21,7 @@
             "description": "List of supported event severity values"
         }
     ],
-    "outputs_type": "list",
+    "outputs_type": "item",
     "platform_version": "8.6.0.530",
     "python_version": "3.13"
 }
