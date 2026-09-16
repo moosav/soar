@@ -14,21 +14,21 @@
                     "targetPort": "1_in"
                 },
                 {
-                    "id": "port_0_to_port_10",
+                    "id": "port_0_to_port_11",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
-                    "targetNode": "10",
-                    "targetPort": "10_in"
+                    "targetNode": "11",
+                    "targetPort": "11_in"
                 },
                 {
-                    "id": "port_10_to_port_4",
-                    "sourceNode": "10",
-                    "sourcePort": "10_out",
+                    "id": "port_11_to_port_4",
+                    "sourceNode": "11",
+                    "sourcePort": "11_out",
                     "targetNode": "4",
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "d6280f6a1878408624b24a62a44799880e180e9c",
+            "hash": "c3c2a7251a088aa6b096aa1cb5ad671b485ea4ab",
             "nodes": {
                 "0": {
                     "data": {
@@ -43,8 +43,8 @@
                     "id": "0",
                     "type": "start",
                     "warnings": {},
-                    "x": 980,
-                    "y": 440
+                    "x": 960,
+                    "y": 460
                 },
                 "1": {
                     "data": {
@@ -64,7 +64,7 @@
                     "x": 1060,
                     "y": 880
                 },
-                "10": {
+                "11": {
                     "data": {
                         "advanced": {
                             "join": []
@@ -74,9 +74,9 @@
                             "name": "IPM_2",
                             "repoName": "ipm"
                         },
-                        "functionId": 3,
-                        "functionName": "IPM_2_3",
-                        "id": "10",
+                        "functionId": 4,
+                        "functionName": "IPM_2_4",
+                        "id": "11",
                         "loop": {
                             "conditions": [
                                 {
@@ -110,12 +110,12 @@
                                 "fields": [
                                     {
                                         "dataTypes": [
-                                            "phantom artifact id"
+                                            "phantom container id"
                                         ],
                                         "description": "",
                                         "inputType": "list",
-                                        "label": "artifact_input",
-                                        "name": "artifact_input",
+                                        "label": "input_event",
+                                        "name": "input_event",
                                         "placeholder": "",
                                         "renderType": "datapath",
                                         "required": false
@@ -128,18 +128,18 @@
                         "utilityType": "custom_function",
                         "values": {
                             "IPM_2": {
-                                "artifact_input": [
-                                    "artifact:*.id"
+                                "input_event": [
+                                    "container:id"
                                 ]
                             }
                         }
                     },
                     "errors": {},
-                    "id": "10",
+                    "id": "11",
                     "type": "utility",
                     "warnings": {},
-                    "x": 845,
-                    "y": 591.0999755859375
+                    "x": 874,
+                    "y": 610.0999755859375
                 },
                 "4": {
                     "data": {
@@ -184,7 +184,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "ipm_2_3:custom_function_result.data.severity",
+                            "content": "ipm_2_4:custom_function_result.data.severity",
                             "title": "title3"
                         },
                         "requiredParameters": [
@@ -214,7 +214,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-16T17:47:27.190084+00:00",
+    "create_time": "2026-09-16T17:52:55.606320+00:00",
     "draft_mode": false,
     "labels": [
         "events"
