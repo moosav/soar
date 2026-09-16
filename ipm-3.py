@@ -79,6 +79,27 @@ def ipm_2_6(action=None, success=None, container=None, results=None, handle=None
 
 
 @phantom.playbook_block()
+def ipm_2_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("ipm_2_7() called")
+
+    parameters = [{}]
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_7")
+
+    return
+
+
+@phantom.playbook_block()
 def on_finish(container, summary):
     phantom.debug("on_finish() called")
 
