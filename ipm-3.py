@@ -12,8 +12,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'ipm_2_4' block
-    ipm_2_4(container=container)
+    # call 'ipm_2_5' block
+    ipm_2_5(container=container)
 
     return
 
@@ -52,8 +52,8 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
 
 @phantom.playbook_block()
-def ipm_2_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("ipm_2_4() called")
+def ipm_2_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("ipm_2_5() called")
 
     severity_value = container.get("severity", None)
 
@@ -73,7 +73,7 @@ def ipm_2_4(action=None, success=None, container=None, results=None, handle=None
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_4", callback=add_note_1)
+    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_5", callback=add_note_1)
 
     return
 
