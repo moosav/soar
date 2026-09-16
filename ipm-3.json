@@ -226,7 +226,11 @@
                     "errors": {},
                     "id": "6",
                     "type": "utility",
-                    "warnings": {},
+                    "warnings": {
+                        "config": [
+                            "The referenced custom function has changed. Reconfigure this block to use the updated parameters."
+                        ]
+                    },
                     "x": 940,
                     "y": 580
                 }
