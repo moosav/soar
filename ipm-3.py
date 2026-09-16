@@ -52,48 +52,6 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
 
 @phantom.playbook_block()
-def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("decision_1() called")
-
-    severity_value = container.get("severity", None)
-
-    # check for 'if' condition 1
-    found_match_1 = phantom.decision(
-        container=container,
-        conditions=[
-            ["ipm_2_2:custom_function_result.data.severity", "==", severity_value]
-        ],
-        conditions_dps=[
-            ["ipm_2_2:custom_function_result.data.severity", "==", "container:severity"]
-        ],
-        name="decision_1:condition_1",
-        delimiter=None)
-
-    # call connected blocks if condition 1 matched
-    if found_match_1:
-        add_note_1(action=action, success=success, container=container, results=results, handle=handle)
-        return
-
-    # check for 'elif' condition 2
-    found_match_2 = phantom.decision(
-        container=container,
-        conditions=[
-            ["ipm_2_2:custom_function_result.data.severity", "==", severity_value]
-        ],
-        conditions_dps=[
-            ["ipm_2_2:custom_function_result.data.severity", "==", "container:severity"]
-        ],
-        name="decision_1:condition_2",
-        delimiter=None)
-
-    # call connected blocks if condition 2 matched
-    if found_match_2:
-        return
-
-    return
-
-
-@phantom.playbook_block()
 def ipm_2_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("ipm_2_2() called")
 
@@ -115,7 +73,7 @@ def ipm_2_2(action=None, success=None, container=None, results=None, handle=None
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_2", callback=decision_1)
+    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_2", callback=add_note_1)
 
     return
 

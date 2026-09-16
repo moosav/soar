@@ -14,19 +14,6 @@
                     "targetPort": "1_in"
                 },
                 {
-                    "conditions": [
-                        {
-                            "conditionKey": "condition_key_0",
-                            "index": 0
-                        }
-                    ],
-                    "id": "port_7_to_port_4",
-                    "sourceNode": "7",
-                    "sourcePort": "7_out",
-                    "targetNode": "4",
-                    "targetPort": "4_in"
-                },
-                {
                     "id": "port_0_to_port_9",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
@@ -34,14 +21,14 @@
                     "targetPort": "9_in"
                 },
                 {
-                    "id": "port_9_to_port_7",
+                    "id": "port_9_to_port_4",
                     "sourceNode": "9",
                     "sourcePort": "9_out",
-                    "targetNode": "7",
-                    "targetPort": "7_in"
+                    "targetNode": "4",
+                    "targetPort": "4_in"
                 }
             ],
-            "hash": "d343a17ef0a9184d5643d485fef542f7927fb7dc",
+            "hash": "a409e6bb7c48196fc045855e4258f52d8e188a91",
             "nodes": {
                 "0": {
                     "data": {
@@ -139,53 +126,6 @@
                     "x": 800,
                     "y": 780
                 },
-                "7": {
-                    "data": {
-                        "advanced": {
-                            "join": []
-                        },
-                        "conditions": [
-                            {
-                                "comparisons": [
-                                    {
-                                        "comparisonKey": "comparison_key_0",
-                                        "op": "==",
-                                        "param": "ipm_2_2:custom_function_result.data.severity",
-                                        "value": "container:severity"
-                                    }
-                                ],
-                                "conditionIndex": 0,
-                                "conditionKey": "condition_key_0",
-                                "logic": "and",
-                                "type": "if"
-                            },
-                            {
-                                "comparisons": [
-                                    {
-                                        "comparisonKey": "comparison_key_90934fff-2001-45b7-9050-900bb72f1db7",
-                                        "op": "==",
-                                        "param": "ipm_2_2:custom_function_result.data.severity",
-                                        "value": "container:severity"
-                                    }
-                                ],
-                                "conditionIndex": 1,
-                                "conditionKey": "condition_key_9eb0c5a1-2e86-441e-be78-7c4debe1af91",
-                                "logic": "and",
-                                "type": "elif"
-                            }
-                        ],
-                        "functionId": 1,
-                        "functionName": "decision_1",
-                        "id": "7",
-                        "type": "decision"
-                    },
-                    "errors": {},
-                    "id": "7",
-                    "type": "decision",
-                    "warnings": {},
-                    "x": 1060,
-                    "y": 660
-                },
                 "9": {
                     "data": {
                         "advanced": {
@@ -273,7 +213,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-16T08:03:41.778730+00:00",
+    "create_time": "2026-09-16T08:07:02.394805+00:00",
     "draft_mode": false,
     "labels": [
         "events"
