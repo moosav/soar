@@ -50,7 +50,7 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
     id_value = container.get("id", None)
-    ipm_2_1__result = phantom.collect2(container=container, datapath=["ipm_2_1:custom_function_result.data.severity"])
+    ipm_2_1__result = phantom.collect2(container=container, datapath=["ipm_2_1:custom_function_result.data.json_output"])
 
     parameters = []
 
