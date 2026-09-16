@@ -54,7 +54,7 @@
                     "targetPort": "8_in"
                 }
             ],
-            "hash": "d343a17ef0a9184d5643d485fef542f7927fb7dc",
+            "hash": "01cc49d8fa124fead36f3e027c2d963274f9f10c",
             "nodes": {
                 "0": {
                     "data": {
@@ -243,7 +243,7 @@
                                         "comparisonKey": "comparison_key_0",
                                         "op": "==",
                                         "param": "ipm_2_1:custom_function_result.data.json_output",
-                                        "value": "medium"
+                                        "value": "severity == medium"
                                     }
                                 ],
                                 "conditionIndex": 0,
@@ -257,7 +257,7 @@
                                         "comparisonKey": "comparison_key_90934fff-2001-45b7-9050-900bb72f1db7",
                                         "op": "==",
                                         "param": "ipm_2_1:custom_function_result.data.json_output",
-                                        "value": "low"
+                                        "value": "severity == low"
                                     }
                                 ],
                                 "conditionIndex": 1,
@@ -351,7 +351,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-16T05:55:12.735207+00:00",
+    "create_time": "2026-09-16T06:14:19.457656+00:00",
     "draft_mode": false,
     "labels": [
         "events"

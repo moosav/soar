@@ -86,10 +86,10 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     found_match_1 = phantom.decision(
         container=container,
         conditions=[
-            ["ipm_2_1:custom_function_result.data.json_output", "==", "medium"]
+            ["ipm_2_1:custom_function_result.data.json_output", "==", "severity == medium"]
         ],
         conditions_dps=[
-            ["ipm_2_1:custom_function_result.data.json_output", "==", "medium"]
+            ["ipm_2_1:custom_function_result.data.json_output", "==", "severity == medium"]
         ],
         name="decision_1:condition_1",
         delimiter=None)
@@ -103,10 +103,10 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     found_match_2 = phantom.decision(
         container=container,
         conditions=[
-            ["ipm_2_1:custom_function_result.data.json_output", "==", "low"]
+            ["ipm_2_1:custom_function_result.data.json_output", "==", "severity == low"]
         ],
         conditions_dps=[
-            ["ipm_2_1:custom_function_result.data.json_output", "==", "low"]
+            ["ipm_2_1:custom_function_result.data.json_output", "==", "severity == low"]
         ],
         name="decision_1:condition_2",
         delimiter=None)
