@@ -24,15 +24,15 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
     id_value = container.get("id", None)
-    ipm_2_1__result = phantom.collect2(container=container, datapath=["ipm_2_1:custom_function_result.data.json_output"])
+    ipm_2_2__result = phantom.collect2(container=container, datapath=["ipm_2_2:custom_function_result.data.severity"])
 
     parameters = []
 
     # build parameters list for 'add_note_1' call
-    for ipm_2_1__result_item in ipm_2_1__result:
+    for ipm_2_2__result_item in ipm_2_2__result:
         parameters.append({
             "title": "title3",
-            "content": ipm_2_1__result_item[0],
+            "content": ipm_2_2__result_item[0],
             "container_id": id_value,
         })
 
@@ -61,10 +61,10 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     found_match_1 = phantom.decision(
         container=container,
         conditions=[
-            ["ipm_2_1:custom_function_result.data.json_output", "==", severity_value]
+            ["ipm_2_2:custom_function_result.data.severity", "==", severity_value]
         ],
         conditions_dps=[
-            ["ipm_2_1:custom_function_result.data.json_output", "==", "container:severity"]
+            ["ipm_2_2:custom_function_result.data.severity", "==", "container:severity"]
         ],
         name="decision_1:condition_1",
         delimiter=None)

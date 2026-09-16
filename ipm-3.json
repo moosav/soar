@@ -54,7 +54,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "0c3c02b489661f93e5ce06ec39d46f58eec642a5",
+            "hash": "61699a2abd3539b86efd22a619850cf5da226b08",
             "nodes": {
                 "0": {
                     "data": {
@@ -133,7 +133,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "ipm_2_1:custom_function_result.data.json_output",
+                            "content": "ipm_2_2:custom_function_result.data.severity",
                             "title": "title3"
                         },
                         "requiredParameters": [
@@ -148,11 +148,7 @@
                     "errors": {},
                     "id": "4",
                     "type": "action",
-                    "warnings": {
-                        "config": [
-                            "Reconfigure invalid datapath."
-                        ]
-                    },
+                    "warnings": {},
                     "x": 920,
                     "y": 840
                 },
@@ -167,7 +163,7 @@
                                     {
                                         "comparisonKey": "comparison_key_0",
                                         "op": "==",
-                                        "param": "ipm_2_1:custom_function_result.data.json_output",
+                                        "param": "ipm_2_2:custom_function_result.data.severity",
                                         "value": "container:severity"
                                     }
                                 ],
@@ -344,7 +340,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-16T06:35:05.763747+00:00",
+    "create_time": "2026-09-16T07:38:56.663542+00:00",
     "draft_mode": false,
     "labels": [
         "events"
