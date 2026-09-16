@@ -27,19 +27,6 @@
                     "targetPort": "4_in"
                 },
                 {
-                    "conditions": [
-                        {
-                            "conditionKey": "condition_key_9eb0c5a1-2e86-441e-be78-7c4debe1af91",
-                            "index": 1
-                        }
-                    ],
-                    "id": "port_7_to_port_8",
-                    "sourceNode": "7",
-                    "sourcePort": "7_out",
-                    "targetNode": "8",
-                    "targetPort": "8_in"
-                },
-                {
                     "id": "port_0_to_port_9",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
@@ -54,7 +41,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "32b1633a1588e147e325f9c857a466f90a485880",
+            "hash": "52b873a5d07570a7d5dea8049a32cf536838ad6e",
             "nodes": {
                 "0": {
                     "data": {
@@ -87,8 +74,8 @@
                     "type": "end",
                     "userCode": "\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all details of actions\n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n",
                     "warnings": {},
-                    "x": 960,
-                    "y": 980
+                    "x": 1060,
+                    "y": 880
                 },
                 "4": {
                     "data": {
@@ -149,8 +136,8 @@
                     "id": "4",
                     "type": "action",
                     "warnings": {},
-                    "x": 920,
-                    "y": 840
+                    "x": 800,
+                    "y": 780
                 },
                 "7": {
                     "data": {
@@ -196,70 +183,8 @@
                     "id": "7",
                     "type": "decision",
                     "warnings": {},
-                    "x": 1000,
-                    "y": 680
-                },
-                "8": {
-                    "data": {
-                        "action": "add note",
-                        "actionType": "generic",
-                        "advanced": {
-                            "join": []
-                        },
-                        "connector": "Phantom",
-                        "connectorConfigs": [
-                            "test-2"
-                        ],
-                        "connectorId": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
-                        "connectorVersion": "v1",
-                        "functionId": 2,
-                        "functionName": "add_note_2",
-                        "id": "8",
-                        "loop": {
-                            "conditions": [
-                                {
-                                    "comparisons": [
-                                        {
-                                            "comparisonKey": "comparison_key_0",
-                                            "op": "==",
-                                            "param": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "conditionIndex": 0,
-                                    "conditionKey": "condition_key_0",
-                                    "logic": "and",
-                                    "type": "if"
-                                }
-                            ],
-                            "enabled": false,
-                            "exitAfterUnit": "m",
-                            "exitAfterValue": 10,
-                            "exitConditionEnabled": false,
-                            "exitLoopAfter": 2,
-                            "pauseUnit": "m",
-                            "pauseValue": 2
-                        },
-                        "parameters": {
-                            "container_id": "container:id",
-                            "content": "ipm_2_2:custom_function_result.data.severity",
-                            "title": "title4"
-                        },
-                        "requiredParameters": [
-                            {
-                                "data_type": "string",
-                                "field": "title"
-                            }
-                        ],
-                        "tab": "byConnector",
-                        "type": "action"
-                    },
-                    "errors": {},
-                    "id": "8",
-                    "type": "action",
-                    "warnings": {},
-                    "x": 1220,
-                    "y": 860
+                    "x": 1060,
+                    "y": 660
                 },
                 "9": {
                     "data": {
@@ -348,7 +273,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-16T08:02:19.560743+00:00",
+    "create_time": "2026-09-16T08:03:41.778730+00:00",
     "draft_mode": false,
     "labels": [
         "events"
