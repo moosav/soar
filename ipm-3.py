@@ -78,10 +78,10 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     found_match_2 = phantom.decision(
         container=container,
         conditions=[
-            ["ipm_2_1:custom_function_result.data.json_output", "==", severity_value]
+            ["ipm_2_2:custom_function_result.data.severity", "==", severity_value]
         ],
         conditions_dps=[
-            ["ipm_2_1:custom_function_result.data.json_output", "==", "container:severity"]
+            ["ipm_2_2:custom_function_result.data.severity", "==", "container:severity"]
         ],
         name="decision_1:condition_2",
         delimiter=None)

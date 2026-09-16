@@ -54,7 +54,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "d343a17ef0a9184d5643d485fef542f7927fb7dc",
+            "hash": "affd14bb28eab8a6cd6203322ec5d3f4d250f29e",
             "nodes": {
                 "0": {
                     "data": {
@@ -177,7 +177,7 @@
                                     {
                                         "comparisonKey": "comparison_key_90934fff-2001-45b7-9050-900bb72f1db7",
                                         "op": "==",
-                                        "param": "ipm_2_1:custom_function_result.data.json_output",
+                                        "param": "ipm_2_2:custom_function_result.data.severity",
                                         "value": "container:severity"
                                     }
                                 ],
@@ -195,11 +195,7 @@
                     "errors": {},
                     "id": "7",
                     "type": "decision",
-                    "warnings": {
-                        "config": [
-                            "Reconfigure invalid datapath."
-                        ]
-                    },
+                    "warnings": {},
                     "x": 1000,
                     "y": 680
                 },
@@ -268,7 +264,8 @@
                 "9": {
                     "data": {
                         "advanced": {
-                            "join": []
+                            "join": [],
+                            "scope": "new"
                         },
                         "customFunction": {
                             "draftMode": false,
@@ -322,8 +319,8 @@
                     "id": "9",
                     "type": "utility",
                     "warnings": {},
-                    "x": 944,
-                    "y": 548.5
+                    "x": 940,
+                    "y": 560
                 }
             },
             "notes": ""
@@ -336,7 +333,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-16T07:39:26.365386+00:00",
+    "create_time": "2026-09-16T07:55:39.037659+00:00",
     "draft_mode": false,
     "labels": [
         "events"
