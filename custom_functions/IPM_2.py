@@ -1,7 +1,7 @@
-def IPM_2(artifact_input=None, **kwargs):
+def IPM_2(input_event=None, **kwargs):
     """
     Args:
-        artifact_input (CEF type: phantom artifact id)
+        input_event (CEF type: phantom container id)
     
     Returns a JSON-serializable object that implements the configured data paths:
         severity: List of supported event severity values
