@@ -79,17 +79,15 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
     id_value = container.get("id", None)
-    format_1__as_list = phantom.get_format_data(name="format_1__as_list")
+    format_1 = phantom.get_format_data(name="format_1")
 
     parameters = []
 
-    # build parameters list for 'add_note_1' call
-    for format_1__item in format_1__as_list:
-        parameters.append({
-            "title": "title4",
-            "content": format_1__item,
-            "container_id": id_value,
-        })
+    parameters.append({
+        "title": "title7",
+        "content": format_1,
+        "container_id": id_value,
+    })
 
     ################################################################################
     ## Custom Code Start
