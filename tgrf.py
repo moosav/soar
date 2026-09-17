@@ -39,29 +39,21 @@ def ipm_2_2(action=None, success=None, container=None, results=None, handle=None
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_2", callback=add_note_1)
+    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_2", callback=format_1)
 
     return
 
 
 @phantom.playbook_block()
-def add_note_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("add_note_1() called")
+def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("format_1() called")
 
-    # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    template = """{0}\n"""
 
-    id_value = container.get("id", None)
-    ipm_2_2__result = phantom.collect2(container=container, datapath=["ipm_2_2:custom_function_result.data.severity"])
-
-    parameters = []
-
-    # build parameters list for 'add_note_1' call
-    for ipm_2_2__result_item in ipm_2_2__result:
-        parameters.append({
-            "title": "title2",
-            "content": ipm_2_2__result_item[0],
-            "container_id": id_value,
-        })
+    # parameter list for template variable replacement
+    parameters = [
+        "ipm_2_2:custom_function_result.data.severity"
+    ]
 
     ################################################################################
     ## Custom Code Start
@@ -73,7 +65,7 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     ## Custom Code End
     ################################################################################
 
-    phantom.act("add note", parameters=parameters, name="add_note_1", assets=["test-2"])
+    phantom.format(container=container, template=template, parameters=parameters, name="format_1")
 
     return
 
