@@ -42,12 +42,12 @@ def ipm_2_7(action=None, success=None, container=None, results=None, handle=None
 def ipm_2_11(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("ipm_2_11() called")
 
-    severity_value = container.get("severity", None)
+    label_value = container.get("label", None)
 
     parameters = []
 
     parameters.append({
-        "input_event": severity_value,
+        "input_event": label_value,
     })
 
     ################################################################################
