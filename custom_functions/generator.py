@@ -9,8 +9,7 @@ def generator(artifact_data=None, **kwargs):
     ############################ Custom Code Goes Below This Line #################################
     outputs = {}
 
-    artifact_id = kwargs.get("artifact_data")
-
-    outputs["url"] = "ARTIFACT_ID=" + str(artifact_id)
+    outputs["url"] = "TEST"
+    outputs["debug"] = repr(kwargs)
 
     return outputs
