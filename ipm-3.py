@@ -12,8 +12,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'ipm_2_11' block
-    ipm_2_11(container=container)
+    # call 'generator_11' block
+    generator_11(container=container)
 
     return
 
@@ -39,15 +39,17 @@ def ipm_2_7(action=None, success=None, container=None, results=None, handle=None
 
 
 @phantom.playbook_block()
-def ipm_2_11(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("ipm_2_11() called")
+def generator_11(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("generator_11() called")
 
-    label_value = container.get("label", None)
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.id","artifact:*.id"])
+
+    container_artifact_header_item_0 = [item[0] for item in container_artifact_data]
 
     parameters = []
 
     parameters.append({
-        "input_event": label_value,
+        "artifact_data": container_artifact_header_item_0,
     })
 
     ################################################################################
@@ -60,7 +62,7 @@ def ipm_2_11(action=None, success=None, container=None, results=None, handle=Non
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="ipm/IPM_2", parameters=parameters, name="ipm_2_11", callback=add_note_1)
+    phantom.custom_function(custom_function="ipm/generator", parameters=parameters, name="generator_11", callback=add_note_1)
 
     return
 
@@ -71,15 +73,17 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    ipm_2_11__result = phantom.collect2(container=container, datapath=["ipm_2_11:custom_function_result.message"])
+    id_value = container.get("id", None)
+    generator_11__result = phantom.collect2(container=container, datapath=["generator_11:custom_function_result.data.url"])
 
     parameters = []
 
     # build parameters list for 'add_note_1' call
-    for ipm_2_11__result_item in ipm_2_11__result:
+    for generator_11__result_item in generator_11__result:
         parameters.append({
             "title": "title8",
-            "content": ipm_2_11__result_item[0],
+            "content": generator_11__result_item[0],
+            "container_id": id_value,
         })
 
     ################################################################################

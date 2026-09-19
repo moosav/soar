@@ -28,7 +28,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "bfc662f45a930c29301bb6e14840653cbd07d121",
+            "hash": "6c8bdfaa7e7dbfdeb3f5db915e4b5c7d695f147c",
             "nodes": {
                 "0": {
                     "data": {
@@ -44,7 +44,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 960,
-                    "y": 459.9999999999999
+                    "y": 459.9999999999998
                 },
                 "1": {
                     "data": {
@@ -138,11 +138,11 @@
                         },
                         "customFunction": {
                             "draftMode": false,
-                            "name": "IPM_2",
+                            "name": "generator",
                             "repoName": "ipm"
                         },
                         "functionId": 11,
-                        "functionName": "IPM_2_11",
+                        "functionName": "generator_11",
                         "id": "23",
                         "loop": {
                             "conditions": [
@@ -172,30 +172,30 @@
                         "selectMore": false,
                         "type": "utility",
                         "utilities": {
-                            "IPM_2": {
+                            "generator": {
                                 "description": "",
                                 "fields": [
                                     {
-                                        "dataTypes": [
-                                            "*"
-                                        ],
+                                        "dataTypes": [],
                                         "description": "",
-                                        "inputType": "item",
-                                        "label": "input_event",
-                                        "name": "input_event",
+                                        "inputType": "list",
+                                        "label": "artifact_data",
+                                        "name": "artifact_data",
                                         "placeholder": "",
                                         "renderType": "datapath",
                                         "required": false
                                     }
                                 ],
-                                "label": "IPM_2",
-                                "name": "IPM_2"
+                                "label": "generator",
+                                "name": "generator"
                             }
                         },
                         "utilityType": "custom_function",
                         "values": {
-                            "IPM_2": {
-                                "input_event": "container:label"
+                            "generator": {
+                                "artifact_data": [
+                                    "artifact:*.id"
+                                ]
                             }
                         }
                     },
@@ -248,7 +248,8 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "content": "ipm_2_11:custom_function_result.message",
+                            "container_id": "container:id",
+                            "content": "generator_11:custom_function_result.data.url",
                             "title": "title8"
                         },
                         "requiredParameters": [
@@ -278,7 +279,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-19T06:40:56.001328+00:00",
+    "create_time": "2026-09-19T09:31:46.889226+00:00",
     "draft_mode": false,
     "labels": [
         "events"
