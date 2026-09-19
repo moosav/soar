@@ -12,8 +12,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'generator_5' block
-    generator_5(container=container)
+    # call 'generator_6' block
+    generator_6(container=container)
 
     return
 
@@ -45,15 +45,15 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
     id_value = container.get("id", None)
-    generator_5__result = phantom.collect2(container=container, datapath=["generator_5:custom_function_result.data.url"])
+    generator_6__result = phantom.collect2(container=container, datapath=["generator_6:custom_function_result.data.url"])
 
     parameters = []
 
     # build parameters list for 'add_note_1' call
-    for generator_5__result_item in generator_5__result:
+    for generator_6__result_item in generator_6__result:
         parameters.append({
             "title": "title8",
-            "content": generator_5__result_item[0],
+            "content": generator_6__result_item[0],
             "container_id": id_value,
         })
 
@@ -73,8 +73,8 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
 
 @phantom.playbook_block()
-def generator_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("generator_5() called")
+def generator_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("generator_6() called")
 
     url_value = container.get("url", None)
 
@@ -94,7 +94,7 @@ def generator_5(action=None, success=None, container=None, results=None, handle=
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="ipm/generator", parameters=parameters, name="generator_5", callback=add_note_1)
+    phantom.custom_function(custom_function="ipm/generator", parameters=parameters, name="generator_6", callback=add_note_1)
 
     return
 
