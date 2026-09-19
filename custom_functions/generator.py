@@ -1,7 +1,7 @@
 def generator(artifact=None, **kwargs):
     """
     Args:
-        artifact (CEF type: url)
+        artifact
     
     Returns a JSON-serializable object that implements the configured data paths:
         url (CEF type: *)
@@ -9,6 +9,6 @@ def generator(artifact=None, **kwargs):
     ############################ Custom Code Goes Below This Line #################################
     outputs = {}
 
-    outputs["url"] = kwargs.get("input_event")
+    outputs["url"] = kwargs.get("articat")
 
     return outputs
