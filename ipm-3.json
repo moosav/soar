@@ -14,21 +14,21 @@
                     "targetPort": "1_in"
                 },
                 {
-                    "id": "port_0_to_port_25",
+                    "id": "port_0_to_port_26",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
-                    "targetNode": "25",
-                    "targetPort": "25_in"
+                    "targetNode": "26",
+                    "targetPort": "26_in"
                 },
                 {
-                    "id": "port_25_to_port_24",
-                    "sourceNode": "25",
-                    "sourcePort": "25_out",
+                    "id": "port_26_to_port_24",
+                    "sourceNode": "26",
+                    "sourcePort": "26_out",
                     "targetNode": "24",
                     "targetPort": "24_in"
                 }
             ],
-            "hash": "3b0b7ac98bb0430896a5dbde3e26a95bc05546bb",
+            "hash": "3ec22aa3d9714fd71d52b6d9bd0ba0f91d8626f4",
             "nodes": {
                 "0": {
                     "data": {
@@ -174,7 +174,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "generator_1:custom_function_result.data.url",
+                            "content": "generator_2:custom_function_result.data.url",
                             "title": "title8"
                         },
                         "requiredParameters": [
@@ -193,7 +193,7 @@
                     "x": 817.3333740234375,
                     "y": 784.6666259765625
                 },
-                "25": {
+                "26": {
                     "data": {
                         "advanced": {
                             "join": []
@@ -203,9 +203,9 @@
                             "name": "generator",
                             "repoName": "ipm"
                         },
-                        "functionId": 1,
-                        "functionName": "generator_1",
-                        "id": "25",
+                        "functionId": 2,
+                        "functionName": "generator_2",
+                        "id": "26",
                         "loop": {
                             "conditions": [
                                 {
@@ -238,9 +238,11 @@
                                 "description": "",
                                 "fields": [
                                     {
-                                        "dataTypes": [],
+                                        "dataTypes": [
+                                            "*"
+                                        ],
                                         "description": "",
-                                        "inputType": "list",
+                                        "inputType": "item",
                                         "label": "artifact_data",
                                         "name": "artifact_data",
                                         "placeholder": "",
@@ -255,18 +257,16 @@
                         "utilityType": "custom_function",
                         "values": {
                             "generator": {
-                                "artifact_data": [
-                                    "artifact:*.data"
-                                ]
+                                "artifact_data": "artifact:*.id"
                             }
                         }
                     },
                     "errors": {},
-                    "id": "25",
+                    "id": "26",
                     "type": "utility",
                     "warnings": {},
-                    "x": 640,
-                    "y": 560
+                    "x": 710.6666870117188,
+                    "y": 592.6666259765625
                 }
             },
             "notes": ""
@@ -279,7 +279,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-19T09:42:31.168712+00:00",
+    "create_time": "2026-09-19T09:44:55.573914+00:00",
     "draft_mode": false,
     "labels": [
         "*"
