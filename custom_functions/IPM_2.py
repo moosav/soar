@@ -8,10 +8,9 @@ def IPM_2(input_event=None, **kwargs):
     """
     ############################ Custom Code Goes Below This Line #################################
     outputs = {}
-
-    raw = kwargs.get("input_event")
-
-    outputs["severity"] = "DEBUG_" + repr(raw)
+    outputs["severity"] = "DEBUG"
+    outputs["all_kwargs"] = repr(kwargs)
+    
 
 
     return outputs
