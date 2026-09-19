@@ -14,21 +14,21 @@
                     "targetPort": "1_in"
                 },
                 {
-                    "id": "port_0_to_port_28",
+                    "id": "port_0_to_port_29",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
-                    "targetNode": "28",
-                    "targetPort": "28_in"
+                    "targetNode": "29",
+                    "targetPort": "29_in"
                 },
                 {
-                    "id": "port_28_to_port_24",
-                    "sourceNode": "28",
-                    "sourcePort": "28_out",
+                    "id": "port_29_to_port_24",
+                    "sourceNode": "29",
+                    "sourcePort": "29_out",
                     "targetNode": "24",
                     "targetPort": "24_in"
                 }
             ],
-            "hash": "542f484824d08aa5a9754d5921373933991ac165",
+            "hash": "31909a2b4040ce6af9f1f8ff61f693b815f09310",
             "nodes": {
                 "0": {
                     "data": {
@@ -174,7 +174,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "generator_4:custom_function_result.data.url",
+                            "content": "generator_5:custom_function_result.data.url",
                             "title": "title8"
                         },
                         "requiredParameters": [
@@ -193,7 +193,7 @@
                     "x": 817.3333740234375,
                     "y": 784.6666259765625
                 },
-                "28": {
+                "29": {
                     "data": {
                         "advanced": {
                             "join": []
@@ -203,9 +203,9 @@
                             "name": "generator",
                             "repoName": "ipm"
                         },
-                        "functionId": 4,
-                        "functionName": "generator_4",
-                        "id": "28",
+                        "functionId": 5,
+                        "functionName": "generator_5",
+                        "id": "29",
                         "loop": {
                             "conditions": [
                                 {
@@ -243,8 +243,8 @@
                                         ],
                                         "description": "",
                                         "inputType": "item",
-                                        "label": "artifact_data",
-                                        "name": "artifact_data",
+                                        "label": "input_event",
+                                        "name": "input_event",
                                         "placeholder": "",
                                         "renderType": "datapath",
                                         "required": false
@@ -257,16 +257,16 @@
                         "utilityType": "custom_function",
                         "values": {
                             "generator": {
-                                "artifact_data": "artifact:*.id"
+                                "input_event": "container:url"
                             }
                         }
                     },
                     "errors": {},
-                    "id": "28",
+                    "id": "29",
                     "type": "utility",
                     "warnings": {},
-                    "x": 620,
-                    "y": 560
+                    "x": 708.0000610351562,
+                    "y": 565.4666748046875
                 }
             },
             "notes": ""
@@ -279,7 +279,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-19T16:38:54.491564+00:00",
+    "create_time": "2026-09-19T16:55:20.466328+00:00",
     "draft_mode": false,
     "labels": [
         "*"
