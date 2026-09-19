@@ -12,8 +12,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'generator_11' block
-    generator_11(container=container)
+    # call 'generator_1' block
+    generator_1(container=container)
 
     return
 
@@ -39,8 +39,42 @@ def ipm_2_7(action=None, success=None, container=None, results=None, handle=None
 
 
 @phantom.playbook_block()
-def generator_11(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("generator_11() called")
+def add_note_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("add_note_1() called")
+
+    # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+
+    id_value = container.get("id", None)
+    generator_1__result = phantom.collect2(container=container, datapath=["generator_1:custom_function_result.data.url"])
+
+    parameters = []
+
+    # build parameters list for 'add_note_1' call
+    for generator_1__result_item in generator_1__result:
+        parameters.append({
+            "title": "title8",
+            "content": generator_1__result_item[0],
+            "container_id": id_value,
+        })
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.act("add note", parameters=parameters, name="add_note_1", assets=["test-2"])
+
+    return
+
+
+@phantom.playbook_block()
+def generator_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("generator_1() called")
 
     container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.id","artifact:*.id"])
 
@@ -62,41 +96,7 @@ def generator_11(action=None, success=None, container=None, results=None, handle
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="ipm/generator", parameters=parameters, name="generator_11", callback=add_note_1)
-
-    return
-
-
-@phantom.playbook_block()
-def add_note_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("add_note_1() called")
-
-    # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-
-    id_value = container.get("id", None)
-    generator_11__result = phantom.collect2(container=container, datapath=["generator_11:custom_function_result.data.url"])
-
-    parameters = []
-
-    # build parameters list for 'add_note_1' call
-    for generator_11__result_item in generator_11__result:
-        parameters.append({
-            "title": "title8",
-            "content": generator_11__result_item[0],
-            "container_id": id_value,
-        })
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.act("add note", parameters=parameters, name="add_note_1", assets=["test-2"])
+    phantom.custom_function(custom_function="ipm/generator", parameters=parameters, name="generator_1", callback=add_note_1)
 
     return
 

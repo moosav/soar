@@ -7,28 +7,28 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_0_to_port_23",
-                    "sourceNode": "0",
-                    "sourcePort": "0_out",
-                    "targetNode": "23",
-                    "targetPort": "23_in"
-                },
-                {
-                    "id": "port_23_to_port_24",
-                    "sourceNode": "23",
-                    "sourcePort": "23_out",
-                    "targetNode": "24",
-                    "targetPort": "24_in"
-                },
-                {
                     "id": "port_24_to_port_1",
                     "sourceNode": "24",
                     "sourcePort": "24_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
+                },
+                {
+                    "id": "port_0_to_port_25",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "25",
+                    "targetPort": "25_in"
+                },
+                {
+                    "id": "port_25_to_port_24",
+                    "sourceNode": "25",
+                    "sourcePort": "25_out",
+                    "targetNode": "24",
+                    "targetPort": "24_in"
                 }
             ],
-            "hash": "bfc662f45a930c29301bb6e14840653cbd07d121",
+            "hash": "7ee9f498e0de5c34c710913435f13f67bdf443f6",
             "nodes": {
                 "0": {
                     "data": {
@@ -43,8 +43,8 @@
                     "id": "0",
                     "type": "start",
                     "warnings": {},
-                    "x": 960,
-                    "y": 459.9999999999998
+                    "x": 700,
+                    "y": 380
                 },
                 "1": {
                     "data": {
@@ -131,7 +131,69 @@
                     "x": 399.79998779296875,
                     "y": 615.7000732421875
                 },
-                "23": {
+                "24": {
+                    "data": {
+                        "action": "add note",
+                        "actionType": "generic",
+                        "advanced": {
+                            "join": []
+                        },
+                        "connector": "Phantom",
+                        "connectorConfigs": [
+                            "test-2"
+                        ],
+                        "connectorId": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                        "connectorVersion": "v1",
+                        "functionId": 1,
+                        "functionName": "add_note_1",
+                        "id": "24",
+                        "loop": {
+                            "conditions": [
+                                {
+                                    "comparisons": [
+                                        {
+                                            "comparisonKey": "comparison_key_0",
+                                            "op": "==",
+                                            "param": "",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "conditionIndex": 0,
+                                    "conditionKey": "condition_key_0",
+                                    "logic": "and",
+                                    "type": "if"
+                                }
+                            ],
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "parameters": {
+                            "container_id": "container:id",
+                            "content": "generator_1:custom_function_result.data.url",
+                            "title": "title8"
+                        },
+                        "requiredParameters": [
+                            {
+                                "data_type": "string",
+                                "field": "title"
+                            }
+                        ],
+                        "tab": "byConnector",
+                        "type": "action"
+                    },
+                    "errors": {},
+                    "id": "24",
+                    "type": "action",
+                    "warnings": {},
+                    "x": 817.3333740234375,
+                    "y": 784.6666259765625
+                },
+                "25": {
                     "data": {
                         "advanced": {
                             "join": []
@@ -141,9 +203,9 @@
                             "name": "generator",
                             "repoName": "ipm"
                         },
-                        "functionId": 11,
-                        "functionName": "generator_11",
-                        "id": "23",
+                        "functionId": 1,
+                        "functionName": "generator_1",
+                        "id": "25",
                         "loop": {
                             "conditions": [
                                 {
@@ -200,73 +262,11 @@
                         }
                     },
                     "errors": {},
-                    "id": "23",
+                    "id": "25",
                     "type": "utility",
                     "warnings": {},
-                    "x": 850.6666870117188,
-                    "y": 616.6666870117188
-                },
-                "24": {
-                    "data": {
-                        "action": "add note",
-                        "actionType": "generic",
-                        "advanced": {
-                            "join": []
-                        },
-                        "connector": "Phantom",
-                        "connectorConfigs": [
-                            "test-2"
-                        ],
-                        "connectorId": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
-                        "connectorVersion": "v1",
-                        "functionId": 1,
-                        "functionName": "add_note_1",
-                        "id": "24",
-                        "loop": {
-                            "conditions": [
-                                {
-                                    "comparisons": [
-                                        {
-                                            "comparisonKey": "comparison_key_0",
-                                            "op": "==",
-                                            "param": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "conditionIndex": 0,
-                                    "conditionKey": "condition_key_0",
-                                    "logic": "and",
-                                    "type": "if"
-                                }
-                            ],
-                            "enabled": false,
-                            "exitAfterUnit": "m",
-                            "exitAfterValue": 10,
-                            "exitConditionEnabled": false,
-                            "exitLoopAfter": 2,
-                            "pauseUnit": "m",
-                            "pauseValue": 2
-                        },
-                        "parameters": {
-                            "container_id": "container:id",
-                            "content": "generator_11:custom_function_result.data.url",
-                            "title": "title8"
-                        },
-                        "requiredParameters": [
-                            {
-                                "data_type": "string",
-                                "field": "title"
-                            }
-                        ],
-                        "tab": "byConnector",
-                        "type": "action"
-                    },
-                    "errors": {},
-                    "id": "24",
-                    "type": "action",
-                    "warnings": {},
-                    "x": 817.3333740234375,
-                    "y": 784.6666259765625
+                    "x": 640.0000610351562,
+                    "y": 564.6666259765625
                 }
             },
             "notes": ""
@@ -279,7 +279,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-19T09:31:46.889226+00:00",
+    "create_time": "2026-09-19T09:36:16.676141+00:00",
     "draft_mode": false,
     "labels": [
         "events"
