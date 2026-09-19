@@ -7,27 +7,28 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_0_to_port_2",
-                    "sourceNode": "0",
-                    "sourcePort": "0_out",
-                    "targetNode": "2",
-                    "targetPort": "2_in"
-                },
-                {
-                    "id": "port_2_to_port_3",
-                    "sourceNode": "2",
-                    "sourcePort": "2_out",
-                    "targetNode": "3",
-                    "targetPort": "3_in"
-                },
-                {
                     "id": "port_3_to_port_1",
                     "sourceNode": "3",
                     "sourcePort": "3_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
+                },
+                {
+                    "id": "port_0_to_port_4",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "4",
+                    "targetPort": "4_in"
+                },
+                {
+                    "id": "port_4_to_port_3",
+                    "sourceNode": "4",
+                    "sourcePort": "4_out",
+                    "targetNode": "3",
+                    "targetPort": "3_in"
                 }
             ],
+            "hash": "ab11a19842859088ce96a033c64ab6c73652c83b",
             "nodes": {
                 "0": {
                     "data": {
@@ -42,8 +43,8 @@
                     "id": "0",
                     "type": "start",
                     "warnings": {},
-                    "x": 1000,
-                    "y": 419.99999999999994
+                    "x": 1040,
+                    "y": 420
                 },
                 "1": {
                     "data": {
@@ -62,81 +63,6 @@
                     "warnings": {},
                     "x": 1000,
                     "y": 1000
-                },
-                "2": {
-                    "data": {
-                        "advanced": {
-                            "join": []
-                        },
-                        "customFunction": {
-                            "draftMode": false,
-                            "name": "generator",
-                            "repoName": "ipm"
-                        },
-                        "functionId": 1,
-                        "functionName": "generator_1",
-                        "id": "2",
-                        "loop": {
-                            "conditions": [
-                                {
-                                    "comparisons": [
-                                        {
-                                            "comparisonKey": "comparison_key_0",
-                                            "op": "==",
-                                            "param": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "conditionIndex": 0,
-                                    "conditionKey": "condition_key_0",
-                                    "logic": "and",
-                                    "type": "if"
-                                }
-                            ],
-                            "enabled": false,
-                            "exitAfterUnit": "m",
-                            "exitAfterValue": 10,
-                            "exitConditionEnabled": false,
-                            "exitLoopAfter": 2,
-                            "pauseUnit": "m",
-                            "pauseValue": 2
-                        },
-                        "selectMore": false,
-                        "type": "utility",
-                        "utilities": {
-                            "generator": {
-                                "description": "",
-                                "fields": [
-                                    {
-                                        "dataTypes": [
-                                            "*"
-                                        ],
-                                        "description": "",
-                                        "inputType": "item",
-                                        "label": "input_event",
-                                        "name": "input_event",
-                                        "placeholder": "",
-                                        "renderType": "datapath",
-                                        "required": false
-                                    }
-                                ],
-                                "label": "generator",
-                                "name": "generator"
-                            }
-                        },
-                        "utilityType": "custom_function",
-                        "values": {
-                            "generator": {
-                                "input_event": "TEST123"
-                            }
-                        }
-                    },
-                    "errors": {},
-                    "id": "2",
-                    "type": "utility",
-                    "warnings": {},
-                    "x": 938,
-                    "y": 624.9000244140625
                 },
                 "3": {
                     "data": {
@@ -181,7 +107,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "generator_1:custom_function_result.data.url",
+                            "content": "generator_2:custom_function_result.data.url",
                             "title": "title9"
                         },
                         "requiredParameters": [
@@ -199,6 +125,80 @@
                     "warnings": {},
                     "x": 940,
                     "y": 805.9000244140625
+                },
+                "4": {
+                    "data": {
+                        "advanced": {
+                            "join": [],
+                            "scope": "new"
+                        },
+                        "customFunction": {
+                            "draftMode": false,
+                            "name": "generator",
+                            "repoName": "ipm"
+                        },
+                        "functionId": 2,
+                        "functionName": "generator_2",
+                        "id": "4",
+                        "loop": {
+                            "conditions": [
+                                {
+                                    "comparisons": [
+                                        {
+                                            "comparisonKey": "comparison_key_0",
+                                            "op": "==",
+                                            "param": "",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "conditionIndex": 0,
+                                    "conditionKey": "condition_key_0",
+                                    "logic": "and",
+                                    "type": "if"
+                                }
+                            ],
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "selectMore": false,
+                        "type": "utility",
+                        "utilities": {
+                            "generator": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "dataTypes": [],
+                                        "description": "",
+                                        "inputType": "item",
+                                        "label": "artifact",
+                                        "name": "artifact",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "generator",
+                                "name": "generator"
+                            }
+                        },
+                        "utilityType": "custom_function",
+                        "values": {
+                            "generator": {
+                                "artifact": "artifact:*.id"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "4",
+                    "type": "utility",
+                    "warnings": {},
+                    "x": 900,
+                    "y": 611.9000244140625
                 }
             },
             "notes": ""
@@ -211,7 +211,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-19T17:16:37.641290+00:00",
+    "create_time": "2026-09-19T17:34:11.149041+00:00",
     "draft_mode": false,
     "labels": [
         "events"

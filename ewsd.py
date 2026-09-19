@@ -12,35 +12,10 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'generator_1' block
-    generator_1(container=container)
+    # call 'generator_2' block
+    generator_2(container=container)
 
     return
-
-@phantom.playbook_block()
-def generator_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("generator_1() called")
-
-    parameters = []
-
-    parameters.append({
-        "input_event": "TEST123",
-    })
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.custom_function(custom_function="ipm/generator", parameters=parameters, name="generator_1", callback=add_note_1)
-
-    return
-
 
 @phantom.playbook_block()
 def add_note_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
@@ -49,15 +24,15 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
     id_value = container.get("id", None)
-    generator_1__result = phantom.collect2(container=container, datapath=["generator_1:custom_function_result.data.url"])
+    generator_2__result = phantom.collect2(container=container, datapath=["generator_2:custom_function_result.data.url"])
 
     parameters = []
 
     # build parameters list for 'add_note_1' call
-    for generator_1__result_item in generator_1__result:
+    for generator_2__result_item in generator_2__result:
         parameters.append({
             "title": "title9",
-            "content": generator_1__result_item[0],
+            "content": generator_2__result_item[0],
             "container_id": id_value,
         })
 
@@ -72,6 +47,35 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     ################################################################################
 
     phantom.act("add note", parameters=parameters, name="add_note_1", assets=["test-2"])
+
+    return
+
+
+@phantom.playbook_block()
+def generator_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("generator_2() called")
+
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.id","artifact:*.id"], scope="new")
+
+    parameters = []
+
+    # build parameters list for 'generator_2' call
+    for container_artifact_item in container_artifact_data:
+        parameters.append({
+            "artifact": container_artifact_item[0],
+        })
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.custom_function(custom_function="ipm/generator", parameters=parameters, name="generator_2", callback=add_note_1)
 
     return
 
