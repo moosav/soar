@@ -28,7 +28,7 @@
                     "targetPort": "24_in"
                 }
             ],
-            "hash": "bfc662f45a930c29301bb6e14840653cbd07d121",
+            "hash": "3b0b7ac98bb0430896a5dbde3e26a95bc05546bb",
             "nodes": {
                 "0": {
                     "data": {
@@ -256,7 +256,7 @@
                         "values": {
                             "generator": {
                                 "artifact_data": [
-                                    "artifact:*.id"
+                                    "artifact:*.data"
                                 ]
                             }
                         }
@@ -265,8 +265,8 @@
                     "id": "25",
                     "type": "utility",
                     "warnings": {},
-                    "x": 640.0000610351562,
-                    "y": 564.6666259765625
+                    "x": 640,
+                    "y": 560
                 }
             },
             "notes": ""
@@ -279,7 +279,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-19T09:36:16.676141+00:00",
+    "create_time": "2026-09-19T09:42:31.168712+00:00",
     "draft_mode": false,
     "labels": [
         "*"

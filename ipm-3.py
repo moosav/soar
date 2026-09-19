@@ -76,7 +76,7 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 def generator_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("generator_1() called")
 
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.id","artifact:*.id"])
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.data","artifact:*.id"])
 
     container_artifact_header_item_0 = [item[0] for item in container_artifact_data]
 
