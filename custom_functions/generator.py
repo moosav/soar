@@ -1,7 +1,7 @@
-def generator(artifact_data=None, **kwargs):
+def generator(input_event=None, **kwargs):
     """
     Args:
-        artifact_data (CEF type: *)
+        input_event (CEF type: *)
     
     Returns a JSON-serializable object that implements the configured data paths:
         url (CEF type: *)
