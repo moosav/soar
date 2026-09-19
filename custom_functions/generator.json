@@ -1,16 +1,16 @@
 {
-    "create_time": "2026-09-19T17:12:53.121961+00:00",
+    "create_time": "2026-09-19T17:29:50.532820+00:00",
     "custom_function_id": "058411433963cc27123614bd3f40a31c3ce5ac2f",
     "description": "",
     "draft_mode": false,
     "inputs": [
         {
             "contains_type": [
-                "*"
+                "url"
             ],
             "description": "",
             "input_type": "item",
-            "name": "input_event",
+            "name": "artifact",
             "placeholder": ""
         }
     ],
