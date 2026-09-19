@@ -28,7 +28,7 @@
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "35b323d964f6c2174f2ddc63f56c86044f1f3ac6",
+            "hash": "99326c5f7a7d9524a0b159d690a8d0ee93ec0f7a",
             "nodes": {
                 "0": {
                     "data": {
@@ -193,7 +193,7 @@
                         "utilityType": "custom_function",
                         "values": {
                             "IPM_2": {
-                                "input_event": null
+                                "input_event": "container:severity"
                             }
                         }
                     },
@@ -277,7 +277,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-19T05:03:31.476687+00:00",
+    "create_time": "2026-09-19T05:05:21.160269+00:00",
     "draft_mode": false,
     "labels": [
         "events"
