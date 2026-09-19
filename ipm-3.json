@@ -14,21 +14,21 @@
                     "targetPort": "1_in"
                 },
                 {
-                    "id": "port_0_to_port_17",
+                    "id": "port_0_to_port_18",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
-                    "targetNode": "17",
-                    "targetPort": "17_in"
+                    "targetNode": "18",
+                    "targetPort": "18_in"
                 },
                 {
-                    "id": "port_17_to_port_4",
-                    "sourceNode": "17",
-                    "sourcePort": "17_out",
+                    "id": "port_18_to_port_4",
+                    "sourceNode": "18",
+                    "sourcePort": "18_out",
                     "targetNode": "4",
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "43d302f164abcf0ba4b18a57b64c0b17ad1f58d2",
+            "hash": "57639ec47e0133f186501be680b787eb04b31122",
             "nodes": {
                 "0": {
                     "data": {
@@ -131,7 +131,7 @@
                     "x": 399.79998779296875,
                     "y": 615.7000732421875
                 },
-                "17": {
+                "18": {
                     "data": {
                         "advanced": {
                             "join": []
@@ -141,9 +141,9 @@
                             "name": "IPM_2",
                             "repoName": "ipm"
                         },
-                        "functionId": 3,
-                        "functionName": "IPM_2_3",
-                        "id": "17",
+                        "functionId": 4,
+                        "functionName": "IPM_2_4",
+                        "id": "18",
                         "loop": {
                             "conditions": [
                                 {
@@ -200,11 +200,11 @@
                         }
                     },
                     "errors": {},
-                    "id": "17",
+                    "id": "18",
                     "type": "utility",
                     "warnings": {},
-                    "x": 904,
-                    "y": 611.3333129882812
+                    "x": 837.3333740234375,
+                    "y": 627.3333129882812
                 },
                 "4": {
                     "data": {
@@ -249,7 +249,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "ipm_2_3:custom_function_result.data.severity",
+                            "content": "ipm_2_4:custom_function_result.data.severity",
                             "title": "title3"
                         },
                         "requiredParameters": [
@@ -279,7 +279,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-19T05:11:03.533869+00:00",
+    "create_time": "2026-09-19T05:13:25.526401+00:00",
     "draft_mode": false,
     "labels": [
         "events"
