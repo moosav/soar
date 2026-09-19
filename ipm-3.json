@@ -14,21 +14,21 @@
                     "targetPort": "1_in"
                 },
                 {
-                    "id": "port_0_to_port_22",
+                    "id": "port_0_to_port_23",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
-                    "targetNode": "22",
-                    "targetPort": "22_in"
+                    "targetNode": "23",
+                    "targetPort": "23_in"
                 },
                 {
-                    "id": "port_22_to_port_4",
-                    "sourceNode": "22",
-                    "sourcePort": "22_out",
+                    "id": "port_23_to_port_4",
+                    "sourceNode": "23",
+                    "sourcePort": "23_out",
                     "targetNode": "4",
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "a08c8b5f136a0501bd4b21366b0bd2470e3b9b0c",
+            "hash": "28ccf7a172dc9b3d48281b8ee9c355087e10310c",
             "nodes": {
                 "0": {
                     "data": {
@@ -131,7 +131,7 @@
                     "x": 399.79998779296875,
                     "y": 615.7000732421875
                 },
-                "22": {
+                "23": {
                     "data": {
                         "advanced": {
                             "join": []
@@ -141,9 +141,9 @@
                             "name": "IPM_2",
                             "repoName": "ipm"
                         },
-                        "functionId": 10,
-                        "functionName": "IPM_2_10",
-                        "id": "22",
+                        "functionId": 11,
+                        "functionName": "IPM_2_11",
+                        "id": "23",
                         "loop": {
                             "conditions": [
                                 {
@@ -200,11 +200,11 @@
                         }
                     },
                     "errors": {},
-                    "id": "22",
+                    "id": "23",
                     "type": "utility",
                     "warnings": {},
-                    "x": 820,
-                    "y": 640
+                    "x": 850.6666870117188,
+                    "y": 616.6666870117188
                 },
                 "4": {
                     "data": {
@@ -249,7 +249,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "ipm_2_10:custom_function_result.data.severity",
+                            "content": "ipm_2_11:custom_function_result.data.severity",
                             "title": "title3"
                         },
                         "requiredParameters": [
@@ -279,7 +279,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-19T05:29:24.284901+00:00",
+    "create_time": "2026-09-19T05:31:57.738875+00:00",
     "draft_mode": false,
     "labels": [
         "events"
