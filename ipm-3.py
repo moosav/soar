@@ -45,17 +45,14 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
     id_value = container.get("id", None)
-    generator_6__result = phantom.collect2(container=container, datapath=["generator_6:custom_function_result.data.url"])
 
     parameters = []
 
-    # build parameters list for 'add_note_1' call
-    for generator_6__result_item in generator_6__result:
-        parameters.append({
-            "title": "title8",
-            "content": generator_6__result_item[0],
-            "container_id": id_value,
-        })
+    parameters.append({
+        "title": "title8",
+        "content": "",
+        "container_id": id_value,
+    })
 
     ################################################################################
     ## Custom Code Start
@@ -76,12 +73,12 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 def generator_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("generator_6() called")
 
-    url_value = container.get("url", None)
+    id_value = container.get("id", None)
 
     parameters = []
 
     parameters.append({
-        "input_event": url_value,
+        "input_event": id_value,
     })
 
     ################################################################################

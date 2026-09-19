@@ -28,7 +28,7 @@
                     "targetPort": "24_in"
                 }
             ],
-            "hash": "051256c8403457aa5a599de9a9c1577bd94fb2ac",
+            "hash": "dbadff394e2296116766e28f709849e509fdbd7d",
             "nodes": {
                 "0": {
                     "data": {
@@ -174,7 +174,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "generator_6:custom_function_result.data.url",
+                            "content": "",
                             "title": "title8"
                         },
                         "requiredParameters": [
@@ -257,7 +257,7 @@
                         "utilityType": "custom_function",
                         "values": {
                             "generator": {
-                                "input_event": "container:url"
+                                "input_event": "container:id"
                             }
                         }
                     },
@@ -279,7 +279,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-19T17:00:07.397877+00:00",
+    "create_time": "2026-09-19T17:01:19.931137+00:00",
     "draft_mode": false,
     "labels": [
         "*"
