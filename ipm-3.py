@@ -71,15 +71,15 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    ipm_2_11___result = phantom.collect2(container=container, datapath=["ipm_2_11::custom_function_result.data.all_kwargs"])
+    ipm_2_11__result = phantom.collect2(container=container, datapath=["ipm_2_11:custom_function_result.message"])
 
     parameters = []
 
     # build parameters list for 'add_note_1' call
-    for ipm_2_11___result_item in ipm_2_11___result:
+    for ipm_2_11__result_item in ipm_2_11__result:
         parameters.append({
             "title": "title8",
-            "content": ipm_2_11___result_item[0],
+            "content": ipm_2_11__result_item[0],
         })
 
     ################################################################################

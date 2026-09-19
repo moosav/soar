@@ -28,7 +28,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "9bb910282709b0c3a40677a7f23a37ef4c458158",
+            "hash": "c70692b3129ae11c88b4a4b2bfb0ed076b9f926a",
             "nodes": {
                 "0": {
                     "data": {
@@ -248,7 +248,7 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "content": "ipm_2_11::custom_function_result.data.all_kwargs",
+                            "content": "ipm_2_11:custom_function_result.message",
                             "title": "title8"
                         },
                         "requiredParameters": [
@@ -278,7 +278,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-19T05:34:56.920628+00:00",
+    "create_time": "2026-09-19T05:36:10.015052+00:00",
     "draft_mode": false,
     "labels": [
         "events"
