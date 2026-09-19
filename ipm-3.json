@@ -7,13 +7,6 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_4_to_port_1",
-                    "sourceNode": "4",
-                    "sourcePort": "4_out",
-                    "targetNode": "1",
-                    "targetPort": "1_in"
-                },
-                {
                     "id": "port_0_to_port_23",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
@@ -21,14 +14,21 @@
                     "targetPort": "23_in"
                 },
                 {
-                    "id": "port_23_to_port_4",
+                    "id": "port_23_to_port_24",
                     "sourceNode": "23",
                     "sourcePort": "23_out",
-                    "targetNode": "4",
-                    "targetPort": "4_in"
+                    "targetNode": "24",
+                    "targetPort": "24_in"
+                },
+                {
+                    "id": "port_24_to_port_1",
+                    "sourceNode": "24",
+                    "sourcePort": "24_out",
+                    "targetNode": "1",
+                    "targetPort": "1_in"
                 }
             ],
-            "hash": "28ccf7a172dc9b3d48281b8ee9c355087e10310c",
+            "hash": "9bb910282709b0c3a40677a7f23a37ef4c458158",
             "nodes": {
                 "0": {
                     "data": {
@@ -206,7 +206,7 @@
                     "x": 850.6666870117188,
                     "y": 616.6666870117188
                 },
-                "4": {
+                "24": {
                     "data": {
                         "action": "add note",
                         "actionType": "generic",
@@ -221,7 +221,7 @@
                         "connectorVersion": "v1",
                         "functionId": 1,
                         "functionName": "add_note_1",
-                        "id": "4",
+                        "id": "24",
                         "loop": {
                             "conditions": [
                                 {
@@ -248,9 +248,8 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "container_id": "container:id",
-                            "content": "ipm_2_11:custom_function_result.data.severity",
-                            "title": "title3"
+                            "content": "ipm_2_11::custom_function_result.data.all_kwargs",
+                            "title": "title8"
                         },
                         "requiredParameters": [
                             {
@@ -262,11 +261,11 @@
                         "type": "action"
                     },
                     "errors": {},
-                    "id": "4",
+                    "id": "24",
                     "type": "action",
                     "warnings": {},
-                    "x": 800,
-                    "y": 780
+                    "x": 817.3333740234375,
+                    "y": 784.6666259765625
                 }
             },
             "notes": ""
@@ -279,7 +278,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-19T05:31:57.738875+00:00",
+    "create_time": "2026-09-19T05:34:56.920628+00:00",
     "draft_mode": false,
     "labels": [
         "events"
