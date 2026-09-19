@@ -7,13 +7,10 @@ def IPM_2(input_event=None, **kwargs):
         severity: List of supported event severity values
     """
     ############################ Custom Code Goes Below This Line #################################
-    import json
-
     outputs = {}
 
     input_value = kwargs.get("input_event")
 
-    outputs["severity"] = "TEST"
-    outputs["debug_input"] = str(input_value)
+    outputs["severity"] = str(input_value)
 
     return outputs
