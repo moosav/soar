@@ -282,7 +282,7 @@
     "create_time": "2026-09-19T09:36:16.676141+00:00",
     "draft_mode": false,
     "labels": [
-        "events"
+        "*"
     ],
     "tags": []
 }
