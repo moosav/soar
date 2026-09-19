@@ -7,11 +7,10 @@ def generator(artifact_data=None, **kwargs):
         url (CEF type: *)
     """
     ############################ Custom Code Goes Below This Line #################################
-    
     outputs = {}
 
-    data = kwargs.get("artifact_data")
+    artifact_id = kwargs.get("artifact_data")
 
-    outputs["url"] = str(data)
+    outputs["url"] = "ARTIFACT_ID=" + str(artifact_id)
 
     return outputs
