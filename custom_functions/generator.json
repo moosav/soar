@@ -1,0 +1,25 @@
+{
+    "create_time": "2026-09-19T09:25:33.479173+00:00",
+    "custom_function_id": "058411433963cc27123614bd3f40a31c3ce5ac2f",
+    "description": "",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "list",
+            "name": "artifact_data",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [],
+            "data_path": "url",
+            "description": ""
+        }
+    ],
+    "outputs_type": "item",
+    "platform_version": "8.6.0.530",
+    "python_version": "3.13"
+}
