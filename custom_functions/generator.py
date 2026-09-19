@@ -9,7 +9,8 @@ def generator(input_event=None, **kwargs):
     ############################ Custom Code Goes Below This Line #################################
     outputs = {}
 
-    outputs["url"] = "TEST"
-    outputs["debug"] = repr(kwargs)
+    url = kwargs.get("input_event")
+
+    outputs["url"] = str(url)
 
     return outputs
