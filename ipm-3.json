@@ -44,7 +44,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 960,
-                    "y": 460
+                    "y": 459.9999999999999
                 },
                 "1": {
                     "data": {
@@ -196,6 +196,9 @@
                     "id": "14",
                     "type": "utility",
                     "warnings": {
+                        "config": [
+                            "The referenced custom function has changed. Reconfigure this block to use the updated parameters."
+                        ],
                         "context": [
                             "Connect block to playbook flow."
                         ]
