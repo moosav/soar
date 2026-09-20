@@ -7,28 +7,28 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_0_to_port_6",
-                    "sourceNode": "0",
-                    "sourcePort": "0_out",
-                    "targetNode": "6",
-                    "targetPort": "6_in"
-                },
-                {
-                    "id": "port_6_to_port_7",
-                    "sourceNode": "6",
-                    "sourcePort": "6_out",
-                    "targetNode": "7",
-                    "targetPort": "7_in"
-                },
-                {
                     "id": "port_7_to_port_1",
                     "sourceNode": "7",
                     "sourcePort": "7_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
+                },
+                {
+                    "id": "port_0_to_port_8",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "8",
+                    "targetPort": "8_in"
+                },
+                {
+                    "id": "port_8_to_port_7",
+                    "sourceNode": "8",
+                    "sourcePort": "8_out",
+                    "targetNode": "7",
+                    "targetPort": "7_in"
                 }
             ],
-            "hash": "d6a86192102b9533b67f008a52dd4d9713e40b68",
+            "hash": "af61c8df4847940ea9e0f9932263bf7e701a0ca7",
             "nodes": {
                 "0": {
                     "data": {
@@ -64,20 +64,81 @@
                     "x": 1000,
                     "y": 1000
                 },
-                "6": {
+                "7": {
+                    "data": {
+                        "action": "add note",
+                        "actionType": "generic",
+                        "advanced": {
+                            "join": []
+                        },
+                        "connector": "Phantom",
+                        "connectorConfigs": [
+                            "test-2"
+                        ],
+                        "connectorId": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                        "connectorVersion": "v1",
+                        "functionId": 1,
+                        "functionName": "add_note_1",
+                        "id": "7",
+                        "loop": {
+                            "conditions": [
+                                {
+                                    "comparisons": [
+                                        {
+                                            "comparisonKey": "comparison_key_0",
+                                            "op": "==",
+                                            "param": "",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "conditionIndex": 0,
+                                    "conditionKey": "condition_key_0",
+                                    "logic": "and",
+                                    "type": "if"
+                                }
+                            ],
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "parameters": {
+                            "container_id": "container:id",
+                            "content": "generator_4:custom_function_result.data.url",
+                            "title": "title9"
+                        },
+                        "requiredParameters": [
+                            {
+                                "data_type": "string",
+                                "field": "title"
+                            }
+                        ],
+                        "tab": "byConnector",
+                        "type": "action"
+                    },
+                    "errors": {},
+                    "id": "7",
+                    "type": "action",
+                    "warnings": {},
+                    "x": 880,
+                    "y": 795.9000244140625
+                },
+                "8": {
                     "data": {
                         "advanced": {
-                            "join": [],
-                            "scope": "new"
+                            "join": []
                         },
                         "customFunction": {
                             "draftMode": false,
                             "name": "generator",
                             "repoName": "ipm"
                         },
-                        "functionId": 3,
-                        "functionName": "generator_3",
-                        "id": "6",
+                        "functionId": 4,
+                        "functionName": "generator_4",
+                        "id": "8",
                         "loop": {
                             "conditions": [
                                 {
@@ -132,73 +193,11 @@
                         }
                     },
                     "errors": {},
-                    "id": "6",
+                    "id": "8",
                     "type": "utility",
                     "warnings": {},
-                    "x": 876,
-                    "y": 607.9000244140625
-                },
-                "7": {
-                    "data": {
-                        "action": "add note",
-                        "actionType": "generic",
-                        "advanced": {
-                            "join": []
-                        },
-                        "connector": "Phantom",
-                        "connectorConfigs": [
-                            "test-2"
-                        ],
-                        "connectorId": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
-                        "connectorVersion": "v1",
-                        "functionId": 1,
-                        "functionName": "add_note_1",
-                        "id": "7",
-                        "loop": {
-                            "conditions": [
-                                {
-                                    "comparisons": [
-                                        {
-                                            "comparisonKey": "comparison_key_0",
-                                            "op": "==",
-                                            "param": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "conditionIndex": 0,
-                                    "conditionKey": "condition_key_0",
-                                    "logic": "and",
-                                    "type": "if"
-                                }
-                            ],
-                            "enabled": false,
-                            "exitAfterUnit": "m",
-                            "exitAfterValue": 10,
-                            "exitConditionEnabled": false,
-                            "exitLoopAfter": 2,
-                            "pauseUnit": "m",
-                            "pauseValue": 2
-                        },
-                        "parameters": {
-                            "container_id": "container:id",
-                            "content": "generator_3:custom_function_result.data.url",
-                            "title": "title9"
-                        },
-                        "requiredParameters": [
-                            {
-                                "data_type": "string",
-                                "field": "title"
-                            }
-                        ],
-                        "tab": "byConnector",
-                        "type": "action"
-                    },
-                    "errors": {},
-                    "id": "7",
-                    "type": "action",
-                    "warnings": {},
-                    "x": 880,
-                    "y": 795.9000244140625
+                    "x": 885,
+                    "y": 624.9000244140625
                 }
             },
             "notes": ""
@@ -211,7 +210,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-20T04:53:05.974721+00:00",
+    "create_time": "2026-09-20T04:56:06.077558+00:00",
     "draft_mode": false,
     "labels": [
         "events"
