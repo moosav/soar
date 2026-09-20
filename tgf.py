@@ -12,14 +12,14 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'add_note_1' block
-    add_note_1(container=container)
+    # call 'on_poll_1' block
+    on_poll_1(container=container)
 
     return
 
 @phantom.playbook_block()
-def add_note_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("add_note_1() called")
+def on_poll_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("on_poll_1() called")
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
@@ -28,12 +28,11 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
     parameters = []
 
-    # build parameters list for 'add_note_1' call
+    # build parameters list for 'on_poll_1' call
     for container_artifact_item in container_artifact_data:
         parameters.append({
-            "title": "title5",
-            "content": container_artifact_item[0],
-            "container_id": id_value,
+            "artifact_count": container_artifact_item[0],
+            "container_count": id_value,
             "context": {'artifact_id': container_artifact_item[1]},
         })
 
@@ -47,7 +46,7 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     ## Custom Code End
     ################################################################################
 
-    phantom.act("add note", parameters=parameters, name="add_note_1", assets=["test-2"])
+    phantom.act("on poll", parameters=parameters, name="on_poll_1", assets=["tums"])
 
     return
 
