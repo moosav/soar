@@ -4,12 +4,12 @@ def generator(url_input=None, **kwargs):
         url_input
     
     Returns a JSON-serializable object that implements the configured data paths:
-        url (CEF type: *)
+        test_output (CEF type: *)
     """
     ############################ Custom Code Goes Below This Line #################################
     outputs = {}
 
-    outputs["url"] = kwargs.get("url_input")
+    outputs["test_output"] = "HELLO_123"
 
 
     return outputs
