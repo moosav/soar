@@ -7,28 +7,28 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_0_to_port_2",
+                    "id": "port_0_to_port_4",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
-                    "targetNode": "2",
-                    "targetPort": "2_in"
+                    "targetNode": "4",
+                    "targetPort": "4_in"
                 },
                 {
-                    "id": "port_2_to_port_3",
-                    "sourceNode": "2",
-                    "sourcePort": "2_out",
-                    "targetNode": "3",
-                    "targetPort": "3_in"
+                    "id": "port_4_to_port_5",
+                    "sourceNode": "4",
+                    "sourcePort": "4_out",
+                    "targetNode": "5",
+                    "targetPort": "5_in"
                 },
                 {
-                    "id": "port_3_to_port_1",
-                    "sourceNode": "3",
-                    "sourcePort": "3_out",
+                    "id": "port_5_to_port_1",
+                    "sourceNode": "5",
+                    "sourcePort": "5_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "a7a48a01c5d4dfd2c56084e160293690301afb9d",
+            "hash": "63dd185d0f8dfc469a474c22d4a95380cea6e554",
             "nodes": {
                 "0": {
                     "data": {
@@ -64,7 +64,7 @@
                     "x": 1000,
                     "y": 1000
                 },
-                "2": {
+                "4": {
                     "data": {
                         "advanced": {
                             "join": [],
@@ -75,9 +75,9 @@
                             "name": "generator",
                             "repoName": "ipm"
                         },
-                        "functionId": 1,
-                        "functionName": "generator_1",
-                        "id": "2",
+                        "functionId": 2,
+                        "functionName": "generator_2",
+                        "id": "4",
                         "loop": {
                             "conditions": [
                                 {
@@ -108,41 +108,24 @@
                         "utilities": {
                             "generator": {
                                 "description": "",
-                                "fields": [
-                                    {
-                                        "dataTypes": [],
-                                        "description": "",
-                                        "inputType": "item",
-                                        "label": "artifact",
-                                        "name": "artifact",
-                                        "placeholder": "",
-                                        "renderType": "datapath",
-                                        "required": false
-                                    }
-                                ],
+                                "fields": [],
                                 "label": "generator",
                                 "name": "generator"
                             }
                         },
                         "utilityType": "custom_function",
                         "values": {
-                            "generator": {
-                                "artifact": "container:id"
-                            }
+                            "generator": {}
                         }
                     },
                     "errors": {},
-                    "id": "2",
+                    "id": "4",
                     "type": "utility",
-                    "warnings": {
-                        "config": [
-                            "The referenced custom function has changed. Reconfigure this block to use the updated parameters."
-                        ]
-                    },
-                    "x": 806,
-                    "y": 592.9000244140625
+                    "warnings": {},
+                    "x": 880,
+                    "y": 600
                 },
-                "3": {
+                "5": {
                     "data": {
                         "action": "add note",
                         "actionType": "generic",
@@ -157,7 +140,7 @@
                         "connectorVersion": "v1",
                         "functionId": 1,
                         "functionName": "add_note_1",
-                        "id": "3",
+                        "id": "5",
                         "loop": {
                             "conditions": [
                                 {
@@ -185,8 +168,8 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "generator_1:custom_function_result.data.url",
-                            "title": "title9"
+                            "content": "generator_2:custom_function_result.data.url",
+                            "title": "title5"
                         },
                         "requiredParameters": [
                             {
@@ -198,11 +181,11 @@
                         "type": "action"
                     },
                     "errors": {},
-                    "id": "3",
+                    "id": "5",
                     "type": "action",
                     "warnings": {},
-                    "x": 841,
-                    "y": 772.9000244140625
+                    "x": 844,
+                    "y": 799.9000244140625
                 }
             },
             "notes": ""
@@ -215,7 +198,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-20T03:58:31.151344+00:00",
+    "create_time": "2026-09-20T04:00:26.744397+00:00",
     "draft_mode": false,
     "labels": [
         "events"
