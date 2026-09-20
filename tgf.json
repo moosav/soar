@@ -7,21 +7,21 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_5_to_port_1",
-                    "sourceNode": "5",
-                    "sourcePort": "5_out",
-                    "targetNode": "1",
-                    "targetPort": "1_in"
-                },
-                {
-                    "id": "port_0_to_port_5",
+                    "id": "port_0_to_port_6",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
-                    "targetNode": "5",
-                    "targetPort": "5_in"
+                    "targetNode": "6",
+                    "targetPort": "6_in"
+                },
+                {
+                    "id": "port_6_to_port_1",
+                    "sourceNode": "6",
+                    "sourcePort": "6_out",
+                    "targetNode": "1",
+                    "targetPort": "1_in"
                 }
             ],
-            "hash": "6c96b23e3d3fb3e935ee0d661f162ca31d25cd06",
+            "hash": "90008fce232d47f5cb28680fcc11cfa0b327da67",
             "nodes": {
                 "0": {
                     "data": {
@@ -57,22 +57,20 @@
                     "x": 1000,
                     "y": 1000
                 },
-                "5": {
+                "6": {
                     "data": {
-                        "action": "add note",
-                        "actionType": "generic",
                         "advanced": {
-                            "join": []
+                            "join": [],
+                            "scope": "new"
                         },
-                        "connector": "Phantom",
-                        "connectorConfigs": [
-                            "test-2"
-                        ],
-                        "connectorId": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
-                        "connectorVersion": "v1",
-                        "functionId": 1,
-                        "functionName": "add_note_1",
-                        "id": "5",
+                        "customFunction": {
+                            "draftMode": false,
+                            "name": "generator",
+                            "repoName": "ipm"
+                        },
+                        "functionId": 3,
+                        "functionName": "generator_3",
+                        "id": "6",
                         "loop": {
                             "conditions": [
                                 {
@@ -98,26 +96,40 @@
                             "pauseUnit": "m",
                             "pauseValue": 2
                         },
-                        "parameters": {
-                            "container_id": "container:id",
-                            "content": "artifact:*.severity",
-                            "title": "title9"
-                        },
-                        "requiredParameters": [
-                            {
-                                "data_type": "string",
-                                "field": "title"
+                        "selectMore": false,
+                        "type": "utility",
+                        "utilities": {
+                            "generator": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "dataTypes": [],
+                                        "description": "",
+                                        "inputType": "item",
+                                        "label": "url_input",
+                                        "name": "url_input",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "generator",
+                                "name": "generator"
                             }
-                        ],
-                        "tab": "byConnector",
-                        "type": "action"
+                        },
+                        "utilityType": "custom_function",
+                        "values": {
+                            "generator": {
+                                "url_input": "artifact:*.cef.requestURL"
+                            }
+                        }
                     },
                     "errors": {},
-                    "id": "5",
-                    "type": "action",
+                    "id": "6",
+                    "type": "utility",
                     "warnings": {},
-                    "x": 844,
-                    "y": 799.9000244140625
+                    "x": 876,
+                    "y": 607.9000244140625
                 }
             },
             "notes": ""
@@ -130,7 +142,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-20T04:30:12.180465+00:00",
+    "create_time": "2026-09-20T04:45:40.504387+00:00",
     "draft_mode": false,
     "labels": [
         "events"
