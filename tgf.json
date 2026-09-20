@@ -61,7 +61,7 @@
                     "targetPort": "16_in"
                 }
             ],
-            "hash": "2b154e616f289555f9e0e9ccfdf033275a7c51cd",
+            "hash": "b3a2614bc7c5f76fcb7c35702fff73839e24ca76",
             "nodes": {
                 "0": {
                     "data": {
@@ -253,7 +253,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "geberator_2_2:custom_function_result.data.url",
+                            "content": "geberator_2_2:custom_function_result.data.severity",
                             "title": "title_1"
                         },
                         "requiredParameters": [
@@ -370,7 +370,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-20T08:06:21.741735+00:00",
+    "create_time": "2026-09-20T08:08:49.361608+00:00",
     "draft_mode": false,
     "labels": [
         "events"

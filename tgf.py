@@ -99,7 +99,7 @@ def add_note_2(action=None, success=None, container=None, results=None, handle=N
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
     id_value = container.get("id", None)
-    geberator_2_2__result = phantom.collect2(container=container, datapath=["geberator_2_2:custom_function_result.data.url"])
+    geberator_2_2__result = phantom.collect2(container=container, datapath=["geberator_2_2:custom_function_result.data.severity"])
 
     parameters = []
 
