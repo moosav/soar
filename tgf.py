@@ -68,22 +68,18 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    content_formatted_string = phantom.format(
-        container=container,
-        template="""{0}\n""",
-        parameters=[
-            ""
-        ])
-
     id_value = container.get("id", None)
+    geberator_2_2__result = phantom.collect2(container=container, datapath=["geberator_2_2:custom_function_result.data.severity"])
 
     parameters = []
 
-    parameters.append({
-        "title": "title9",
-        "content": content_formatted_string,
-        "container_id": id_value,
-    })
+    # build parameters list for 'add_note_1' call
+    for geberator_2_2__result_item in geberator_2_2__result:
+        parameters.append({
+            "title": "title9",
+            "content": geberator_2_2__result_item[0],
+            "container_id": id_value,
+        })
 
     ################################################################################
     ## Custom Code Start
@@ -110,18 +106,21 @@ def add_note_2(action=None, success=None, container=None, results=None, handle=N
         container=container,
         template="""{0}\n""",
         parameters=[
-            ""
+            "geberator_2_2:custom_function_result.data.severity"
         ])
 
     id_value = container.get("id", None)
+    geberator_2_2__result = phantom.collect2(container=container, datapath=["geberator_2_2:custom_function_result.data.severity"])
 
     parameters = []
 
-    parameters.append({
-        "title": "title_1",
-        "content": content_formatted_string,
-        "container_id": id_value,
-    })
+    # build parameters list for 'add_note_2' call
+    for geberator_2_2__result_item in geberator_2_2__result:
+        parameters.append({
+            "title": "title_1",
+            "content": content_formatted_string,
+            "container_id": id_value,
+        })
 
     ################################################################################
     ## Custom Code Start
