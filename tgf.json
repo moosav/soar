@@ -21,7 +21,7 @@
                     "targetPort": "5_in"
                 }
             ],
-            "hash": "e58f3689c569b9a55de5504c25fd3598f0a366ec",
+            "hash": "0fc293173e78249f37514ff4b373c487f56487fe",
             "nodes": {
                 "0": {
                     "data": {
@@ -100,7 +100,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "artifact:*.cef.destinationAddress",
+                            "content": "artifact:*.cef.severity",
                             "title": "title9"
                         },
                         "requiredParameters": [
@@ -130,7 +130,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-20T04:10:51.311524+00:00",
+    "create_time": "2026-09-20T04:12:24.956317+00:00",
     "draft_mode": false,
     "labels": [
         "events"
