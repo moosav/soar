@@ -9,12 +9,7 @@ def generator(url_input=None, **kwargs):
     ############################ Custom Code Goes Below This Line #################################
     outputs = {}
 
-    value = kwargs.get("url_input")
-
-    if value is not None:
-        outputs["url"] = str(value)
-    else:
-        outputs["url"] = ""
+    outputs["url"] = kwargs.get("url_input")
 
 
     return outputs
