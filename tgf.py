@@ -12,8 +12,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'generator_10' block
-    generator_10(container=container)
+    # call 'geberator_2_1' block
+    geberator_2_1(container=container)
 
     return
 
@@ -24,15 +24,15 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
     id_value = container.get("id", None)
-    generator_10__result = phantom.collect2(container=container, datapath=["generator_10:custom_function_result.data.url"])
+    geberator_2_1__result = phantom.collect2(container=container, datapath=["geberator_2_1:custom_function_result.data.severity"])
 
     parameters = []
 
     # build parameters list for 'add_note_1' call
-    for generator_10__result_item in generator_10__result:
+    for geberator_2_1__result_item in geberator_2_1__result:
         parameters.append({
             "title": "title9",
-            "content": generator_10__result_item[0],
+            "content": geberator_2_1__result_item[0],
             "container_id": id_value,
         })
 
@@ -52,17 +52,17 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
 
 @phantom.playbook_block()
-def generator_10(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("generator_10() called")
+def geberator_2_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("geberator_2_1() called")
 
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.requestURL","artifact:*.id"], scope="new")
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.severity","artifact:*.id"], scope="new")
 
     parameters = []
 
-    # build parameters list for 'generator_10' call
+    # build parameters list for 'geberator_2_1' call
     for container_artifact_item in container_artifact_data:
         parameters.append({
-            "url_input": container_artifact_item[0],
+            "severity_input": container_artifact_item[0],
         })
 
     ################################################################################
@@ -75,7 +75,7 @@ def generator_10(action=None, success=None, container=None, results=None, handle
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="ipm/generator", parameters=parameters, name="generator_10", callback=add_note_1)
+    phantom.custom_function(custom_function="ipm/Geberator_2", parameters=parameters, name="geberator_2_1", callback=add_note_1)
 
     return
 
