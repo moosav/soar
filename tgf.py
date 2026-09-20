@@ -76,7 +76,7 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     # build parameters list for 'add_note_1' call
     for geberator_2_2__result_item in geberator_2_2__result:
         parameters.append({
-            "title": "title9",
+            "title": "condition_1",
             "content": geberator_2_2__result_item[0],
             "container_id": id_value,
         })
@@ -117,7 +117,7 @@ def add_note_2(action=None, success=None, container=None, results=None, handle=N
     # build parameters list for 'add_note_2' call
     for geberator_2_2__result_item in geberator_2_2__result:
         parameters.append({
-            "title": "title_1",
+            "title": "condition_2",
             "content": content_formatted_string,
             "container_id": id_value,
         })
