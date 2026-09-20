@@ -61,7 +61,7 @@
                     "targetPort": "16_in"
                 }
             ],
-            "hash": "c2a1f49bce4b6d8ae4d969cf2a43b30812276081",
+            "hash": "9f003e64114a12b83f34133cfd3cfcd81557efb4",
             "nodes": {
                 "0": {
                     "data": {
@@ -108,8 +108,8 @@
                                     {
                                         "comparisonKey": "comparison_key_0",
                                         "op": "==",
-                                        "param": "geberator_2_2:custom_function_result.data.severity",
-                                        "value": "medium"
+                                        "param": "",
+                                        "value": "HIGH"
                                     }
                                 ],
                                 "conditionIndex": 0,
@@ -123,7 +123,7 @@
                                         "comparisonKey": "comparison_key_4171849c-7df9-4626-b55a-b6301ad9bf33",
                                         "op": "==",
                                         "param": "geberator_2_2:custom_function_result.data.severity",
-                                        "value": "high"
+                                        "value": "low"
                                     }
                                 ],
                                 "conditionIndex": 1,
@@ -366,7 +366,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-20T08:09:45.082864+00:00",
+    "create_time": "2026-09-20T08:12:17.431240+00:00",
     "draft_mode": false,
     "labels": [
         "events"
