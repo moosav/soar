@@ -12,39 +12,10 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'geberator_2_1' block
-    geberator_2_1(container=container)
+    # call 'geberator_2_2' block
+    geberator_2_2(container=container)
 
     return
-
-@phantom.playbook_block()
-def geberator_2_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("geberator_2_1() called")
-
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.severity","artifact:*.id"], scope="new")
-
-    parameters = []
-
-    # build parameters list for 'geberator_2_1' call
-    for container_artifact_item in container_artifact_data:
-        parameters.append({
-            "severity_input": container_artifact_item[0],
-        })
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.custom_function(custom_function="ipm/Geberator_2", parameters=parameters, name="geberator_2_1", callback=decision_1)
-
-    return
-
 
 @phantom.playbook_block()
 def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
@@ -54,10 +25,10 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     found_match_1 = phantom.decision(
         container=container,
         conditions=[
-            ["geberator_2_1:custom_function_result.data.severity", "==", "medium"]
+            ["geberator_2_2:custom_function_result.data.severity", "==", "medium"]
         ],
         conditions_dps=[
-            ["geberator_2_1:custom_function_result.data.severity", "==", "medium"]
+            ["geberator_2_2:custom_function_result.data.severity", "==", "medium"]
         ],
         name="decision_1:condition_1",
         delimiter=None)
@@ -71,10 +42,10 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     found_match_2 = phantom.decision(
         container=container,
         conditions=[
-            ["geberator_2_1:custom_function_result.data.severity", "==", "low"]
+            ["geberator_2_1:custom_function_result.data.severity", "==", "HIGH"]
         ],
         conditions_dps=[
-            ["geberator_2_1:custom_function_result.data.severity", "==", "low"]
+            ["geberator_2_1:custom_function_result.data.severity", "==", "HIGH"]
         ],
         name="decision_1:condition_2",
         delimiter=None)
@@ -94,15 +65,15 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
     id_value = container.get("id", None)
-    geberator_2_1__result = phantom.collect2(container=container, datapath=["geberator_2_1:custom_function_result.data.severity"])
+    geberator_2_2__result = phantom.collect2(container=container, datapath=["geberator_2_2:custom_function_result.data.severity"])
 
     parameters = []
 
     # build parameters list for 'add_note_1' call
-    for geberator_2_1__result_item in geberator_2_1__result:
+    for geberator_2_2__result_item in geberator_2_2__result:
         parameters.append({
             "title": "title9",
-            "content": geberator_2_1__result_item[0],
+            "content": geberator_2_2__result_item[0],
             "container_id": id_value,
         })
 
@@ -128,15 +99,15 @@ def add_note_2(action=None, success=None, container=None, results=None, handle=N
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
     id_value = container.get("id", None)
-    geberator_2_1__result = phantom.collect2(container=container, datapath=["geberator_2_1:custom_function_result.data.severity"])
+    geberator_2_2__result = phantom.collect2(container=container, datapath=["geberator_2_2:custom_function_result.data.url"])
 
     parameters = []
 
     # build parameters list for 'add_note_2' call
-    for geberator_2_1__result_item in geberator_2_1__result:
+    for geberator_2_2__result_item in geberator_2_2__result:
         parameters.append({
             "title": "title_1",
-            "content": geberator_2_1__result_item[0],
+            "content": geberator_2_2__result_item[0],
             "container_id": id_value,
         })
 
@@ -151,6 +122,38 @@ def add_note_2(action=None, success=None, container=None, results=None, handle=N
     ################################################################################
 
     phantom.act("add note", parameters=parameters, name="add_note_2", assets=["test-2"])
+
+    return
+
+
+@phantom.playbook_block()
+def geberator_2_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("geberator_2_2() called")
+
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.severity","artifact:*.cef.requestURL","artifact:*.id"], scope="new")
+
+    container_artifact_cef_item_1 = [item[1] for item in container_artifact_data]
+
+    parameters = []
+
+    # build parameters list for 'geberator_2_2' call
+    for container_artifact_item in container_artifact_data:
+        parameters.append({
+            "severity_input": container_artifact_item[0],
+            "url_input": container_artifact_cef_item_1,
+        })
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.custom_function(custom_function="ipm/Geberator_2", parameters=parameters, name="geberator_2_2", callback=decision_1)
 
     return
 

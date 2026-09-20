@@ -7,20 +7,6 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_0_to_port_15",
-                    "sourceNode": "0",
-                    "sourcePort": "0_out",
-                    "targetNode": "15",
-                    "targetPort": "15_in"
-                },
-                {
-                    "id": "port_15_to_port_16",
-                    "sourceNode": "15",
-                    "sourcePort": "15_out",
-                    "targetNode": "16",
-                    "targetPort": "16_in"
-                },
-                {
                     "conditions": [
                         {
                             "conditionKey": "condition_key_0",
@@ -59,9 +45,23 @@
                     "sourcePort": "16_out",
                     "targetNode": "19",
                     "targetPort": "19_in"
+                },
+                {
+                    "id": "port_0_to_port_20",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "20",
+                    "targetPort": "20_in"
+                },
+                {
+                    "id": "port_20_to_port_16",
+                    "sourceNode": "20",
+                    "sourcePort": "20_out",
+                    "targetNode": "16",
+                    "targetPort": "16_in"
                 }
             ],
-            "hash": "d53937e1b6e8516bcc3fd6e7cdef4dcdf6d86542",
+            "hash": "a0106a323621e6cf98374367be9537efbacdd991",
             "nodes": {
                 "0": {
                     "data": {
@@ -97,80 +97,6 @@
                     "x": 840,
                     "y": 1040
                 },
-                "15": {
-                    "data": {
-                        "advanced": {
-                            "join": [],
-                            "scope": "new"
-                        },
-                        "customFunction": {
-                            "draftMode": false,
-                            "name": "Geberator_2",
-                            "repoName": "ipm"
-                        },
-                        "functionId": 1,
-                        "functionName": "Geberator_2_1",
-                        "id": "15",
-                        "loop": {
-                            "conditions": [
-                                {
-                                    "comparisons": [
-                                        {
-                                            "comparisonKey": "comparison_key_0",
-                                            "op": "==",
-                                            "param": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "conditionIndex": 0,
-                                    "conditionKey": "condition_key_0",
-                                    "logic": "and",
-                                    "type": "if"
-                                }
-                            ],
-                            "enabled": false,
-                            "exitAfterUnit": "m",
-                            "exitAfterValue": 10,
-                            "exitConditionEnabled": false,
-                            "exitLoopAfter": 2,
-                            "pauseUnit": "m",
-                            "pauseValue": 2
-                        },
-                        "selectMore": false,
-                        "type": "utility",
-                        "utilities": {
-                            "Geberator_2": {
-                                "description": "",
-                                "fields": [
-                                    {
-                                        "dataTypes": [],
-                                        "description": "",
-                                        "inputType": "item",
-                                        "label": "severity_input",
-                                        "name": "severity_input",
-                                        "placeholder": "",
-                                        "renderType": "datapath",
-                                        "required": false
-                                    }
-                                ],
-                                "label": "Geberator_2",
-                                "name": "Geberator_2"
-                            }
-                        },
-                        "utilityType": "custom_function",
-                        "values": {
-                            "Geberator_2": {
-                                "severity_input": "artifact:*.severity"
-                            }
-                        }
-                    },
-                    "errors": {},
-                    "id": "15",
-                    "type": "utility",
-                    "warnings": {},
-                    "x": 732,
-                    "y": 597.5
-                },
                 "16": {
                     "data": {
                         "advanced": {
@@ -182,7 +108,7 @@
                                     {
                                         "comparisonKey": "comparison_key_0",
                                         "op": "==",
-                                        "param": "geberator_2_1:custom_function_result.data.severity",
+                                        "param": "geberator_2_2:custom_function_result.data.severity",
                                         "value": "medium"
                                     }
                                 ],
@@ -197,7 +123,7 @@
                                         "comparisonKey": "comparison_key_4171849c-7df9-4626-b55a-b6301ad9bf33",
                                         "op": "==",
                                         "param": "geberator_2_1:custom_function_result.data.severity",
-                                        "value": "low"
+                                        "value": "HIGH"
                                     }
                                 ],
                                 "conditionIndex": 1,
@@ -214,7 +140,11 @@
                     "errors": {},
                     "id": "16",
                     "type": "decision",
-                    "warnings": {},
+                    "warnings": {
+                        "config": [
+                            "Reconfigure invalid datapath."
+                        ]
+                    },
                     "x": 880,
                     "y": 660
                 },
@@ -261,7 +191,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "geberator_2_1:custom_function_result.data.severity",
+                            "content": "geberator_2_2:custom_function_result.data.severity",
                             "title": "title9"
                         },
                         "requiredParameters": [
@@ -277,8 +207,8 @@
                     "id": "18",
                     "type": "action",
                     "warnings": {},
-                    "x": 680,
-                    "y": 880
+                    "x": 600,
+                    "y": 860
                 },
                 "19": {
                     "data": {
@@ -323,7 +253,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "geberator_2_1:custom_function_result.data.severity",
+                            "content": "geberator_2_2:custom_function_result.data.url",
                             "title": "title_1"
                         },
                         "requiredParameters": [
@@ -341,6 +271,93 @@
                     "warnings": {},
                     "x": 982,
                     "y": 867.5
+                },
+                "20": {
+                    "data": {
+                        "advanced": {
+                            "join": [],
+                            "scope": "new"
+                        },
+                        "customFunction": {
+                            "draftMode": false,
+                            "name": "Geberator_2",
+                            "repoName": "ipm"
+                        },
+                        "functionId": 2,
+                        "functionName": "Geberator_2_2",
+                        "id": "20",
+                        "loop": {
+                            "conditions": [
+                                {
+                                    "comparisons": [
+                                        {
+                                            "comparisonKey": "comparison_key_0",
+                                            "op": "==",
+                                            "param": "",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "conditionIndex": 0,
+                                    "conditionKey": "condition_key_0",
+                                    "logic": "and",
+                                    "type": "if"
+                                }
+                            ],
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "selectMore": false,
+                        "type": "utility",
+                        "utilities": {
+                            "Geberator_2": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "dataTypes": [],
+                                        "description": "",
+                                        "inputType": "item",
+                                        "label": "severity_input",
+                                        "name": "severity_input",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    },
+                                    {
+                                        "dataTypes": [],
+                                        "description": "",
+                                        "inputType": "list",
+                                        "label": "url_input",
+                                        "name": "url_input",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "Geberator_2",
+                                "name": "Geberator_2"
+                            }
+                        },
+                        "utilityType": "custom_function",
+                        "values": {
+                            "Geberator_2": {
+                                "severity_input": "artifact:*.severity",
+                                "url_input": [
+                                    "artifact:*.cef.requestURL"
+                                ]
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "20",
+                    "type": "utility",
+                    "warnings": {},
+                    "x": 791.1111450195312,
+                    "y": 553.2222290039062
                 }
             },
             "notes": ""
@@ -353,7 +370,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-20T07:59:26.586670+00:00",
+    "create_time": "2026-09-20T08:06:21.741735+00:00",
     "draft_mode": false,
     "labels": [
         "events"
