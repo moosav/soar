@@ -61,7 +61,7 @@
                     "targetPort": "16_in"
                 }
             ],
-            "hash": "9f003e64114a12b83f34133cfd3cfcd81557efb4",
+            "hash": "1bb145cae0b6a283d53de4c1cf104b1b3f9bb87d",
             "nodes": {
                 "0": {
                     "data": {
@@ -100,7 +100,9 @@
                 "16": {
                     "data": {
                         "advanced": {
-                            "join": []
+                            "case_sensitive": false,
+                            "join": [],
+                            "scope": "new"
                         },
                         "conditions": [
                             {
@@ -366,7 +368,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-20T08:16:34.528327+00:00",
+    "create_time": "2026-09-20T08:17:51.621181+00:00",
     "draft_mode": false,
     "labels": [
         "events"

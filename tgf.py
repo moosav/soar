@@ -31,6 +31,8 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
             ["", "==", "HIGH"]
         ],
         name="decision_1:condition_1",
+        scope="new",
+        case_sensitive=False,
         delimiter=None)
 
     # call connected blocks if condition 1 matched
@@ -48,6 +50,8 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
             ["geberator_2_2:custom_function_result.data.severity", "==", "low"]
         ],
         name="decision_1:condition_2",
+        scope="new",
+        case_sensitive=False,
         delimiter=None)
 
     # call connected blocks if condition 2 matched
