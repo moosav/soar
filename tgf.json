@@ -7,27 +7,21 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_0_to_port_4",
-                    "sourceNode": "0",
-                    "sourcePort": "0_out",
-                    "targetNode": "4",
-                    "targetPort": "4_in"
-                },
-                {
-                    "id": "port_4_to_port_5",
-                    "sourceNode": "4",
-                    "sourcePort": "4_out",
-                    "targetNode": "5",
-                    "targetPort": "5_in"
-                },
-                {
                     "id": "port_5_to_port_1",
                     "sourceNode": "5",
                     "sourcePort": "5_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
+                },
+                {
+                    "id": "port_0_to_port_5",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "5",
+                    "targetPort": "5_in"
                 }
             ],
+            "hash": "a1fde21bb5fd08a1bb6c64571b403abb388da72a",
             "nodes": {
                 "0": {
                     "data": {
@@ -62,67 +56,6 @@
                     "warnings": {},
                     "x": 1000,
                     "y": 1000
-                },
-                "4": {
-                    "data": {
-                        "advanced": {
-                            "join": [],
-                            "scope": "new"
-                        },
-                        "customFunction": {
-                            "draftMode": false,
-                            "name": "generator",
-                            "repoName": "ipm"
-                        },
-                        "functionId": 2,
-                        "functionName": "generator_2",
-                        "id": "4",
-                        "loop": {
-                            "conditions": [
-                                {
-                                    "comparisons": [
-                                        {
-                                            "comparisonKey": "comparison_key_0",
-                                            "op": "==",
-                                            "param": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "conditionIndex": 0,
-                                    "conditionKey": "condition_key_0",
-                                    "logic": "and",
-                                    "type": "if"
-                                }
-                            ],
-                            "enabled": false,
-                            "exitAfterUnit": "m",
-                            "exitAfterValue": 10,
-                            "exitConditionEnabled": false,
-                            "exitLoopAfter": 2,
-                            "pauseUnit": "m",
-                            "pauseValue": 2
-                        },
-                        "selectMore": false,
-                        "type": "utility",
-                        "utilities": {
-                            "generator": {
-                                "description": "",
-                                "fields": [],
-                                "label": "generator",
-                                "name": "generator"
-                            }
-                        },
-                        "utilityType": "custom_function",
-                        "values": {
-                            "generator": {}
-                        }
-                    },
-                    "errors": {},
-                    "id": "4",
-                    "type": "utility",
-                    "warnings": {},
-                    "x": 880,
-                    "y": 600
                 },
                 "5": {
                     "data": {
@@ -167,7 +100,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "generator_2:custom_function_result.message",
+                            "content": "artifact:*.cef.destinationAddress",
                             "title": "title5"
                         },
                         "requiredParameters": [
@@ -197,7 +130,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-20T04:01:04.963891+00:00",
+    "create_time": "2026-09-20T04:05:38.165519+00:00",
     "draft_mode": false,
     "labels": [
         "events"
