@@ -25,10 +25,10 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     found_match_1 = phantom.decision(
         container=container,
         conditions=[
-            ["", "==", "high"]
+            ["geberator_2_2:custom_function_result.data.severity", "==", "high"]
         ],
         conditions_dps=[
-            ["", "==", "high"]
+            ["geberator_2_2:custom_function_result.data.severity", "==", "high"]
         ],
         name="decision_1:condition_1",
         scope="new",
