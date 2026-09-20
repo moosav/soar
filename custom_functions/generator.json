@@ -1,17 +1,9 @@
 {
-    "create_time": "2026-09-19T17:31:19.433316+00:00",
+    "create_time": "2026-09-20T03:57:38.691117+00:00",
     "custom_function_id": "058411433963cc27123614bd3f40a31c3ce5ac2f",
     "description": "",
     "draft_mode": false,
-    "inputs": [
-        {
-            "contains_type": [],
-            "description": "",
-            "input_type": "item",
-            "name": "artifact",
-            "placeholder": ""
-        }
-    ],
+    "inputs": [],
     "outputs": [
         {
             "contains_type": [
