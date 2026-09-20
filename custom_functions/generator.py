@@ -9,7 +9,9 @@ def generator(url_input=None, **kwargs):
     ############################ Custom Code Goes Below This Line #################################
     outputs = {}
 
-    outputs["test_output"] = "HELLO_123"
+    value = kwargs.get("url_input")
+
+    outputs["test_output"] = str(value)
 
 
     return outputs
