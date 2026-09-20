@@ -21,7 +21,7 @@
                     "targetPort": "5_in"
                 }
             ],
-            "hash": "a6bd4752f90fb8c987ae466714dcca473517291c",
+            "hash": "e58f3689c569b9a55de5504c25fd3598f0a366ec",
             "nodes": {
                 "0": {
                     "data": {
@@ -59,19 +59,19 @@
                 },
                 "5": {
                     "data": {
-                        "action": "on poll",
-                        "actionType": "ingest",
+                        "action": "add note",
+                        "actionType": "generic",
                         "advanced": {
                             "join": []
                         },
-                        "connector": "Generator",
+                        "connector": "Phantom",
                         "connectorConfigs": [
-                            "tums"
+                            "test-2"
                         ],
-                        "connectorId": "48f16006-fee0-44fa-89b0-0106c0618527",
+                        "connectorId": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
                         "connectorVersion": "v1",
                         "functionId": 1,
-                        "functionName": "on_poll_1",
+                        "functionName": "add_note_1",
                         "id": "5",
                         "loop": {
                             "conditions": [
@@ -99,10 +99,16 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "artifact_count": "artifact:*.cef.destinationAddress",
-                            "container_count": "container:id"
+                            "container_id": "container:id",
+                            "content": "artifact:*.cef.destinationAddress",
+                            "title": "title9"
                         },
-                        "requiredParameters": [],
+                        "requiredParameters": [
+                            {
+                                "data_type": "string",
+                                "field": "title"
+                            }
+                        ],
                         "tab": "byConnector",
                         "type": "action"
                     },
@@ -124,7 +130,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-20T04:09:51.300540+00:00",
+    "create_time": "2026-09-20T04:10:51.311524+00:00",
     "draft_mode": false,
     "labels": [
         "events"
