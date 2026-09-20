@@ -14,13 +14,21 @@
                     "targetPort": "6_in"
                 },
                 {
-                    "id": "port_6_to_port_1",
+                    "id": "port_6_to_port_7",
                     "sourceNode": "6",
                     "sourcePort": "6_out",
+                    "targetNode": "7",
+                    "targetPort": "7_in"
+                },
+                {
+                    "id": "port_7_to_port_1",
+                    "sourceNode": "7",
+                    "sourcePort": "7_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
                 }
             ],
+            "hash": "d6a86192102b9533b67f008a52dd4d9713e40b68",
             "nodes": {
                 "0": {
                     "data": {
@@ -129,6 +137,68 @@
                     "warnings": {},
                     "x": 876,
                     "y": 607.9000244140625
+                },
+                "7": {
+                    "data": {
+                        "action": "add note",
+                        "actionType": "generic",
+                        "advanced": {
+                            "join": []
+                        },
+                        "connector": "Phantom",
+                        "connectorConfigs": [
+                            "test-2"
+                        ],
+                        "connectorId": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                        "connectorVersion": "v1",
+                        "functionId": 1,
+                        "functionName": "add_note_1",
+                        "id": "7",
+                        "loop": {
+                            "conditions": [
+                                {
+                                    "comparisons": [
+                                        {
+                                            "comparisonKey": "comparison_key_0",
+                                            "op": "==",
+                                            "param": "",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "conditionIndex": 0,
+                                    "conditionKey": "condition_key_0",
+                                    "logic": "and",
+                                    "type": "if"
+                                }
+                            ],
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "parameters": {
+                            "container_id": "container:id",
+                            "content": "generator_3:custom_function_result.data.url",
+                            "title": "title9"
+                        },
+                        "requiredParameters": [
+                            {
+                                "data_type": "string",
+                                "field": "title"
+                            }
+                        ],
+                        "tab": "byConnector",
+                        "type": "action"
+                    },
+                    "errors": {},
+                    "id": "7",
+                    "type": "action",
+                    "warnings": {},
+                    "x": 880,
+                    "y": 795.9000244140625
                 }
             },
             "notes": ""
@@ -141,7 +211,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-20T04:45:40.504387+00:00",
+    "create_time": "2026-09-20T04:53:05.974721+00:00",
     "draft_mode": false,
     "labels": [
         "events"
