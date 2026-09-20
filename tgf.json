@@ -7,13 +7,6 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_7_to_port_1",
-                    "sourceNode": "7",
-                    "sourcePort": "7_out",
-                    "targetNode": "1",
-                    "targetPort": "1_in"
-                },
-                {
                     "id": "port_0_to_port_15",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
@@ -21,14 +14,61 @@
                     "targetPort": "15_in"
                 },
                 {
-                    "id": "port_15_to_port_7",
+                    "id": "port_15_to_port_16",
                     "sourceNode": "15",
                     "sourcePort": "15_out",
-                    "targetNode": "7",
-                    "targetPort": "7_in"
+                    "targetNode": "16",
+                    "targetPort": "16_in"
+                },
+                {
+                    "id": "port_15_to_port_17",
+                    "sourceNode": "15",
+                    "sourcePort": "15_out",
+                    "targetNode": "17",
+                    "targetPort": "17_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "conditionKey": "condition_key_0",
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_16_to_port_18",
+                    "sourceNode": "16",
+                    "sourcePort": "16_out",
+                    "targetNode": "18",
+                    "targetPort": "18_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "conditionKey": "condition_key_0",
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_17_to_port_19",
+                    "sourceNode": "17",
+                    "sourcePort": "17_out",
+                    "targetNode": "19",
+                    "targetPort": "19_in"
+                },
+                {
+                    "id": "port_18_to_port_1",
+                    "sourceNode": "18",
+                    "sourcePort": "18_out",
+                    "targetNode": "1",
+                    "targetPort": "1_in"
+                },
+                {
+                    "id": "port_19_to_port_1",
+                    "sourceNode": "19",
+                    "sourcePort": "19_out",
+                    "targetNode": "1",
+                    "targetPort": "1_in"
                 }
             ],
-            "hash": "2b154e616f289555f9e0e9ccfdf033275a7c51cd",
+            "hash": "a2372fafd59eb74a637809015d68e2c004df95a2",
             "nodes": {
                 "0": {
                     "data": {
@@ -43,8 +83,8 @@
                     "id": "0",
                     "type": "start",
                     "warnings": {},
-                    "x": 1000,
-                    "y": 419.9999999999998
+                    "x": 760,
+                    "y": 440
                 },
                 "1": {
                     "data": {
@@ -61,8 +101,8 @@
                     "type": "end",
                     "userCode": "\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all details of actions\n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n",
                     "warnings": {},
-                    "x": 1000,
-                    "y": 1000
+                    "x": 840,
+                    "y": 1040
                 },
                 "15": {
                     "data": {
@@ -138,7 +178,73 @@
                     "x": 732,
                     "y": 597.5
                 },
-                "7": {
+                "16": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "conditions": [
+                            {
+                                "comparisons": [
+                                    {
+                                        "comparisonKey": "comparison_key_0",
+                                        "op": "==",
+                                        "param": "geberator_2_1:custom_function_result.data.severity",
+                                        "value": "medium"
+                                    }
+                                ],
+                                "conditionIndex": 0,
+                                "conditionKey": "condition_key_0",
+                                "logic": "and",
+                                "type": "if"
+                            }
+                        ],
+                        "functionId": 1,
+                        "functionName": "decision_1",
+                        "id": "16",
+                        "type": "decision"
+                    },
+                    "errors": {},
+                    "id": "16",
+                    "type": "decision",
+                    "warnings": {},
+                    "x": 640,
+                    "y": 720
+                },
+                "17": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "conditions": [
+                            {
+                                "comparisons": [
+                                    {
+                                        "comparisonKey": "comparison_key_0",
+                                        "op": "==",
+                                        "param": "geberator_2_1:custom_function_result.data.severity",
+                                        "value": "high"
+                                    }
+                                ],
+                                "conditionIndex": 0,
+                                "conditionKey": "condition_key_0",
+                                "logic": "and",
+                                "type": "if"
+                            }
+                        ],
+                        "functionId": 2,
+                        "functionName": "decision_2",
+                        "id": "17",
+                        "type": "decision"
+                    },
+                    "errors": {},
+                    "id": "17",
+                    "type": "decision",
+                    "warnings": {},
+                    "x": 1000,
+                    "y": 720
+                },
+                "18": {
                     "data": {
                         "action": "add note",
                         "actionType": "generic",
@@ -153,7 +259,7 @@
                         "connectorVersion": "v1",
                         "functionId": 1,
                         "functionName": "add_note_1",
-                        "id": "7",
+                        "id": "18",
                         "loop": {
                             "conditions": [
                                 {
@@ -194,11 +300,73 @@
                         "type": "action"
                     },
                     "errors": {},
-                    "id": "7",
+                    "id": "18",
                     "type": "action",
                     "warnings": {},
-                    "x": 880,
-                    "y": 795.9000244140625
+                    "x": 680,
+                    "y": 880
+                },
+                "19": {
+                    "data": {
+                        "action": "add note",
+                        "actionType": "generic",
+                        "advanced": {
+                            "join": []
+                        },
+                        "connector": "Phantom",
+                        "connectorConfigs": [
+                            "test-2"
+                        ],
+                        "connectorId": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                        "connectorVersion": "v1",
+                        "functionId": 2,
+                        "functionName": "add_note_2",
+                        "id": "19",
+                        "loop": {
+                            "conditions": [
+                                {
+                                    "comparisons": [
+                                        {
+                                            "comparisonKey": "comparison_key_0",
+                                            "op": "==",
+                                            "param": "",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "conditionIndex": 0,
+                                    "conditionKey": "condition_key_0",
+                                    "logic": "and",
+                                    "type": "if"
+                                }
+                            ],
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "parameters": {
+                            "container_id": "container:id",
+                            "content": "geberator_2_1:custom_function_result.data.severity",
+                            "title": "title_1"
+                        },
+                        "requiredParameters": [
+                            {
+                                "data_type": "string",
+                                "field": "title"
+                            }
+                        ],
+                        "tab": "byConnector",
+                        "type": "action"
+                    },
+                    "errors": {},
+                    "id": "19",
+                    "type": "action",
+                    "warnings": {},
+                    "x": 982,
+                    "y": 867.5
                 }
             },
             "notes": ""
@@ -211,7 +379,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-20T06:28:01.620502+00:00",
+    "create_time": "2026-09-20T07:58:18.786191+00:00",
     "draft_mode": false,
     "labels": [
         "events"
