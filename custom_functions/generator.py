@@ -8,5 +8,5 @@ def generator(url_input=None, **kwargs):
     """
     ############################ Custom Code Goes Below This Line #################################
     outputs = {}
-    outputs["test_output"] = repr(kwargs)
+    outputs["test_output"] = "URL_TEST"
     return outputs
