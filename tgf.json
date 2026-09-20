@@ -61,7 +61,7 @@
                     "targetPort": "16_in"
                 }
             ],
-            "hash": "ea5f9f6d9e6afd30d77352a371f97864ee015298",
+            "hash": "c2621057240cede3adaa9bdbedcd66c2b0bf705c",
             "nodes": {
                 "0": {
                     "data": {
@@ -189,7 +189,13 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "geberator_2_2:custom_function_result.data.severity",
+                            "content": {
+                                "functionId": 1,
+                                "parameters": [
+                                    ""
+                                ],
+                                "template": "{test1-if1}\n"
+                            },
                             "title": "title9"
                         },
                         "requiredParameters": [
@@ -251,7 +257,13 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "geberator_2_2:custom_function_result.data.severity",
+                            "content": {
+                                "functionId": 2,
+                                "parameters": [
+                                    ""
+                                ],
+                                "template": "{test2-else}\n"
+                            },
                             "title": "title_1"
                         },
                         "requiredParameters": [
@@ -368,7 +380,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-20T09:42:08.963384+00:00",
+    "create_time": "2026-09-20T09:47:14.976988+00:00",
     "draft_mode": false,
     "labels": [
         "events"
