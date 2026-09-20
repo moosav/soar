@@ -70,7 +70,7 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
     content_formatted_string = phantom.format(
         container=container,
-        template="""\"test1_if1\"\n""",
+        template="""{0}\n""",
         parameters=[
             ""
         ])
@@ -108,7 +108,7 @@ def add_note_2(action=None, success=None, container=None, results=None, handle=N
 
     content_formatted_string = phantom.format(
         container=container,
-        template="""\"test2_else\"\n""",
+        template="""{0}\n""",
         parameters=[
             ""
         ])
