@@ -23,19 +23,16 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
+    severity_value = container.get("severity", None)
     id_value = container.get("id", None)
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.severity","artifact:*.id"])
 
     parameters = []
 
-    # build parameters list for 'add_note_1' call
-    for container_artifact_item in container_artifact_data:
-        parameters.append({
-            "title": "title9",
-            "content": container_artifact_item[0],
-            "container_id": id_value,
-            "context": {'artifact_id': container_artifact_item[1]},
-        })
+    parameters.append({
+        "title": "title9",
+        "content": severity_value,
+        "container_id": id_value,
+    })
 
     ################################################################################
     ## Custom Code Start
