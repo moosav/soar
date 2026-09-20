@@ -1,5 +1,5 @@
 {
-    "create_time": "2026-09-20T06:00:35.570573+00:00",
+    "create_time": "2026-09-20T06:03:57.268167+00:00",
     "custom_function_id": "058411433963cc27123614bd3f40a31c3ce5ac2f",
     "description": "",
     "draft_mode": false,
@@ -17,7 +17,7 @@
             "contains_type": [
                 "*"
             ],
-            "data_path": "test_output",
+            "data_path": "url",
             "description": ""
         }
     ],
