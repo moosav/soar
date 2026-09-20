@@ -28,7 +28,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "63dd185d0f8dfc469a474c22d4a95380cea6e554",
+            "hash": "69014d985ae75675d434840fdbfcdcc89202f871",
             "nodes": {
                 "0": {
                     "data": {
@@ -168,7 +168,7 @@
                         },
                         "parameters": {
                             "container_id": "container:id",
-                            "content": "generator_2:custom_function_result.data.url",
+                            "content": "generator_2:custom_function_result.message",
                             "title": "title5"
                         },
                         "requiredParameters": [
@@ -198,7 +198,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-20T04:00:26.744397+00:00",
+    "create_time": "2026-09-20T04:01:04.963891+00:00",
     "draft_mode": false,
     "labels": [
         "events"

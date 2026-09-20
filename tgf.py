@@ -45,7 +45,7 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
     id_value = container.get("id", None)
-    generator_2__result = phantom.collect2(container=container, datapath=["generator_2:custom_function_result.data.url"])
+    generator_2__result = phantom.collect2(container=container, datapath=["generator_2:custom_function_result.message"])
 
     parameters = []
 
