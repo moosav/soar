@@ -1,5 +1,5 @@
 {
-    "create_time": "2026-09-20T06:26:10.806372+00:00",
+    "create_time": "2026-09-20T08:03:50.459003+00:00",
     "custom_function_id": "82d210aaf06c8c8466dc9b91ce73c898c4a00a82",
     "description": "",
     "draft_mode": false,
@@ -10,12 +10,24 @@
             "input_type": "item",
             "name": "severity_input",
             "placeholder": ""
+        },
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "list",
+            "name": "url_input",
+            "placeholder": ""
         }
     ],
     "outputs": [
         {
             "contains_type": [],
             "data_path": "severity",
+            "description": ""
+        },
+        {
+            "contains_type": [],
+            "data_path": "url",
             "description": ""
         }
     ],
