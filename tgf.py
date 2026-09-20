@@ -41,19 +41,7 @@ def geberator_2_1(action=None, success=None, container=None, results=None, handl
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="ipm/Geberator_2", parameters=parameters, name="geberator_2_1", callback=geberator_2_1_callback)
-
-    return
-
-
-@phantom.playbook_block()
-def geberator_2_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("geberator_2_1_callback() called")
-
-    
-    decision_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
-    decision_2(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
-
+    phantom.custom_function(custom_function="ipm/Geberator_2", parameters=parameters, name="geberator_2_1", callback=decision_1)
 
     return
 
@@ -79,27 +67,20 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
         add_note_1(action=action, success=success, container=container, results=results, handle=handle)
         return
 
-    return
-
-
-@phantom.playbook_block()
-def decision_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("decision_2() called")
-
-    # check for 'if' condition 1
-    found_match_1 = phantom.decision(
+    # check for 'elif' condition 2
+    found_match_2 = phantom.decision(
         container=container,
         conditions=[
-            ["geberator_2_1:custom_function_result.data.severity", "==", "high"]
+            ["geberator_2_1:custom_function_result.data.severity", "==", "low"]
         ],
         conditions_dps=[
-            ["geberator_2_1:custom_function_result.data.severity", "==", "high"]
+            ["geberator_2_1:custom_function_result.data.severity", "==", "low"]
         ],
-        name="decision_2:condition_1",
+        name="decision_1:condition_2",
         delimiter=None)
 
-    # call connected blocks if condition 1 matched
-    if found_match_1:
+    # call connected blocks if condition 2 matched
+    if found_match_2:
         add_note_2(action=action, success=success, container=container, results=results, handle=handle)
         return
 
