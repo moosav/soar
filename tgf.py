@@ -12,8 +12,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'generator_7' block
-    generator_7(container=container)
+    # call 'generator_8' block
+    generator_8(container=container)
 
     return
 
@@ -24,15 +24,15 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
     id_value = container.get("id", None)
-    generator_7__result = phantom.collect2(container=container, datapath=["generator_7:custom_function_result.data.test_output"])
+    generator_8__result = phantom.collect2(container=container, datapath=["generator_8:custom_function_result.data.test_output"])
 
     parameters = []
 
     # build parameters list for 'add_note_1' call
-    for generator_7__result_item in generator_7__result:
+    for generator_8__result_item in generator_8__result:
         parameters.append({
             "title": "title9",
-            "content": generator_7__result_item[0],
+            "content": generator_8__result_item[0],
             "container_id": id_value,
         })
 
@@ -52,14 +52,14 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
 
 @phantom.playbook_block()
-def generator_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("generator_7() called")
+def generator_8(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("generator_8() called")
 
     container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.requestURL","artifact:*.id"], scope="new")
 
     parameters = []
 
-    # build parameters list for 'generator_7' call
+    # build parameters list for 'generator_8' call
     for container_artifact_item in container_artifact_data:
         parameters.append({
             "url_input": container_artifact_item[0],
@@ -75,7 +75,7 @@ def generator_7(action=None, success=None, container=None, results=None, handle=
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="ipm/generator", parameters=parameters, name="generator_7", callback=add_note_1)
+    phantom.custom_function(custom_function="ipm/generator", parameters=parameters, name="generator_8", callback=add_note_1)
 
     return
 
