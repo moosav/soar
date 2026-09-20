@@ -21,15 +21,13 @@ def on_start(container):
 def generator_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("generator_1() called")
 
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.id","artifact:*.id"], scope="new")
+    id_value = container.get("id", None)
 
     parameters = []
 
-    # build parameters list for 'generator_1' call
-    for container_artifact_item in container_artifact_data:
-        parameters.append({
-            "artifact": container_artifact_item[0],
-        })
+    parameters.append({
+        "artifact": id_value,
+    })
 
     ################################################################################
     ## Custom Code Start

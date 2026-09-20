@@ -28,6 +28,7 @@
                     "targetPort": "1_in"
                 }
             ],
+            "hash": "a7a48a01c5d4dfd2c56084e160293690301afb9d",
             "nodes": {
                 "0": {
                     "data": {
@@ -126,14 +127,18 @@
                         "utilityType": "custom_function",
                         "values": {
                             "generator": {
-                                "artifact": "artifact:*.id"
+                                "artifact": "container:id"
                             }
                         }
                     },
                     "errors": {},
                     "id": "2",
                     "type": "utility",
-                    "warnings": {},
+                    "warnings": {
+                        "config": [
+                            "The referenced custom function has changed. Reconfigure this block to use the updated parameters."
+                        ]
+                    },
                     "x": 806,
                     "y": 592.9000244140625
                 },
@@ -210,7 +215,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-19T17:42:33.822614+00:00",
+    "create_time": "2026-09-20T03:58:31.151344+00:00",
     "draft_mode": false,
     "labels": [
         "events"
