@@ -141,17 +141,17 @@ def add_note_2(action=None, success=None, container=None, results=None, handle=N
 def geberator_2_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("geberator_2_2() called")
 
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.severity","artifact:*.cef.requestURL","artifact:*.id"], scope="new")
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.requestURL","artifact:*.severity","artifact:*.id"], scope="new")
 
-    container_artifact_cef_item_1 = [item[1] for item in container_artifact_data]
+    container_artifact_cef_item_0 = [item[0] for item in container_artifact_data]
 
     parameters = []
 
     # build parameters list for 'geberator_2_2' call
     for container_artifact_item in container_artifact_data:
         parameters.append({
-            "severity_input": container_artifact_item[0],
-            "url_input": container_artifact_cef_item_1,
+            "url_input": container_artifact_cef_item_0,
+            "severity_input": container_artifact_item[1],
         })
 
     ################################################################################
