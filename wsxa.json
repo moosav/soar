@@ -48,7 +48,7 @@
                     "targetPort": "3_in"
                 }
             ],
-            "hash": "4585a13f4a9cf95e7847ee753ea93f75664054e6",
+            "hash": "7f963acf0d9cb780a7015ac7549a5746e39dc67f",
             "nodes": {
                 "0": {
                     "data": {
@@ -107,7 +107,7 @@
                 },
                 "4": {
                     "data": {
-                        "action": "get data",
+                        "action": "get headers",
                         "actionType": "investigate",
                         "advanced": {
                             "join": []
@@ -119,7 +119,7 @@
                         "connectorId": "290b7499-0374-4930-9cdc-5e9b05d65827",
                         "connectorVersion": "v1",
                         "functionId": 1,
-                        "functionName": "get_data_1",
+                        "functionName": "get_headers_1",
                         "id": "4",
                         "loop": {
                             "conditions": [
@@ -285,7 +285,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-30T08:24:44.092385+00:00",
+    "create_time": "2026-09-30T09:31:06.060318+00:00",
     "draft_mode": false,
     "labels": [
         "events"
