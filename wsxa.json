@@ -7,20 +7,6 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_0_to_port_2",
-                    "sourceNode": "0",
-                    "sourcePort": "0_out",
-                    "targetNode": "2",
-                    "targetPort": "2_in"
-                },
-                {
-                    "id": "port_2_to_port_3",
-                    "sourceNode": "2",
-                    "sourcePort": "2_out",
-                    "targetNode": "3",
-                    "targetPort": "3_in"
-                },
-                {
                     "id": "port_3_to_port_4",
                     "sourceNode": "3",
                     "sourcePort": "3_out",
@@ -46,8 +32,23 @@
                     "sourcePort": "5_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
+                },
+                {
+                    "id": "port_0_to_port_6",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "6",
+                    "targetPort": "6_in"
+                },
+                {
+                    "id": "port_6_to_port_3",
+                    "sourceNode": "6",
+                    "sourcePort": "6_out",
+                    "targetNode": "3",
+                    "targetPort": "3_in"
                 }
             ],
+            "hash": "f3e397a79b3016dccf4a324e9e3283bf3d237358",
             "nodes": {
                 "0": {
                     "data": {
@@ -83,81 +84,6 @@
                     "x": 900,
                     "y": 1040
                 },
-                "2": {
-                    "data": {
-                        "advanced": {
-                            "join": []
-                        },
-                        "customFunction": {
-                            "draftMode": false,
-                            "name": "test_2",
-                            "repoName": "ipm"
-                        },
-                        "functionId": 1,
-                        "functionName": "test_2_1",
-                        "id": "2",
-                        "loop": {
-                            "conditions": [
-                                {
-                                    "comparisons": [
-                                        {
-                                            "comparisonKey": "comparison_key_0",
-                                            "op": "==",
-                                            "param": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "conditionIndex": 0,
-                                    "conditionKey": "condition_key_0",
-                                    "logic": "and",
-                                    "type": "if"
-                                }
-                            ],
-                            "enabled": false,
-                            "exitAfterUnit": "m",
-                            "exitAfterValue": 10,
-                            "exitConditionEnabled": false,
-                            "exitLoopAfter": 2,
-                            "pauseUnit": "m",
-                            "pauseValue": 2
-                        },
-                        "selectMore": false,
-                        "type": "utility",
-                        "utilities": {
-                            "test_2": {
-                                "description": "",
-                                "fields": [
-                                    {
-                                        "dataTypes": [],
-                                        "description": "",
-                                        "inputType": "list",
-                                        "label": "url",
-                                        "name": "url",
-                                        "placeholder": "",
-                                        "renderType": "datapath",
-                                        "required": false
-                                    }
-                                ],
-                                "label": "test_2",
-                                "name": "test_2"
-                            }
-                        },
-                        "utilityType": "custom_function",
-                        "values": {
-                            "test_2": {
-                                "url": [
-                                    "container:url"
-                                ]
-                            }
-                        }
-                    },
-                    "errors": {},
-                    "id": "2",
-                    "type": "utility",
-                    "warnings": {},
-                    "x": 1000,
-                    "y": 540
-                },
                 "3": {
                     "data": {
                         "advanced": {
@@ -167,7 +93,7 @@
                         "functionName": "format_1",
                         "id": "3",
                         "parameters": [
-                            "test_2_1:custom_function_result.data.target_url"
+                            "test_2_2:custom_function_result.data.target_url"
                         ],
                         "template": "Testing HTTP connectivity to: {target_url}\n",
                         "type": "format"
@@ -221,7 +147,8 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "headers": "test_2_1:custom_function_result.data.target_url",
+                            "headers": "test_2_2:custom_function_result.data.target_url",
+                            "location": "test_2_2:custom_function_result.data.target_url",
                             "verify_certificate": true
                         },
                         "requiredParameters": [
@@ -272,6 +199,80 @@
                     "warnings": {},
                     "x": 1080,
                     "y": 900
+                },
+                "6": {
+                    "data": {
+                        "advanced": {
+                            "join": [],
+                            "scope": "new"
+                        },
+                        "customFunction": {
+                            "draftMode": false,
+                            "name": "test_2",
+                            "repoName": "ipm"
+                        },
+                        "functionId": 2,
+                        "functionName": "test_2_2",
+                        "id": "6",
+                        "loop": {
+                            "conditions": [
+                                {
+                                    "comparisons": [
+                                        {
+                                            "comparisonKey": "comparison_key_0",
+                                            "op": "==",
+                                            "param": "",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "conditionIndex": 0,
+                                    "conditionKey": "condition_key_0",
+                                    "logic": "and",
+                                    "type": "if"
+                                }
+                            ],
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "selectMore": false,
+                        "type": "utility",
+                        "utilities": {
+                            "test_2": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "dataTypes": [],
+                                        "description": "",
+                                        "inputType": "item",
+                                        "label": "url",
+                                        "name": "url",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "test_2",
+                                "name": "test_2"
+                            }
+                        },
+                        "utilityType": "custom_function",
+                        "values": {
+                            "test_2": {
+                                "url": "container:url"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "6",
+                    "type": "utility",
+                    "warnings": {},
+                    "x": 897,
+                    "y": 485.5
                 }
             },
             "notes": ""
@@ -284,7 +285,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-30T08:20:37.974332+00:00",
+    "create_time": "2026-09-30T08:23:03.913930+00:00",
     "draft_mode": false,
     "labels": [
         "events"

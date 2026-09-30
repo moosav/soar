@@ -12,37 +12,10 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'test_2_1' block
-    test_2_1(container=container)
+    # call 'test_2_2' block
+    test_2_2(container=container)
 
     return
-
-@phantom.playbook_block()
-def test_2_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("test_2_1() called")
-
-    url_value = container.get("url", None)
-
-    parameters = []
-
-    parameters.append({
-        "url": url_value,
-    })
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.custom_function(custom_function="ipm/test_2", parameters=parameters, name="test_2_1", callback=format_1)
-
-    return
-
 
 @phantom.playbook_block()
 def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
@@ -52,7 +25,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "test_2_1:custom_function_result.data.target_url"
+        "test_2_2:custom_function_result.data.target_url"
     ]
 
     ################################################################################
@@ -78,17 +51,18 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    test_2_1__result = phantom.collect2(container=container, datapath=["test_2_1:custom_function_result.data.target_url"])
+    test_2_2__result = phantom.collect2(container=container, datapath=["test_2_2:custom_function_result.data.target_url"])
 
     parameters = []
 
     # build parameters list for 'get_data_1' call
-    for test_2_1__result_item in test_2_1__result:
-        parameters.append({
-            "verify_certificate": True,
-            "headers": test_2_1__result_item[0],
-            "location": "",
-        })
+    for test_2_2__result_item in test_2_2__result:
+        if test_2_2__result_item[0] is not None:
+            parameters.append({
+                "verify_certificate": True,
+                "headers": test_2_2__result_item[0],
+                "location": test_2_2__result_item[0],
+            })
 
     ################################################################################
     ## Custom Code Start
@@ -124,6 +98,33 @@ def filter_1(action=None, success=None, container=None, results=None, handle=Non
     # call connected blocks if filtered artifacts or results
     if matched_artifacts_1 or matched_results_1:
         pass
+
+    return
+
+
+@phantom.playbook_block()
+def test_2_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("test_2_2() called")
+
+    url_value = container.get("url", None)
+
+    parameters = []
+
+    parameters.append({
+        "url": url_value,
+    })
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.custom_function(custom_function="ipm/test_2", parameters=parameters, name="test_2_2", callback=format_1)
 
     return
 
