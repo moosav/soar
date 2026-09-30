@@ -48,7 +48,7 @@
                     "targetPort": "3_in"
                 }
             ],
-            "hash": "7f963acf0d9cb780a7015ac7549a5746e39dc67f",
+            "hash": "d61b074e5a829dfa0037408dc8336c3d87ea2860",
             "nodes": {
                 "0": {
                     "data": {
@@ -107,19 +107,19 @@
                 },
                 "4": {
                     "data": {
-                        "action": "get headers",
-                        "actionType": "investigate",
+                        "action": "add note",
+                        "actionType": "generic",
                         "advanced": {
                             "join": []
                         },
-                        "connector": "HTTP",
+                        "connector": "Phantom",
                         "connectorConfigs": [
-                            "splunk-2"
+                            "test-2"
                         ],
-                        "connectorId": "290b7499-0374-4930-9cdc-5e9b05d65827",
+                        "connectorId": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
                         "connectorVersion": "v1",
                         "functionId": 1,
-                        "functionName": "get_headers_1",
+                        "functionName": "add_note_1",
                         "id": "4",
                         "loop": {
                             "conditions": [
@@ -147,14 +147,14 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "headers": "test_2_2:custom_function_result.data.target_url",
-                            "location": "test_2_2:custom_function_result.data.target_url",
-                            "verify_certificate": true
+                            "container_id": "test_2_2:custom_function_result.data.target_url",
+                            "content": "test_2_2:custom_function_result.data.target_url",
+                            "title": "title6"
                         },
                         "requiredParameters": [
                             {
                                 "data_type": "string",
-                                "field": "location"
+                                "field": "title"
                             }
                         ],
                         "tab": "byConnector",
@@ -285,7 +285,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-30T09:31:06.060318+00:00",
+    "create_time": "2026-09-30T09:32:03.107179+00:00",
     "draft_mode": false,
     "labels": [
         "events"

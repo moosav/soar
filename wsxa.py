@@ -40,14 +40,14 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_1")
 
-    get_headers_1(container=container)
+    add_note_1(container=container)
 
     return
 
 
 @phantom.playbook_block()
-def get_headers_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("get_headers_1() called")
+def add_note_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("add_note_1() called")
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
@@ -55,14 +55,13 @@ def get_headers_1(action=None, success=None, container=None, results=None, handl
 
     parameters = []
 
-    # build parameters list for 'get_headers_1' call
+    # build parameters list for 'add_note_1' call
     for test_2_2__result_item in test_2_2__result:
-        if test_2_2__result_item[0] is not None:
-            parameters.append({
-                "verify_certificate": True,
-                "location": test_2_2__result_item[0],
-                "headers": test_2_2__result_item[0],
-            })
+        parameters.append({
+            "title": "title6",
+            "content": test_2_2__result_item[0],
+            "container_id": test_2_2__result_item[0],
+        })
 
     ################################################################################
     ## Custom Code Start
@@ -74,7 +73,7 @@ def get_headers_1(action=None, success=None, container=None, results=None, handl
     ## Custom Code End
     ################################################################################
 
-    phantom.act("get headers", parameters=parameters, name="get_headers_1", assets=["splunk-2"], callback=filter_1)
+    phantom.act("add note", parameters=parameters, name="add_note_1", assets=["test-2"], callback=filter_1)
 
     return
 
