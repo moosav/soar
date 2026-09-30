@@ -1,5 +1,5 @@
 {
-    "create_time": "2026-09-30T06:21:07.787111+00:00",
+    "create_time": "2026-09-30T08:21:19.938861+00:00",
     "custom_function_id": "93eb576297ac78b70435a2ffa56cd0282c22b614",
     "description": "",
     "draft_mode": false,
@@ -7,7 +7,7 @@
         {
             "contains_type": [],
             "description": "",
-            "input_type": "list",
+            "input_type": "item",
             "name": "url",
             "placeholder": ""
         }
