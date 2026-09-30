@@ -48,6 +48,7 @@
                     "targetPort": "1_in"
                 }
             ],
+            "hash": "4587032e5526d2d7d88fa505fc77f81b75793c2a",
             "nodes": {
                 "0": {
                     "data": {
@@ -146,7 +147,7 @@
                         "values": {
                             "test_2": {
                                 "url": [
-                                    "artifact:*.cef.requestURL"
+                                    "container:url"
                                 ]
                             }
                         }
@@ -284,7 +285,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-30T08:17:44.226021+00:00",
+    "create_time": "2026-09-30T08:20:37.974332+00:00",
     "draft_mode": false,
     "labels": [
         "events"

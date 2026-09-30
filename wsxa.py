@@ -21,14 +21,12 @@ def on_start(container):
 def test_2_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("test_2_1() called")
 
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.requestURL","artifact:*.id"])
-
-    container_artifact_cef_item_0 = [item[0] for item in container_artifact_data]
+    url_value = container.get("url", None)
 
     parameters = []
 
     parameters.append({
-        "url": container_artifact_cef_item_0,
+        "url": url_value,
     })
 
     ################################################################################
