@@ -40,14 +40,14 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_1")
 
-    add_note_1(container=container)
+    get_data_1(container=container)
 
     return
 
 
 @phantom.playbook_block()
-def add_note_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("add_note_1() called")
+def get_data_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("get_data_1() called")
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
@@ -55,13 +55,13 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
 
     parameters = []
 
-    # build parameters list for 'add_note_1' call
+    # build parameters list for 'get_data_1' call
     for test_2_2__result_item in test_2_2__result:
-        parameters.append({
-            "title": "title6",
-            "content": test_2_2__result_item[0],
-            "container_id": test_2_2__result_item[0],
-        })
+        if test_2_2__result_item[0] is not None:
+            parameters.append({
+                "verify_certificate": False,
+                "location": test_2_2__result_item[0],
+            })
 
     ################################################################################
     ## Custom Code Start
@@ -73,7 +73,7 @@ def add_note_1(action=None, success=None, container=None, results=None, handle=N
     ## Custom Code End
     ################################################################################
 
-    phantom.act("add note", parameters=parameters, name="add_note_1", assets=["test-2"], callback=filter_1)
+    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk-2"], callback=filter_1)
 
     return
 
