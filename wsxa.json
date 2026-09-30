@@ -48,7 +48,7 @@
                     "targetPort": "3_in"
                 }
             ],
-            "hash": "f3e397a79b3016dccf4a324e9e3283bf3d237358",
+            "hash": "4585a13f4a9cf95e7847ee753ea93f75664054e6",
             "nodes": {
                 "0": {
                     "data": {
@@ -95,7 +95,7 @@
                         "parameters": [
                             "test_2_2:custom_function_result.data.target_url"
                         ],
-                        "template": "Testing HTTP connectivity to: {target_url}\n",
+                        "template": "Testing HTTP endpoint:",
                         "type": "format"
                     },
                     "errors": {},
@@ -285,7 +285,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-09-30T08:23:03.913930+00:00",
+    "create_time": "2026-09-30T08:24:44.092385+00:00",
     "draft_mode": false,
     "labels": [
         "events"
