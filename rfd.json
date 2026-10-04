@@ -7,21 +7,34 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_0_to_port_2",
-                    "sourceNode": "0",
-                    "sourcePort": "0_out",
-                    "targetNode": "2",
-                    "targetPort": "2_in"
-                },
-                {
                     "id": "port_2_to_port_1",
                     "sourceNode": "2",
                     "sourcePort": "2_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
+                },
+                {
+                    "id": "port_0_to_port_3",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "3",
+                    "targetPort": "3_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "conditionKey": "condition_key_0",
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_3_to_port_2",
+                    "sourceNode": "3",
+                    "sourcePort": "3_out",
+                    "targetNode": "2",
+                    "targetPort": "2_in"
                 }
             ],
-            "hash": "07f469ea06245febe8bb7542dbfe8a3c71fd7c83",
+            "hash": "263d6bdca0540b77e0363524964f7e98395cc25c",
             "nodes": {
                 "0": {
                     "data": {
@@ -99,7 +112,7 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "url": "artifact:*.cef.requestURL"
+                            "url": "filtered-data:filter_1:condition_1:artifact:*.cef.requestURL"
                         },
                         "requiredParameters": [
                             {
@@ -116,9 +129,47 @@
                     "warnings": {},
                     "x": 900,
                     "y": 653.5
+                },
+                "3": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "conditions": [
+                            {
+                                "comparisons": [
+                                    {
+                                        "comparisonKey": "comparison_key_0",
+                                        "op": "==",
+                                        "param": "artifact:*.cef.requestURL",
+                                        "value": "is not empty"
+                                    }
+                                ],
+                                "conditionIndex": 0,
+                                "conditionKey": "condition_key_0",
+                                "logic": "and"
+                            }
+                        ],
+                        "functionId": 1,
+                        "functionName": "filter_1",
+                        "id": "3",
+                        "type": "filter"
+                    },
+                    "errors": {},
+                    "id": "3",
+                    "type": "filter",
+                    "warnings": {},
+                    "x": 1040,
+                    "y": 520
                 }
             },
-            "notes": ""
+            "notes": "",
+            "origin": {
+                "playbook_id": 368,
+                "playbook_name": "wsxx",
+                "playbook_repo_id": 2,
+                "playbook_repo_name": "local"
+            }
         },
         "input_spec": null,
         "output_spec": null,
@@ -128,7 +179,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-10-04T05:50:46.117332+00:00",
+    "create_time": "2026-10-04T06:26:11.758175+00:00",
     "draft_mode": false,
     "labels": [
         "events"
