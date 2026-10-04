@@ -27,14 +27,41 @@
                             "index": 0
                         }
                     ],
-                    "id": "port_3_to_port_1",
+                    "id": "port_3_to_port_5",
                     "sourceNode": "3",
                     "sourcePort": "3_out",
+                    "targetNode": "5",
+                    "targetPort": "5_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "conditionKey": "condition_key_e6c17031-65c8-4524-a8d1-6ad0a921aa83",
+                            "index": 1
+                        }
+                    ],
+                    "id": "port_3_to_port_4",
+                    "sourceNode": "3",
+                    "sourcePort": "3_out",
+                    "targetNode": "4",
+                    "targetPort": "4_in"
+                },
+                {
+                    "id": "port_5_to_port_1",
+                    "sourceNode": "5",
+                    "sourcePort": "5_out",
+                    "targetNode": "1",
+                    "targetPort": "1_in"
+                },
+                {
+                    "id": "port_4_to_port_1",
+                    "sourceNode": "4",
+                    "sourcePort": "4_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "bd1062ea0ea4210404e7adcde7f38eb1efc603e6",
+            "hash": "a985751ba540ac1e9a12090bdcb006b029e9c226",
             "nodes": {
                 "0": {
                     "data": {
@@ -49,8 +76,8 @@
                     "id": "0",
                     "type": "start",
                     "warnings": {},
-                    "x": 1000,
-                    "y": 419.9999999999999
+                    "x": 1040,
+                    "y": 420
                 },
                 "1": {
                     "data": {
@@ -128,8 +155,8 @@
                     "id": "2",
                     "type": "action",
                     "warnings": {},
-                    "x": 908,
-                    "y": 620.5
+                    "x": 1020,
+                    "y": 600
                 },
                 "3": {
                     "data": {
@@ -176,8 +203,52 @@
                     "id": "3",
                     "type": "decision",
                     "warnings": {},
-                    "x": 1120,
-                    "y": 760
+                    "x": 1100,
+                    "y": 720
+                },
+                "4": {
+                    "data": {
+                        "advanced": {
+                            "join": [],
+                            "scope": "all"
+                        },
+                        "functionId": 1,
+                        "functionName": "format_1",
+                        "id": "4",
+                        "parameters": [
+                            "url_reputation_1:action_result.data.*.attributes.last_analysis_stats.malicious"
+                        ],
+                        "template": "Malicious URL detected\n\nURL: <URL>\nMalicious: <malicious count>\nSuspicious: <suspicious count>\nHarmless: <harmless count>\nUndetected: <undetected count>",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "4",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 720,
+                    "y": 860
+                },
+                "5": {
+                    "data": {
+                        "advanced": {
+                            "join": [],
+                            "scope": "all"
+                        },
+                        "functionId": 2,
+                        "functionName": "format_2",
+                        "id": "5",
+                        "parameters": [
+                            "url_reputation_1:action_result.data.*.attributes.last_analysis_stats.malicious"
+                        ],
+                        "template": "Malicious URL detected\n\nURL: <URL>\nMalicious: <malicious count>\nSuspicious: <suspicious count>\nHarmless: <harmless count>\nUndetected: <undetected count>\n",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "5",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 1240,
+                    "y": 860
                 }
             },
             "notes": ""
@@ -190,7 +261,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-10-04T10:05:46.229720+00:00",
+    "create_time": "2026-10-04T11:24:02.352372+00:00",
     "draft_mode": false,
     "labels": [
         "events"

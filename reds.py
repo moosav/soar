@@ -68,6 +68,7 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if found_match_1:
+        format_2(action=action, success=success, container=container, results=results, handle=handle)
         return
 
     # check for 'elif' condition 2
@@ -84,7 +85,60 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 2 matched
     if found_match_2:
+        format_1(action=action, success=success, container=container, results=results, handle=handle)
         return
+
+    return
+
+
+@phantom.playbook_block()
+def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("format_1() called")
+
+    template = """Malicious URL detected\n\nURL: <URL>\nMalicious: <malicious count>\nSuspicious: <suspicious count>\nHarmless: <harmless count>\nUndetected: <undetected count>"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "url_reputation_1:action_result.data.*.attributes.last_analysis_stats.malicious"
+    ]
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_1", scope="all")
+
+    return
+
+
+@phantom.playbook_block()
+def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("format_2() called")
+
+    template = """Malicious URL detected\n\nURL: <URL>\nMalicious: <malicious count>\nSuspicious: <suspicious count>\nHarmless: <harmless count>\nUndetected: <undetected count>\n"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "url_reputation_1:action_result.data.*.attributes.last_analysis_stats.malicious"
+    ]
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_2", scope="all")
 
     return
 
