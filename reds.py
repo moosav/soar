@@ -95,7 +95,7 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("format_1() called")
 
-    template = """Malicious URL detected\n\nURL: <URL>\nMalicious: <malicious count>\nSuspicious: <suspicious count>\nHarmless: <harmless count>\nUndetected: <undetected count>"""
+    template = """\"this is clean\"\n\nURL: <URL>\nMalicious: <malicious count>\nSuspicious: <suspicious count>\nHarmless: <harmless count>\nUndetected: <undetected count>"""
 
     # parameter list for template variable replacement
     parameters = [
