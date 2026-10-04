@@ -34,7 +34,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "c069c3ccbdce29948559cf8470a96c7b81611d68",
+            "hash": "86680df72b5bb4a1ddfd6acaa0a332884a4ec515",
             "nodes": {
                 "0": {
                     "data": {
@@ -134,16 +134,17 @@
                 "3": {
                     "data": {
                         "advanced": {
-                            "join": []
+                            "join": [],
+                            "notRequiredJoins": []
                         },
                         "conditions": [
                             {
                                 "comparisons": [
                                     {
                                         "comparisonKey": "comparison_key_0",
-                                        "op": "==",
-                                        "param": "url_reputation_1:action_result.parameter.url",
-                                        "value": "malicious"
+                                        "op": ">",
+                                        "param": "url_reputation_1:action_result.data.*.attributes.last_analysis_stats.malicious",
+                                        "value": "0"
                                     }
                                 ],
                                 "conditionIndex": 0,
@@ -175,7 +176,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-10-04T06:54:43.243070+00:00",
+    "create_time": "2026-10-04T07:37:25.202313+00:00",
     "draft_mode": false,
     "labels": [
         "events"

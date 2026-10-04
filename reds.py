@@ -58,10 +58,10 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     found_match_1 = phantom.decision(
         container=container,
         conditions=[
-            ["url_reputation_1:action_result.parameter.url", "==", "malicious"]
+            ["url_reputation_1:action_result.data.*.attributes.last_analysis_stats.malicious", ">", 0]
         ],
         conditions_dps=[
-            ["url_reputation_1:action_result.parameter.url", "==", "malicious"]
+            ["url_reputation_1:action_result.data.*.attributes.last_analysis_stats.malicious", ">", 0]
         ],
         name="decision_1:condition_1",
         delimiter=None)
