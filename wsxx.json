@@ -21,7 +21,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "07f469ea06245febe8bb7542dbfe8a3c71fd7c83",
+            "hash": "2776511de36a218e1823d29bb2b828d4ff966c9b",
             "nodes": {
                 "0": {
                     "data": {
@@ -99,7 +99,7 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "url": "container:id"
+                            "url": "artifact:*.cef.requestURL"
                         },
                         "requiredParameters": [
                             {
@@ -128,7 +128,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-10-04T05:45:53.436155+00:00",
+    "create_time": "2026-10-04T05:50:46.117332+00:00",
     "draft_mode": false,
     "labels": [
         "events"

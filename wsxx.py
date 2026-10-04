@@ -23,14 +23,17 @@ def url_reputation_1(action=None, success=None, container=None, results=None, ha
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    id_value = container.get("id", None)
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.requestURL","artifact:*.id"])
 
     parameters = []
 
-    if id_value is not None:
-        parameters.append({
-            "url": id_value,
-        })
+    # build parameters list for 'url_reputation_1' call
+    for container_artifact_item in container_artifact_data:
+        if container_artifact_item[0] is not None:
+            parameters.append({
+                "url": container_artifact_item[0],
+                "context": {'artifact_id': container_artifact_item[1]},
+            })
 
     ################################################################################
     ## Custom Code Start
