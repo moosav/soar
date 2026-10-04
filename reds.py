@@ -70,6 +70,22 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     if found_match_1:
         return
 
+    # check for 'elif' condition 2
+    found_match_2 = phantom.decision(
+        container=container,
+        conditions=[
+            ["", "==", 0]
+        ],
+        conditions_dps=[
+            ["", "==", 0]
+        ],
+        name="decision_1:condition_2",
+        delimiter=None)
+
+    # call connected blocks if condition 2 matched
+    if found_match_2:
+        return
+
     return
 
 

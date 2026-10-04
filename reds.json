@@ -34,7 +34,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "86680df72b5bb4a1ddfd6acaa0a332884a4ec515",
+            "hash": "4438ed5a98796eb1793b8b77f63f6bd1732bb283",
             "nodes": {
                 "0": {
                     "data": {
@@ -151,6 +151,20 @@
                                 "conditionKey": "condition_key_0",
                                 "logic": "and",
                                 "type": "if"
+                            },
+                            {
+                                "comparisons": [
+                                    {
+                                        "comparisonKey": "comparison_key_2c08f18a-2471-4c2d-ac65-8d1e73230141",
+                                        "op": "==",
+                                        "param": "",
+                                        "value": "0"
+                                    }
+                                ],
+                                "conditionIndex": 1,
+                                "conditionKey": "condition_key_e6c17031-65c8-4524-a8d1-6ad0a921aa83",
+                                "logic": "and",
+                                "type": "elif"
                             }
                         ],
                         "functionId": 1,
@@ -162,8 +176,8 @@
                     "id": "3",
                     "type": "decision",
                     "warnings": {},
-                    "x": 978,
-                    "y": 781.5
+                    "x": 1120,
+                    "y": 760
                 }
             },
             "notes": ""
@@ -176,7 +190,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-10-04T07:37:25.202313+00:00",
+    "create_time": "2026-10-04T10:02:56.452556+00:00",
     "draft_mode": false,
     "labels": [
         "events"
