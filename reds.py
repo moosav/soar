@@ -58,10 +58,10 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     found_match_1 = phantom.decision(
         container=container,
         conditions=[
-            ["url_reputation_1:action_result.data.*.attributes.last_analysis_stats.malicious", ">", 2]
+            ["url_reputation_1:action_result.data.*.attributes.last_analysis_stats.malicious", ">", 8]
         ],
         conditions_dps=[
-            ["url_reputation_1:action_result.data.*.attributes.last_analysis_stats.malicious", ">", 2]
+            ["url_reputation_1:action_result.data.*.attributes.last_analysis_stats.malicious", ">", 8]
         ],
         name="decision_1:condition_1",
         delimiter=None)
@@ -75,10 +75,10 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     found_match_2 = phantom.decision(
         container=container,
         conditions=[
-            ["", "<=", 2]
+            ["", "<=", 8]
         ],
         conditions_dps=[
-            ["", "<=", 2]
+            ["", "<=", 8]
         ],
         name="decision_1:condition_2",
         delimiter=None)
