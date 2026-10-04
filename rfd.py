@@ -12,8 +12,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'filter_1' block
-    filter_1(container=container)
+    # call 'url_reputation_1' block
+    url_reputation_1(container=container)
 
     return
 
@@ -23,16 +23,16 @@ def url_reputation_1(action=None, success=None, container=None, results=None, ha
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    filtered_artifact_0_data_filter_1 = phantom.collect2(container=container, datapath=["filtered-data:filter_1:condition_1:artifact:*.cef.requestURL","filtered-data:filter_1:condition_1:artifact:*.id"])
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.requestURL","artifact:*.id"], scope="new")
 
     parameters = []
 
     # build parameters list for 'url_reputation_1' call
-    for filtered_artifact_0_item_filter_1 in filtered_artifact_0_data_filter_1:
-        if filtered_artifact_0_item_filter_1[0] is not None:
+    for container_artifact_item in container_artifact_data:
+        if container_artifact_item[0] is not None:
             parameters.append({
-                "url": filtered_artifact_0_item_filter_1[0],
-                "context": {'artifact_id': filtered_artifact_0_item_filter_1[1]},
+                "url": container_artifact_item[0],
+                "context": {'artifact_id': container_artifact_item[1]},
             })
 
     ################################################################################
@@ -46,29 +46,6 @@ def url_reputation_1(action=None, success=None, container=None, results=None, ha
     ################################################################################
 
     phantom.act("url reputation", parameters=parameters, name="url_reputation_1", assets=["ipm"])
-
-    return
-
-
-@phantom.playbook_block()
-def filter_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("filter_1() called")
-
-    # collect filtered artifact ids and results for 'if' condition 1
-    matched_artifacts_1, matched_results_1 = phantom.condition(
-        container=container,
-        conditions=[
-            ["artifact:*.cef.requestURL", "==", "\"is not empty\""]
-        ],
-        conditions_dps=[
-            ["artifact:*.cef.requestURL", "==", "\"is not empty\""]
-        ],
-        name="filter_1:condition_1",
-        delimiter=None)
-
-    # call connected blocks if filtered artifacts or results
-    if matched_artifacts_1 or matched_results_1:
-        url_reputation_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
 
     return
 

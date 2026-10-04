@@ -14,27 +14,14 @@
                     "targetPort": "1_in"
                 },
                 {
-                    "id": "port_0_to_port_3",
+                    "id": "port_0_to_port_2",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
-                    "targetNode": "3",
-                    "targetPort": "3_in"
-                },
-                {
-                    "conditions": [
-                        {
-                            "conditionKey": "condition_key_0",
-                            "index": 0
-                        }
-                    ],
-                    "id": "port_3_to_port_2",
-                    "sourceNode": "3",
-                    "sourcePort": "3_out",
                     "targetNode": "2",
                     "targetPort": "2_in"
                 }
             ],
-            "hash": "f8ba8923dae20c63b569210ffcfa58184831f23c",
+            "hash": "1087664305cb9b45cff5a765829573195b12f621",
             "nodes": {
                 "0": {
                     "data": {
@@ -75,7 +62,8 @@
                         "action": "url reputation",
                         "actionType": "investigate",
                         "advanced": {
-                            "join": []
+                            "join": [],
+                            "scope": "new"
                         },
                         "connector": "VirusTotal v3",
                         "connectorConfigs": [
@@ -112,7 +100,7 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "url": "filtered-data:filter_1:condition_1:artifact:*.cef.requestURL"
+                            "url": "artifact:*.cef.requestURL"
                         },
                         "requiredParameters": [
                             {
@@ -129,38 +117,6 @@
                     "warnings": {},
                     "x": 900,
                     "y": 653.5
-                },
-                "3": {
-                    "data": {
-                        "advanced": {
-                            "join": []
-                        },
-                        "conditions": [
-                            {
-                                "comparisons": [
-                                    {
-                                        "comparisonKey": "comparison_key_0",
-                                        "op": "==",
-                                        "param": "artifact:*.cef.requestURL",
-                                        "value": "\"is not empty\""
-                                    }
-                                ],
-                                "conditionIndex": 0,
-                                "conditionKey": "condition_key_0",
-                                "logic": "and"
-                            }
-                        ],
-                        "functionId": 1,
-                        "functionName": "filter_1",
-                        "id": "3",
-                        "type": "filter"
-                    },
-                    "errors": {},
-                    "id": "3",
-                    "type": "filter",
-                    "warnings": {},
-                    "x": 1040,
-                    "y": 520
                 }
             },
             "notes": ""
@@ -173,7 +129,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-10-04T06:28:33.700586+00:00",
+    "create_time": "2026-10-04T06:29:28.293668+00:00",
     "draft_mode": false,
     "labels": [
         "events"
