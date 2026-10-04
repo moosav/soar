@@ -61,7 +61,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "25cc0d618276eeae72e09a5d1032b810626b313a",
+            "hash": "4aec91266e3b76a83da7c40506c474e56942ab7c",
             "nodes": {
                 "0": {
                     "data": {
@@ -216,9 +216,13 @@
                         "functionName": "format_1",
                         "id": "4",
                         "parameters": [
-                            "url_reputation_1:action_result.data.*.attributes.last_analysis_stats.malicious"
+                            "url_reputation_1:action_result.parameter.url",
+                            "url_reputation_1:action_result.data.*.attributes.last_analysis_stats.malicious",
+                            "url_reputation_1:action_result.data.*.attributes.last_analysis_stats.suspicious",
+                            "url_reputation_1:action_result.data.*.attributes.last_analysis_stats.harmless",
+                            "url_reputation_1:action_result.data.*.attributes.last_analysis_stats.undetected"
                         ],
-                        "template": "\"this is clean\"\n\nURL: <URL>\nMalicious: <malicious count>\nSuspicious: <suspicious count>\nHarmless: <harmless count>\nUndetected: <undetected count>",
+                        "template": "Malicious URL Detected\n\nURL: {0}\nMalicious: {1}\nSuspicious: {2}\nHarmless: {3}\nUndetected: {4}{1}{2}{3}{4}",
                         "type": "format"
                     },
                     "errors": {},
@@ -261,7 +265,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-10-04T11:27:46.327416+00:00",
+    "create_time": "2026-10-04T16:54:05.136822+00:00",
     "draft_mode": false,
     "labels": [
         "events"
