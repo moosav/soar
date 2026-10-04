@@ -122,7 +122,9 @@
         },
         "input_spec": [
             {
-                "contains": [],
+                "contains": [
+                    "url"
+                ],
                 "description": "",
                 "name": "url"
             }
