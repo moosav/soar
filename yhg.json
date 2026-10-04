@@ -123,10 +123,10 @@
         "input_spec": [
             {
                 "contains": [
-                    "url"
+                    "*"
                 ],
                 "description": "",
-                "name": "url"
+                "name": "id"
             }
         ],
         "output_spec": null,
