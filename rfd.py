@@ -58,10 +58,10 @@ def filter_1(action=None, success=None, container=None, results=None, handle=Non
     matched_artifacts_1, matched_results_1 = phantom.condition(
         container=container,
         conditions=[
-            ["artifact:*.cef.requestURL", "==", "is not empty"]
+            ["artifact:*.cef.requestURL", "==", "\"is not empty\""]
         ],
         conditions_dps=[
-            ["artifact:*.cef.requestURL", "==", "is not empty"]
+            ["artifact:*.cef.requestURL", "==", "\"is not empty\""]
         ],
         name="filter_1:condition_1",
         delimiter=None)

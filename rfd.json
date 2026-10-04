@@ -34,7 +34,7 @@
                     "targetPort": "2_in"
                 }
             ],
-            "hash": "263d6bdca0540b77e0363524964f7e98395cc25c",
+            "hash": "f8ba8923dae20c63b569210ffcfa58184831f23c",
             "nodes": {
                 "0": {
                     "data": {
@@ -142,7 +142,7 @@
                                         "comparisonKey": "comparison_key_0",
                                         "op": "==",
                                         "param": "artifact:*.cef.requestURL",
-                                        "value": "is not empty"
+                                        "value": "\"is not empty\""
                                     }
                                 ],
                                 "conditionIndex": 0,
@@ -163,13 +163,7 @@
                     "y": 520
                 }
             },
-            "notes": "",
-            "origin": {
-                "playbook_id": 368,
-                "playbook_name": "wsxx",
-                "playbook_repo_id": 2,
-                "playbook_repo_name": "local"
-            }
+            "notes": ""
         },
         "input_spec": null,
         "output_spec": null,
@@ -179,7 +173,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-10-04T06:26:11.758175+00:00",
+    "create_time": "2026-10-04T06:28:33.700586+00:00",
     "draft_mode": false,
     "labels": [
         "events"
