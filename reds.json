@@ -34,6 +34,7 @@
                     "targetPort": "1_in"
                 }
             ],
+            "hash": "c069c3ccbdce29948559cf8470a96c7b81611d68",
             "nodes": {
                 "0": {
                     "data": {
@@ -75,7 +76,7 @@
                         "actionType": "investigate",
                         "advanced": {
                             "join": [],
-                            "scope": "new"
+                            "scope": "all"
                         },
                         "connector": "VirusTotal v3",
                         "connectorConfigs": [
@@ -174,7 +175,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-10-04T06:50:53.688942+00:00",
+    "create_time": "2026-10-04T06:54:43.243070+00:00",
     "draft_mode": false,
     "labels": [
         "events"

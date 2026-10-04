@@ -23,7 +23,7 @@ def url_reputation_1(action=None, success=None, container=None, results=None, ha
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.requestURL","artifact:*.id"], scope="new")
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.requestURL","artifact:*.id"], scope="all")
 
     parameters = []
 
