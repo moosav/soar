@@ -14,14 +14,27 @@
                     "targetPort": "2_in"
                 },
                 {
-                    "id": "port_2_to_port_1",
+                    "id": "port_2_to_port_3",
                     "sourceNode": "2",
                     "sourcePort": "2_out",
+                    "targetNode": "3",
+                    "targetPort": "3_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "conditionKey": "condition_key_0",
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_3_to_port_1",
+                    "sourceNode": "3",
+                    "sourcePort": "3_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "1087664305cb9b45cff5a765829573195b12f621",
+            "hash": "35acfea793274323ceb7341ae1eeb21991d36f82",
             "nodes": {
                 "0": {
                     "data": {
@@ -117,6 +130,39 @@
                     "warnings": {},
                     "x": 908,
                     "y": 620.5
+                },
+                "3": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "conditions": [
+                            {
+                                "comparisons": [
+                                    {
+                                        "comparisonKey": "comparison_key_0",
+                                        "op": "==",
+                                        "param": "url_reputation_1:action_result.parameter.url",
+                                        "value": "malicious"
+                                    }
+                                ],
+                                "conditionIndex": 0,
+                                "conditionKey": "condition_key_0",
+                                "logic": "and",
+                                "type": "if"
+                            }
+                        ],
+                        "functionId": 1,
+                        "functionName": "decision_1",
+                        "id": "3",
+                        "type": "decision"
+                    },
+                    "errors": {},
+                    "id": "3",
+                    "type": "decision",
+                    "warnings": {},
+                    "x": 978,
+                    "y": 781.5
                 }
             },
             "notes": ""
@@ -129,7 +175,7 @@
         "schema": "5.0.24",
         "version": "8.6.0.530"
     },
-    "create_time": "2026-10-04T06:46:21.792334+00:00",
+    "create_time": "2026-10-04T06:50:53.688942+00:00",
     "draft_mode": false,
     "labels": [
         "events"
